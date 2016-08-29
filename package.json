@@ -21,11 +21,11 @@
     "watch:js": "npm run build:js && webpack --watch",
     "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map"
   },
-	"babel": {
-	    "presets": [
-	      "es2015",
-	      "react"
-	    ]
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -38,6 +38,7 @@
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
+    "react-router-scroll": "^0.3.2",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "unirest": "^0.5.0"
