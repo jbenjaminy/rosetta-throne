@@ -86,13 +86,14 @@ var Questions = [
 		"answer": "to make someone itch",
 		"classification": "verb"
 	},
-	{	"prompt": "",
-		"answer": "",
-		"classification": ""
+	{	"prompt": "affin",
+		"answer": "when",
+		"classification": "adverb"
 	},
-	{	"prompt": "",
-		"answer": "",
-		"classification": ""
+	{	"prompt": "affisat",
+		"answer": "to clean",
+		"altAnswer": "to wash",
+		"classification": "verb"
 	},
 	{	"prompt": "",
 		"answer": "",
