@@ -1,0 +1,706 @@
+var Questions = [ 
+	{	"prompt": "acchakat",
+		"answer": "to silence",
+		"classification": "verb"
+	},
+	{	"prompt": "acchorkat",
+		"answer": "to roll",
+		"classification": "verb"
+	},
+	{	"prompt": "achra",
+		"answer": "smelly",
+		"classification": "adjective"
+	},
+	{	"prompt": "achrakh",
+		"answer": "stink",
+		"altAnswer": "smell",
+		"classification": "noun"
+	},
+	{	"prompt": "achralat",
+		"answer": "to be smelly",
+		"altAnswer": "to give off a smell",
+		"classification": "verb"
+	},
+	{	"prompt": "adakhilat",
+		"answer": "to eat",
+		"altAnswer": "to feed",
+		"altAnswer2": "to feed on",
+		"altAnswer3": "to feast on",
+		"classification": "verb"
+	},
+	{	"prompt": "addiwelat",
+		"answer": "midnight ",
+		"classification": "noun"
+	},
+	{	"prompt": "addothralat",
+		"answer": "to convey",
+		"altAnswer": "to transport someone",
+		"classification": "verb"
+	},
+	{	"prompt": "addrekat",
+		"answer": "to spill",
+		"altAnswer": "to cause to spill",
+		"classification": "verb"
+	},
+	{	"prompt": "addrivat",
+		"answer": "to kill",
+		"altAnswer": "to murder",
+		"classification": "verb"
+	},
+	{	"prompt": "ador",
+		"answer": "chair",
+		"classification": "noun"
+	},
+	{	"prompt": "adra",
+		"answer": "turtle",
+		"classification": "noun"
+	},
+	{	"prompt": "aena",
+		"answer": "morning",
+		"classification": "noun"
+	},
+	{	"prompt": "afazh",
+		"answer": "hot",
+		"classification": "adjective"
+	},
+	{	"prompt": "afazhi",
+		"answer": "warm",
+		"classification": "adjective"
+	},
+	{	"prompt": "affa",
+		"answer": "whoa",
+		"altAnswer": "shh",
+		"classification": "interjection"
+	},
+	{	"prompt": "affazhat",
+		"answer": "to warm",
+		"altAnswer": "to give warmth to",
+		"altAnswer2": "to make hot",
+		"classification": "verb"
+	},
+	{	"prompt": "affazolat",
+		"answer": "to replace",
+		"classification": "verb"
+	},
+	{	"prompt": "affesat",
+		"answer": "to make someone itch",
+		"classification": "verb"
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"classification": ""
+	}
+];
