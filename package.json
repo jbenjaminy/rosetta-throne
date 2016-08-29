@@ -19,7 +19,8 @@
     "clean:css": "rm -f build/$npm_package_name.$npm_package_version.css build/$npm_package_name.$npm_package_version.css.map",
     "build:js": "npm run clean:js && webpack",
     "watch:js": "npm run build:js && webpack --watch",
-    "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map"
+    "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map",
+    "mongod": "mongod --bind_ip=0.0.0.0 --dbpath=./mongo_data --nojournal --rest"
   },
   "babel": {
     "presets": [
@@ -34,6 +35,8 @@
     "express": "^4.14.0",
     "isomorphic-fetch": "^2.2.1",
     "less": "^2.7.1",
+    "mongodb": "^2.2.9",
+    "mongoose": "^4.5.10",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",

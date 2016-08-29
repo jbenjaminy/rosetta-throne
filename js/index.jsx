@@ -18,7 +18,7 @@ var QuizPage = require('./quiz-page')
 // This acts as the big container
 var App = function(props) {
   return (
-    //props.children will render the routes (Index or )
+    //props.children will render the routes (Index or other routes )
     <div>
       {props.children}
     </div>
@@ -34,7 +34,7 @@ var routes = (
 
 // The page loads {routes} instead of a component which will look up and render the index page and load the app
 document.addEventListener( 'DOMContentLoaded', function() {
- //store.dispatch(actions.pageLoad());
+ store.dispatch(actions.pageLoad());
   ReactDOM.render(
     <Provider store={store}>
       <Router
