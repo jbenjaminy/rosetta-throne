@@ -1,4 +1,4 @@
-import { createStore, applyRouterMiddleware, compose} from 'redux';
+import { createStore, applyMiddleware, compose} from 'redux';
 var reducers = require('./reducers');
 var actions = require('./actions');
 var thunk = require('redux-thunk').default;
