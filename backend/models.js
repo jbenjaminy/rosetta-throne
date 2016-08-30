@@ -1,56 +1,29 @@
 var mongoose = require('mongoose');
 
 var UserSchema = new mongoose.Schema({
-   username: {
+   token: {
        type: String,
        required: true,
        unique: true
-   }
+   },
+	 questionHistory:[]
 });
 var User = mongoose.model('User', UserSchema);
 
 var QuestionSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-		},
 	prompt: {
-		type: string,
+		type: String,
 		required: true
 	},
 	correctAnswer: {
-		type: string,
-		required: true
-	},
-	frequency: {
-		type: string,
+		type: String,
 		required: true
 	}
 });
 var Question = mongoose.model('Question', QuestionSchema)
 
-var HistorySchema = new mongoose.Schema({
-	question: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Question',
-		required: true
-	},
-	history:[
-		{
-			timeStamp: { type: string,
-									required: true },
-			correct: { type: Boolean,
-								required: true }
-		}
-	]
-});
-
-var History = mongoose.model('History', HistorySchema)
-
 exports.User = User;
 exports.Question = Question;
-exports.History = History;
 
 
 
