@@ -40,8 +40,4 @@ var reducer = function(state, action) {
   }
 };
 
-
-
-
-
 module.exports = reducer;
