@@ -5,17 +5,17 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var User = require('./models').User;
 var Question = require('./models').Question;
-var History = require('./models').History;
 
 var app = express();
 var jsonParser = bodyParser.json();
 
 
 /*----- GET request for specific user -----*/
-app.get('/users/:userID', function(request, response) {
-  User.find({
-      _id: request.params.userID
-  }, function(error, user) {
+app.get('/users/:username', function(request, response) {
+  var query = {
+    username: {$eq: request.params.username}
+  };
+  User.find(query).populate('questionHistory').exec(function(error, user) {
       // check if user[0] in returned array is falsey
       if (!user[0]) {
           // return 404 error message if specified user does not exist
@@ -23,12 +23,13 @@ app.get('/users/:userID', function(request, response) {
               message: "User not found"
           });
       }
-      var returnUser = {
+      var userDocument = {
           _id: user[0]._id,
-          username: user[0].username
+          username: user[0].username,
+          questionHistory: user[0].questionHistory
       };
       // returns OK status and user that was queried in response
-      response.json(returnUser);
+      response.json(userDocument);
   });
 });
 
@@ -55,7 +56,7 @@ app.post('/users/:username', jsonParser, function(request, response) {
              message: 'Internal server error'
          });
      }
-     response.status(201).header('Location', '/users/' + user._id).json({});
+     response.status(201).json({});
   });
 });
 // PUT FOR USERS:
@@ -71,74 +72,23 @@ app.post('/users/:username', jsonParser, function(request, response) {
 // /*--------------------------- QUESTION ENDPOINTS ----------------------------*/
 
 /*----- GET request for questions array -----*/
-app.get('/questions/:user', function(request, response) {
-  var username = request.params.user;
-  var query = {
-    username: username
-  }
-  User.findOne(query, function(err, user) {
-    if (!user || err) {
-      console.error("User does not exist", username);
-      return;
-    }
-    id = user._id;
-    }
-  })
+app.get('/questions', function(request, response) {
 
-  Message.find(request.query).populate('from to').exec(function(error, messages) {
-      for (var i = 0; i < messages.length; i++) {
-          var returnMessagesArr = [];
-          var returnMessageObj = {
-          _id: messages[i].id,
-              from: {
-                      _id: messages[i].from._id,
-                      username: messages[i].from.username
-              },
-              to: {
-                      _id: messages[i].to._id,
-                      username: messages[i].to.username
-              },
-              text: messages[i].text
-          }
-
-          returnMessagesArr.push(returnMessageObj);
+  Question.find(request.query).populate('prompt correctAnswer').exec(function(error, question) {
+    var questionArray = [];
+    for (var i = 0; i < question.length; i++) {
+      var questionObject = {
+        _id: question[i].id,
+        prompt: question[i].prompt,
+        correctAnswer: question[i].correctAnswer
       }
-      if (error) {
-          return response.sendStatus(500);
-      }
-      response.json(returnMessagesArr);
-    });
-  }
-});
-
-
-
-/*----- GET request for a single question ------*/
-app.get('/messages/:messageId', passport.authenticate('basic', {session: false}), function(request, response) {
-  Message.findOne({_id: request.params.messageId}).populate('to from').exec(function(error, message) {
-    var returnMessage = {
-        _id: message.id,
-        from: {
-                _id: message.from._id,
-                username: message.from.username
-        },
-        to: {
-                _id: message.to._id,
-                username: message.to.username
-        },
-        text: message.text
+      questionArray.push(questionObject);
     }
-    // checks that the user requesting user's id matches either the 'to' field or the 'from' field
-    if (message.to._id.toString() !== request.user._id.toString() && message.from._id.toString() !== request.user._id.toString()) {
-      return response.status(401).json({
-          message: 'Unauthorized'
-      });
+    if (error) {
+        return response.sendStatus(500);
     }
-    if (!message) {
-        return response.status(404).json({message: 'Message not found'});
-    }
-    // return message that was fetched
-    response.json(returnMessage);
+    // CALL FUNCTION CONTAINING ALGORITHM HERE
+    response.json(questionArray);
   });
 });
 
@@ -218,7 +168,7 @@ app.get('/messages/:messageId', passport.authenticate('basic', {session: false})
 var runServer = function(callback) {
     var databaseUri = process.env.DATABASE_URI || global.databaseUri || 'mongodb://localhost/quiz';
     mongoose.connect(databaseUri).then(function() {
-        // var port = process.env.PORT || 8081;
+        var port = process.env.PORT || 8081;
         var server = app.listen(port, function() {
             console.log('Listening on port ' + port);
             if (callback) {
