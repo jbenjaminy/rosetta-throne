@@ -10,15 +10,19 @@ var UserSchema = new mongoose.Schema({
 		 type: String,
 		 required: true,
 		 unique: true
+	 },
+	 questionHistory: {
+		 type: Array,
+		 required: true
 	 }
-	 questionHistory: []
 });
 var User = mongoose.model('User', UserSchema);
 
 var QuestionSchema = new mongoose.Schema({
 	prompt: {
 		type: String,
-		required: true
+		required: true,
+		unique: true
 	},
 	correctAnswer: {
 		type: String,

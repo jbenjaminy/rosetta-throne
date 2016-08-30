@@ -1,0 +1,17 @@
+[
+     {
+      "prompt": "havzi",
+      "correctAnswer": "cat" },
+     {
+      "prompt": "vilajero",
+      "correctAnswer": "battle" },
+     {
+      "prompt": "vorsa",
+      "correctAnswer": "fire" },
+     {
+      "prompt": "zhavorsa",
+      "correctAnswer": "dragon"},
+     {
+      "prompt": "vov",
+      "correctAnswer": "weapon"}
+]

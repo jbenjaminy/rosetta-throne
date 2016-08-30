@@ -9,6 +9,11 @@ var Question = require('./models').Question;
 var app = express();
 var jsonParser = bodyParser.json();
 
+Question.create({"prompt": "havzi", "correctAnswer": "cat" })
+Question.create({"prompt": "vilajero","correctAnswer": "battle" })
+Question.create({"prompt": "vorsa", "correctAnswer": "fire" })
+Question.create({"prompt": "zhavorsa", "correctAnswer": "dragon"})
+Question.create({"prompt": "vov", "correctAnswer": "weapon"})
 
 /*----- GET request for specific user -----*/
 app.get('/users/:username', function(request, response) {
@@ -48,6 +53,7 @@ app.post('/users/:username', jsonParser, function(request, response) {
 //creates new user from the constructor
   var user = new User({
       username: username,
+      questionHistory: []
   });
   // saves new user to database
   user.save(function(error) {
@@ -74,7 +80,7 @@ app.post('/users/:username', jsonParser, function(request, response) {
 /*----- GET request for questions array -----*/
 app.get('/questions', function(request, response) {
 
-  Question.find(request.query).populate('prompt correctAnswer').exec(function(error, question) {
+  Question.find({}, function(error, question) {
     var questionArray = [];
     for (var i = 0; i < question.length; i++) {
       var questionObject = {
@@ -94,79 +100,29 @@ app.get('/questions', function(request, response) {
 
 
 // /*----- POST request for Questions -----*/
-// app.post('/messages', passport.authenticate('basic', {session: false}), function(request, response) {
-//     // After authentication, checks that the 'from' field matches the requesting user's id
-//     if (request.body.from !== request.user._id.toString()) {
-//         return response.status(401).json({
-//              message: 'Unauthorized'
-//         });
-//     }
-//     // No text for the message
-//     if (!request.body.text) {
-//         return response.status(422).json({
-//             message: 'Missing field: text'
-//         });
-//     }
-//     // Message text is non-string
-//     if (typeof request.body.text !== 'string') {
-//         return response.status(422).json({
-//             message: 'Incorrect field type: text'
-//         });
-//     }
-//     // to field is non-string
-//     if (typeof request.body.to !== 'string') {
-//         return response.status(422).json({
-//             message: 'Incorrect field type: to'
-//         });
-//     }
-//     // from field is non-string
-//     if (typeof request.body.from !== 'string') {
-//         return response.status(422).json({
-//             message: 'Incorrect field type: from'
-//         });
-//     }
-
-//     // Test if from field contains an id for a non-existent user
-//     User.findOne({
-//         _id: request.body.from
-//     }, function(error, users) {
-//         // if it is a non-existent user return appropriate error
-//         if (!users) {
-//             return response.status(422).json({
-//                 message: 'Incorrect field value: from'
-//             });
-//         }
-//         // else test if to field contains an id for a non-existent user
-//         else {
-//             User.findOne({
-//                 _id: request.body.to
-//             }, function(error, users) {
-//                 // if it is a non-existent user return appropriate error
-//                 if (!users) {
-//                     return response.status(422).json({
-//                         message: 'Incorrect field value: to'
-//                     });
-//                 }
-//                 // else we know both fields are valid users with appropriate input type and message text is supplied. Will proceed and create the message document.
-//                 else {
-//                     Message.create(request.body, function(error, message) {
-//                         if (error) {
-//                             return response.sendStatus(500);
-//                         }
-//                         // if successfully created message, send CREATED status and path of message
-//                         response.status(201).header('Location', '/messages/' + message._id).json({});
-//                     });
-//                 }
-//             });
-//         }
-//     });
-// });
-
+app.post('/questions', function(request, response) {
+  console.log(request.body, "<-- request.body");
+  var questionsArray = request.body;
+  var completed = 0;
+  questionsArray.forEach(function(question) {
+    Question.create(question, function(error) {
+      if (error) {
+        console.log("Post question error for: ", question)
+      } else {
+        console.log("Post question success")
+      }
+    });
+    completed++;
+    if (completed === questionsArray.length) {
+      return response.status(201).json();
+    }
+  });
+});
 
 /*----------------------------- RUN SERVER -----------------------------*/
 
 var runServer = function(callback) {
-    var databaseUri = process.env.DATABASE_URI || global.databaseUri || 'mongodb://localhost/quiz';
+    var databaseUri = process.env.DATABASE_URI || global.databaseUri || 'mongodb://localhost/test';
     mongoose.connect(databaseUri).then(function() {
         var port = process.env.PORT || 8081;
         var server = app.listen(port, function() {
