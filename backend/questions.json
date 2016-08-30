@@ -1,11 +1,13 @@
 var Questions = [ 
 	{	"prompt": "acchakat",
 		"answer": "to silence",
-		"classification": "verb"
+		"classification": "verb",
+		"category": "transitive"
 	},
 	{	"prompt": "acchorkat",
 		"answer": "to roll",
-		"classification": "verb"
+		"classification": "verb",
+		"category": "transitive"
 	},
 	{	"prompt": "achra",
 		"answer": "smelly",
@@ -14,7 +16,8 @@ var Questions = [
 	{	"prompt": "achrakh",
 		"answer": "stink",
 		"altAnswer": "smell",
-		"classification": "noun"
+		"classification": "noun",
+		"category": "inanimate"
 	},
 	{	"prompt": "achralat",
 		"answer": "to be smelly",
@@ -26,34 +29,52 @@ var Questions = [
 		"altAnswer": "to feed",
 		"altAnswer2": "to feed on",
 		"altAnswer3": "to feast on",
-		"classification": "verb"
+		"classification": "verb",
+	},
+	{	"prompt": "adakhilat",
+		"answer": "to eat",
+		"altAnswer": "to feed",
+		"more": "(someone or something)",
+		"category": "transitive"
 	},
 	{	"prompt": "addiwelat",
-		"answer": "midnight ",
-		"classification": "noun"
+		"answer": "to moisten",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "addo ajjalani",
+		"answer": "midnight",
+		"classification": "noun",
+		"category": "phrase"
 	},
 	{	"prompt": "addothralat",
 		"answer": "to convey",
 		"altAnswer": "to transport someone",
-		"classification": "verb"
+		"classification": "verb",
+		"category": "transitive"
 	},
 	{	"prompt": "addrekat",
 		"answer": "to spill",
 		"altAnswer": "to cause to spill",
-		"classification": "verb"
+		"classification": "verb",
+		"category": "transitive"
 	},
 	{	"prompt": "addrivat",
 		"answer": "to kill",
 		"altAnswer": "to murder",
-		"classification": "verb"
+		"more": "(chiefly when done intentionally by a person)",
+		"classification": "verb",
+		"category": "transitive"
 	},
 	{	"prompt": "ador",
 		"answer": "chair",
-		"classification": "noun"
+		"classification": "noun",
+		"category": "inanimate"
 	},
 	{	"prompt": "adra",
 		"answer": "turtle",
-		"classification": "noun"
+		"classification": "noun",
+		"category": "animate"
 	},
 	{	"prompt": "aena",
 		"answer": "morning",
@@ -70,21 +91,25 @@ var Questions = [
 	{	"prompt": "affa",
 		"answer": "whoa",
 		"altAnswer": "shh",
+		"more": "!",
 		"classification": "interjection"
 	},
 	{	"prompt": "affazhat",
 		"answer": "to warm",
 		"altAnswer": "to give warmth to",
 		"altAnswer2": "to make hot",
-		"classification": "verb"
+		"classification": "verb",
+		"category": "transitive"
 	},
 	{	"prompt": "affazolat",
 		"answer": "to replace",
-		"classification": "verb"
+		"classification": "verb",
+		"category": "transitive"
 	},
 	{	"prompt": "affesat",
 		"answer": "to make someone itch",
-		"classification": "verb"
+		"classification": "verb",
+		"category": "transitive"
 	},
 	{	"prompt": "affin",
 		"answer": "when",
@@ -93,615 +118,1608 @@ var Questions = [
 	{	"prompt": "affisat",
 		"answer": "to clean",
 		"altAnswer": "to wash",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "afix",
+		"answer": "fly",
+		"classification": "noun",
+		"category": "animate"
+	},
+	{	"prompt": "aggendat",
+		"answer": "to rip something",
+		"altAnswer": "to tear something",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "ahesh",
+		"answer": "snow",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "aheshke",
+		"answer": "winter",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "ahhaqat",
+		"answer": "to frustrate",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "ahhasat",
+		"answer": "to sharpen",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "ahhaz",
+		"answer": "then",
+		"more": "(of close or immediate future)",
+		"classification": "adverb"
+	},
+	{	"prompt": "ai",
+		"answer": "yes",
+		"more": "(obedient response)", 
+		"classification": "interjection"
+	},
+	{	"prompt": "ajjalan",
+		"answer": "tonigt",
+		"classification": "adverb"
+	},
+	{	"prompt": "ajjin",
+		"answer": "now",
+		"classification": "adverb"
+	},
+	{	"prompt": "akat",
+		"answer": "two",
+		"classification": "noun",
+		"category": "numerical"
+	},
+	{	"prompt": "akataki",
+		"answer": "second",
+		"classification": "adjective",
+		"category": "numerical"
+	},
+	{	"prompt": "akka",
+		"answer": "also",
+		"altAnswer": "too",
+		"altAnswer2": "as well",
+		"altAnswer3": "even",
+		"altAnswer4": "even so",
+		"altAnswer5": "re-",
+		"classification": "adverb"
+	},
+	{	"prompt": "akkate",
+		"answer": "both",
+		"altAnswer": "alike",
+		"altAnswer2": "the same way",
+		"classification": "adverb"
+	},
+	{	"prompt": "akkelenak",
+		"answer": "leader",
+		"classification": "noun",
+		"category": "animate"
+	},
+	{	"prompt": "akkelenat",
+		"answer": "to decide",
+		"altAnswer": "to judge",
 		"classification": "verb"
 	},
+	{	"prompt": "akko",
+		"answer": "stand up",
+		"more": "! (shortening of akkovaras; used to command animals)",
+		"classification": "interjection"
+	},
+	{	"prompt": "akkovarat",
+		"answer": "to stand something up",
+		"classification": "verb"
+	},
+	{	"prompt": "ale",
+		"answer": "more",
+		"classification": "adjective"
+	},
+	{	"prompt": "alegra",
+		"answer": "duck",
+		"classification": "noun",
+		"category": "animate"
+	},
+	{	"prompt": "akkoalat",
+		"answer": "to heal",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "allayafat",
+		"answer": "to please",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "alikh",
+		"answer": "more",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "alle",
+		"answer": "further",
+		"altAnswer": "farther",
+		"classification": "adverb"
+	},
+	{	"prompt": "alloshat",
+		"answer": "to pledge",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "ammasat",
+		"answer": "to decorate",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "ammattelat",
+		"answer": "to hobble a person",
+		"classification": "verb"
+	},
+	{	"prompt": "ammemat",
+		"answer": "to play a musical instrument",
+		"classification": "verb"
+	},
+	{	"prompt": "ammenat",
+		"answer": "to empty something",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "ammithrat",
+		"answer": "to rest",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "anat",
+		"answer": "to jog",
+		"classification": "verb"
+	},
+	{	"prompt": "anha",
+		"answer": "I",
+		"classification": "pronoun"
+	},
+	{	"prompt": "anna",
+		"answer": "me",
+		"classification": "pronoun"
+	},
+	{	"prompt": "annakhat",
+		"answer": "to stop someone",
+		"altAnswer": "to stop something",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "annakholat",
+		"answer": "to put an end to",
+		"altAnswer": "to finish",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "annese",
+		"answer": "announcement",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "annevalat",
+		"answer": "to sit something",
+		"altAnswer": "to leave something alone",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "anni",
+		"answer": "of mine",
+		"classification": "pronoun"
+	},
+	{	"prompt": "annithilat",
+		"answer": "to encourage",
+		"altAnswer": "to invigorate",
+		"altAnswer2": "to entice",
+		"classification": "verb"
+	},
+	{	"prompt": "ao (adj)",
+		"answer": "deep",
+		"classification": "adjective"
+	},
+	{	"prompt": "ao (adv)",
+		"answer": "dark",
+		"more": "(of color)",
+		"classification": "adverb"
+	},
+	{	"prompt": "aqqisat",
+		"answer": "to keep near",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "arakh",
+		"answer": "curved sword",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "aranat",
+		"answer": "to drop something",
+		"altAnswer": "to lose something",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "aranikh",
+		"answer": "subject",
+		"altAnswer": "topic",
+		"altAnswer2": "theme",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "arannat",
+		"answer": "to be neglected",
+		"classification": "verb"
+	},
+	{	"prompt": "aranne",
+		"answer": "carelessly",
+		"classification": "adverb"
+	},
+	{	"prompt": "aresak",
+		"answer": "coward",
+		"classification": "noun",
+		"category": "animate"
+	},
+	{	"prompt": "aresat",
+		"answer": "to hide",
+		"classification": "verb",
+		"category": "intransitive"
+	},
+	{	"prompt": "arraggat",
+		"answer": "to choke someone",
+		"classification": "verb"
+	},
+	{	"prompt": "arranat",
+		"answer": "to shame",
+		"altAnswer": "to cause to be merciful",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "arrane",
+		"answer": "shaming",
+		"altAnswer": "a public dressing down",
+		"classification": "noun"
+	},
+	{	"prompt": "arrek (adv)",
+		"answer": "then",
+		"more": "(of event not in the immediate future)",
+		"classification": "adverb"
+	},
+	{	"prompt": "arrek (conj)",
+		"answer": "when",
+		"classification": "conjunction"
+	},
+	{	"prompt": "arrekaan",
+		"answer": "until",
+		"classification": "conjunction"
+	},
+	{	"prompt": "arrekoon",
+		"answer": "from",
+		"altAnswer": "since",
+		"classification": "conjunction"
+	},
+	{	"prompt": "arrissat",
+		"answer": "to fix",
+		"classification": "verb"
+	},
+	{	"prompt": "arrokhat",
+		"answer": "to frighten",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "arthasat",
+		"answer": "to fall",
+		"classification": "verb"
+	},
+	{	"prompt": "arthasolat",
+		"answer": "to fall",
+		"classification": "verb"
+	},
+	{	"prompt": "asavva",
+		"answer": "sky",
+		"classification": "noun",
+		"category": "animate"
+	},
+	{	"prompt": "ase",
+		"answer": "word",
+		"altAnswer": "command",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "asfavirzeth",
+		"answer": "cranberry",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "ashefa",
+		"answer": "river",
+		"classification": "noun",
+		"category": "animate"
+	},
+	{	"prompt": "asqoyi",
+		"answer": "oath",
+		"altAnswer": "vow",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "assamvat",
+		"answer": "to break something",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "asshekh (adv)",
+		"answer": "today",
+		"classification": "adverb"
+	},
+	{	"prompt": "asshekh (noun)",
+		"answer": "today",
+		"altAnswer": "day",
+		"classification": "noun",
+		"category": "intransitive"
+	},
+	{	"prompt": "asshekhqoyi",
+		"answer": "birthday",
+		"classification": "noun",
+		"category": "intransitive"
+	},
+	{	"prompt": "asshie",
+		"answer": "introduction",
+		"classification": "noun"
+	},
+	{	"prompt": "asshilat",
+		"answer": "to introduce",
+		"altAnswer": "to present",
+		"classification": "verb"
+	},
+	{	"prompt": "assikhqoyi",
+		"answer": "sign",
+		"altAnswer": "omen",
+		"classification": "noun",
+		"category": "intransitive"
+	},
+	{	"prompt": "assikhqoyisir",
+		"answer": "prophecy",
+		"classification": "noun",
+		"category": "animate"
+	},
+	{	"prompt": "assilat",
+		"answer": "to signal",
+		"altAnswer": "to signal to",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "assilat",
+		"answer": "to defeat",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "assokh",
+		"answer": "message",
+		"altAnswer": "instructions",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "assokhosor",
+		"answer": "law",
+		"classification": "noun",
+		"category": "animate"
+	},
+// 100
+	{	"prompt": "assolat",
+		"answer": "to command",
+		"classification": "verb"
+	},
+	{	"prompt": "astat",
+		"answer": "to say",
+		"classification": "verb"
+	},
+	{	"prompt": "astilat",
+		"answer": "to joke",
+		"altAnswer": "to joke about",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "asto",
+		"answer": "saying",
+		"altAnswer": "prayer",
+		"classification": "noun"
+	},
+	{	"prompt": "astolat",
+		"answer": "to speak",
+		"altAnswer": "to speak of",
+		"classification": "verb",
+		"category": "transitive"
+	},
+	{	"prompt": "astosor",
+		"answer": "story",
+		"classification": "noun",
+		"category": "animate"
+	},
+	{	"prompt": "at",
+		"answer": "one",
+		"classification": "noun",
+		"category": "numerical"
+	},
+	{	"prompt": "ataki",
+		"answer": "first",
+		"classification": "adjective",
+		"category": "numerical"
+	},
+	{	"prompt": "ate",
+		"answer": "first",
+		"classification": "adverb",
+		"category": "numerical"
+	},
+	{	"prompt": "ath",
+		"answer": "dry",
+		"classification": "adjective"
+	},
+	{	"prompt": "athaddrivar",
+		"answer": "fatality",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athahhaqar",
+		"answer": "frustration",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athaozar",
+		"answer": "depths",
+		"altAnswer": "deep",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athaqqiyazar",
+		"answer": "spilling of blood",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athasar",
+		"answer": "wasteland",
+		"classification": "noun",
+		"category": "animate"
+	},
+	{	"prompt": "athastokhdeveshizar",
+		"answer": "nonsense",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athayozar",
+		"answer": "waiting",
+		"altAnswer": "noun",
+		"classification": "inanimate"
+	},
+	{	"prompt": "athchilar",
+		"answer": "limit",
+		"altAnswer": "lay",
+		"altAnswer2": "expanse",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athchilozar",
+		"answer": "lying",
+		"more": "(with women)",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athchomar",
+		"answer": "respect",
+		"altAnswer": "reverence",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athchomar chomakea",
+		"answer": "respect to those that are respectful",
+		"more": "(a greeting; said to a group of people)",
+		"classification": "idiom"
+	},
+	{	"prompt": "athdarinar",
+		"answer": "lameness",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athdavrazar",
+		"answer": "usefulness",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athdavrazar!",
+		"answer": "good!",
+		"altAnswer": "excellent!",
+		"classification": "interjection"
+   	},
+	{	"prompt": "athdikar",
+		"answer": "speed",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athdisizar",
+		"answer": "comfort",
+		"altAnswer": "simplicity",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "athdrivar",
+		"answer": "death",
+		"classification": "noun",
+		"category": "inanimate"
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
+	{	"prompt": "athdikar",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
-	},{	"prompt": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
+	{	"prompt": "athdikar",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
-	},{	"prompt": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+// 200
+	{	"prompt": "athdikar",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
-	},{	"prompt": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
-	},{	"prompt": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "athdikar",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
-	},{	"prompt": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "athdikar",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
-	},{	"prompt": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
+		"answer": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "athdikar",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
-	},{	"prompt": "",
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
+	},
+	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	},
 	{	"prompt": "",
 		"answer": "",
-		"classification": ""
+		"altAnswer": "",
+		"classification": "",
+		"category": ""
 	}
+// 300
 ];
