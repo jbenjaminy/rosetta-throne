@@ -9,11 +9,18 @@ var Question = require('./models').Question;
 var app = express();
 var jsonParser = bodyParser.json();
 
-Question.create({"prompt": "havzi", "correctAnswer": "cat" })
-Question.create({"prompt": "vilajero","correctAnswer": "battle" })
-Question.create({"prompt": "vorsa", "correctAnswer": "fire" })
-Question.create({"prompt": "zhavorsa", "correctAnswer": "dragon"})
-Question.create({"prompt": "vov", "correctAnswer": "weapon"})
+// This allows CORS
+app.use(function(request, response, next) {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+// Question.create({"prompt": "havzi", "correctAnswer": "cat" })
+// Question.create({"prompt": "vilajero","correctAnswer": "battle" })
+// Question.create({"prompt": "vorsa", "correctAnswer": "fire" })
+// Question.create({"prompt": "zhavorsa", "correctAnswer": "dragon"})
+// Question.create({"prompt": "vov", "correctAnswer": "weapon"})
 
 /*----- GET request for specific user -----*/
 app.get('/users/:username', function(request, response) {
@@ -79,7 +86,6 @@ app.post('/users/:username', jsonParser, function(request, response) {
 
 /*----- GET request for questions array -----*/
 app.get('/questions', function(request, response) {
-
   Question.find({}, function(error, question) {
     var questionArray = [];
     for (var i = 0; i < question.length; i++) {
@@ -137,7 +143,6 @@ var runServer = function(callback) {
 if (require.main === module) {
     runServer();
 }
-
 
 /*------------------------------- EXPORTS -------------------------------*/
 exports.app = app;

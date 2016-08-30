@@ -6,13 +6,16 @@ var QuizPage = React.createClass({
   onFormSubmit: function(event) {
     event.preventDefault();
     this.props.dispatch(actions.submitAnswer(this.refs.userInput.value));
-    if (this.props.questionNumber > 4) {
+    if (this.props.questionNumber > this.props.questions.length - 2) {
       this.props.dispatch(actions.pageLoad());
     }
   },
 
   render: function() {
-    console.log(this.props.state, "state")
+    console.log(this.props.state, 'state')
+   if (!this.props.questions) {
+     return null
+   }
     return (
       <div>
         <div>{this.props.questions[this.props.questionNumber].prompt}</div>

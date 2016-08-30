@@ -4,39 +4,23 @@ var reducer = function(state, action) {
   state = state || {};
 
   if (action.type === actions.PAGE_LOAD) {
-    return Object.assign({}, {
-      questions: {
-	        1: {
-            prompt: 'havzi',
-            answer: 'cat' },
-          2: {
-            prompt: 'vilajero',
-            answer: 'battle' },
-	        3: {
-            prompt: 'vorsa',
-            answer: 'fire' },
-          4: {
-            prompt: 'zhavorsa',
-            answer: 'dragon'},
-          5: {
-            prompt: 'vov',
-            answer: 'weapon'}
-      },
-      questionNumber: 1,
-      userAnswer: ''
+    return Object.assign({}, state, {
+      questionNumber: 0
     });
-  }
-
-  else if (action.type === actions.SUBMIT_ANSWER) {
-    console.log("here")
+  } else if (action.type === actions.FETCH_QUESTIONS_SUCCESS) {
+    return Object.assign({}, state, {
+      userAnswer: '',
+      questions: action.questions
+    });
+  } else if (action.type === actions.FETCH_QUESTIONS_ERROR) {
+    return state;
+  } else if (action.type === actions.SUBMIT_ANSWER) {
     return Object.assign({}, state, {
       userAnswer: action.answer,
       questionNumber: state.questionNumber + 1
-
     });
-  }
-  else {
-    return state
+  } else {
+    return state;
   }
 };
 
