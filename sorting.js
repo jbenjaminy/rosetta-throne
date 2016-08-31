@@ -4,9 +4,8 @@
 // var nextQuestion = nextQuestion
 //
 //
-var sort = function(array) {
+var sort = function(questionBank) {
   var que = [];
-  var questionBank = array.slice();
   questionBank.forEach(function(question) {
     if (question.m === 1) {
       que.push(question)
@@ -32,6 +31,9 @@ var sort = function(array) {
     if (i === questionBank.length - 1 && questionBank[i].m === 1) {
       que.push(questionBank[i])
       que.push(questionBank[i])
+    }
+    for (var i = 0; i < questionBank.length; i++) {
+
     }
   };
   return que
