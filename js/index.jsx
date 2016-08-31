@@ -11,16 +11,17 @@ import { useScroll } from 'react-router-scroll';
 
 var actions = require('./actions');
 var store = require( './store' );
-
+var Header = require('./header');
 var LandingPage = require('./landing-page')
 var QuizPage = require('./quiz-page')
 
 // This acts as the big container
 var App = function(props) {
   return (
-    //props.children will render the routes (Index or other routes )
     <div>
-      {props.children}
+      <div>
+        {props.children}
+      </div>
     </div>
   );
 };
