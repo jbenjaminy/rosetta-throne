@@ -16,6 +16,7 @@ app.use(function(request, response, next) {
   next();
 });
 
+//User.create({"username": "User1", "questionHistory": "[{"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "5", "correct": "true"}, {"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "7", "correct": "true"}, {"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "9", "correct": "true"}]})
 // Question.create({"prompt": "havzi", "correctAnswer": "cat" })
 // Question.create({"prompt": "vilajero","correctAnswer": "battle" })
 // Question.create({"prompt": "vorsa", "correctAnswer": "fire" })
@@ -100,6 +101,7 @@ app.get('/questions', function(request, response) {
         return response.sendStatus(500);
     }
     // CALL FUNCTION CONTAINING ALGORITHM HERE
+
     response.json(questionArray);
   });
 });

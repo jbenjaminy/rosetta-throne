@@ -27,6 +27,10 @@ var QuestionSchema = new mongoose.Schema({
 	correctAnswer: {
 		type: String,
 		required: true
+	},
+	m: {
+		type: Number,
+		required: true
 	}
 });
 var Question = mongoose.model('Question', QuestionSchema)
