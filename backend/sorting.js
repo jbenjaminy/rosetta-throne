@@ -139,7 +139,7 @@ var assemblePracticeSet = function(questionBank) {
         que.push(questionBank[i])
     }
   };
-  return que
+  return que.slice(0,1);
 }
 
 
