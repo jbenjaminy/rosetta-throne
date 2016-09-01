@@ -132,20 +132,21 @@ app.post('/questions', function(request, response) {
 app.put('/questions/:id/:m', function(request, response) {
   var id = request.params.id
   var m = request.params.m
+  console.log(m, "m")
+  // Question.find({_id: id}, function(error, question) {
+    // console.log(question, '<--question')
+  //   var updatedQuestion = {
+  //     // _id: question[0]._id,
+  //     // prompt: question[0].prompt,
+  //     // correctAnswer: question[0].correctAnswer,
+  //     m: m
+  //   }
+  Question.update({_id: id}, {m: m}, function(error) {
+    if (error) {
+      console.error(error, "Error message")
+      return response.status(500).json({message: 'Internal server error'});
+    } response.json({});
 
-  Question.find({_id: id}, function(error, question) {
-    console.log(question, '<--question')
-    var updatedQuestion = {
-      _id: question[0]._id,
-      prompt: question[0].prompt,
-      correctAnswer: question[0].correctAnswer,
-      m: m
-    }
-    Question.update(question, updatedQuestion, function(error) {
-      if (error) {
-        return response.status(500).json({message: 'Internal server error'});
-      } response.json({});
-    });
   });
 });
 

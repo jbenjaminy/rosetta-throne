@@ -9,7 +9,9 @@ var QuizPage = React.createClass({
     var question = this.props.questions[0];
     if (this.refs.userInput.value === question.correctAnswer) {
       this.props.dispatch(actions.updateMvalue(question.m + 1, question._id))
-    } else {this.props.dispatch(actions.updateMvalue(question.m - 1, question._id))
+    } else {
+    // Don't decrement below 1
+     this.props.dispatch(actions.updateMvalue(question.m - 1, question._id))
     }
 
     if (this.props.questions.length === 0) {
