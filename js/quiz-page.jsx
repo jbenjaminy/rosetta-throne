@@ -1,5 +1,6 @@
 var React = require('react');
 var actions = require('./actions');
+var Header = require('./header');
 var connect = require('react-redux').connect;
 
 var QuizPage = React.createClass({
@@ -18,6 +19,7 @@ var QuizPage = React.createClass({
    }
     return (
       <div>
+        <Header cls='header2'/>
         <div>{this.props.questions[this.props.questionNumber].prompt}</div>
         <form onSubmit={this.onFormSubmit}>
           <input type="text" ref="userInput" placeholder="Your answer" required/>
