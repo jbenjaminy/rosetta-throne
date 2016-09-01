@@ -1,13 +1,5 @@
 // Write an algorith to sort the questions
-//          x  o  x  o  o
-// array = [A, B, C, D, E]
-// var nextQuestion = nextQuestion
-//   questionBank.forEach(function(question) {
-  //   if (question.m === 1) {
-  //     que.push(question)
-  //   }
-  // });
-//
+
 var sort = function(questionBank) {
   var que = [];
   for (var i = 0; i < questionBank.length; i++) {
@@ -94,7 +86,7 @@ var sort = function(questionBank) {
             }
             i = j;
             break;
-          } 
+          }
         } else if (questionBank[j].m === 3 && j+1 < questionBank.length - 1) {
             for (var k = j+1; k < questionBank.length; k++) {
               if (questionBank[k].m === 2 && questionBank[k+1].m === 1) {
@@ -105,7 +97,7 @@ var sort = function(questionBank) {
                 que.push(questionBank[k+1])
                 j = k + 1;
                 break;
-              } 
+              }
               else if (questionBank[k].m === 3 && questionBank[k+1].m === 1) {
                 que.push(questionBank[i])
                 que.push(questionBank[k+1])
@@ -142,7 +134,7 @@ var sort = function(questionBank) {
           i = j;
           break;
         }
-      } 
+      }
     } else if (questionBank[i].m === 3 && i === questionBank.length - 1) {
         que.push(questionBank[i])
     }
@@ -150,11 +142,11 @@ var sort = function(questionBank) {
   return que
 }
 
-var array = [{q: 1, m: 4}, {q: 2, m: 4}, {q: 3, m: 4}, {q: 4, m: 4}, {q: 5, m: 4}];
-console.log(sort(array));
+
+//
+// var array = [{q: 1, m: 4}, {q: 2, m: 4}, {q: 3, m: 4}, {q: 4, m: 4}, {q: 5, m: 4}];
+// console.log(sort(array));
 
  // Bug starts at: [{q: 1, m: 3}, {q: 2, m: 3}, {q: 3, m: 1}, {q: 4, m: 1}, {q: 5, m: 1}];
 
-
-
-
+module.exports = sort;
