@@ -6,6 +6,27 @@ var reducer = function(state, action) {
   if (action.type === actions.PAGE_LOAD) {
     return Object.assign({}, {
     });
+  } else if (action.type === actions.INCREMENT_QUESTION) {
+      var questionNumber = state.questionNumber + 1;
+      var startQuiz = false;
+      var previewQuestions = state.previewQuestions
+      if (questionNumber === state.previewQuestions.length - 1) {
+        startQuiz = true;
+        previewQuestions = false;
+      }
+    return Object.assign({}, state, {
+      questionNumber: questionNumber,
+      startQuiz: startQuiz,
+      previewQuestions: previewQuestions
+    });
+  } else if (action.type === actions.FETCH_PREVIEW_SUCCESS) {
+    return Object.assign({}, state, {
+      previewQuestions: action.questions,
+      questionNumber: 0,
+      startQuiz: false
+    });
+  } else if (action.type === actions.FETCH_PREVIEW_ERROR) {
+    return state;
   } else if (action.type === actions.FETCH_QUESTIONS_SUCCESS) {
     return Object.assign({}, state, {
       questions: action.questions,

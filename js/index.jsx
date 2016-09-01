@@ -12,6 +12,7 @@ import { useScroll } from 'react-router-scroll';
 var actions = require('./actions');
 var store = require( './store' );
 var LandingPage = require('./landing-page')
+var PracticePage = require('./practice-page')
 var QuizPage = require('./quiz-page')
 
 // This acts as the big container
@@ -26,7 +27,8 @@ var App = function(props) {
 var routes = (
   <Route path='/' component={App}>
     <IndexRoute component={LandingPage} />
-    <Route path='practice' component={QuizPage} />
+    <Route path='practice' component={PracticePage} />
+    <Route path='quiz' component={QuizPage} />
   </Route>
 )
 

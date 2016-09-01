@@ -7,7 +7,7 @@ var Link = router.Link;
 var Header = React.createClass({
 
   getQuestions: function(event) {
-    this.props.dispatch(actions.fetchQuestions());
+    this.props.dispatch(actions.fetchPreview());
   },
 
   render: function() {

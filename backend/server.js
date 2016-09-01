@@ -87,6 +87,25 @@ app.post('/users/:username', jsonParser, function(request, response) {
 // /*--------------------------- QUESTION ENDPOINTS ----------------------------*/
 
 /*----- GET request for questions array -----*/
+app.get('/preview', function(request, response) {
+  Question.find({}, function(error, question) {
+    var questionArray = [];
+    for (var i = 0; i < question.length; i++) {
+      var questionObject = {
+        prompt: question[i].prompt,
+        placeHolder: question[i].correctAnswer
+      }
+      questionArray.push(questionObject);
+    }
+    if (error) {
+        return response.sendStatus(500);
+    }
+
+    response.json(questionArray);
+  });
+});
+
+/*----- GET request for questions array -----*/
 app.get('/questions', function(request, response) {
   Question.find({}, function(error, question) {
     var questionArray = [];
