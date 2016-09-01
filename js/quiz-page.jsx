@@ -29,11 +29,12 @@ var QuizPage = React.createClass({
      return null
    }
     return (
-      <div>
+      <div className='quizPage'>
         <Header cls='header2'/>
-        <div>{this.props.questions[0].prompt}</div>
+        <div className='prompt'>{this.props.questions[0].prompt}</div>
         <form onSubmit={this.onFormSubmit}>
-          <input type="text" ref="userInput" placeholder="Your answer" required/>
+          <input type="text" ref="userInput" placeholder="Enter English translation" required/>
+          <br/>
           <button type="submit" id="submit-button">Submit answer</button>
         </form>
       </div>

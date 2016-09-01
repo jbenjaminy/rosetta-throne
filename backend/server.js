@@ -17,12 +17,12 @@ app.use(function(request, response, next) {
   next();
 });
 
-//User.create({"username": "User1", "questionHistory": "[{"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "5", "correct": "true"}, {"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "7", "correct": "true"}, {"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "9", "correct": "true"}]})
-// Question.create({"prompt": "havzi", "correctAnswer": "cat", "m": 1 })
-// Question.create({"prompt": "vilajero","correctAnswer": "battle", "m": 1 })
-// Question.create({"prompt": "vorsa", "correctAnswer": "fire", "m": 1 })
-// Question.create({"prompt": "zhavorsa", "correctAnswer": "dragon", "m": 1})
-// Question.create({"prompt": "vov", "correctAnswer": "weapon", "m": 1})
+// User.create({"username": "User1", "questionHistory": "[{"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "5", "correct": "true"}, {"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "7", "correct": "true"}, {"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "9", "correct": "true"}]})
+Question.create({"prompt": "havzi", "correctAnswer": "cat", "m": 1 })
+Question.create({"prompt": "vilajero","correctAnswer": "battle", "m": 1 })
+Question.create({"prompt": "vorsa", "correctAnswer": "fire", "m": 1 })
+Question.create({"prompt": "zhavorsa", "correctAnswer": "dragon", "m": 1})
+Question.create({"prompt": "vov", "correctAnswer": "weapon", "m": 1})
 
 /*----- GET request for specific user -----*/
 app.get('/users/:username', function(request, response) {
@@ -130,23 +130,21 @@ app.post('/questions', function(request, response) {
 
 // PUT request for Questions to update "m" value
 app.put('/questions/:id/:m', function(request, response) {
-  //console.log(request, "request");
   var id = request.params.id
   var m = request.params.m
 
   Question.find({_id: id}, function(error, question) {
-
+    console.log(question, '<--question')
     var updatedQuestion = {
-      _id: id,
-      prompt: question.prompt,
-      correctAnswer: question.correctAnswer,
+      _id: question[0]._id,
+      prompt: question[0].prompt,
+      correctAnswer: question[0].correctAnswer,
       m: m
     }
     Question.update(question, updatedQuestion, function(error) {
       if (error) {
         return response.status(500).json({message: 'Internal server error'});
       } response.json({});
-      console.log(response, '<-- response')
     });
   });
 });
