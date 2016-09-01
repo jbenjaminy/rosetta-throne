@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var User = require('./models').User;
 var Question = require('./models').Question;
-var sort = require('./sorting').sort;
+var assemblePracticeSet = require('./sorting');
 var app = express();
 var jsonParser = bodyParser.json();
 
@@ -13,15 +13,16 @@ var jsonParser = bodyParser.json();
 app.use(function(request, response, next) {
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  response.header("Access-Control-Allow-Methods", "PUT");
   next();
 });
 
 //User.create({"username": "User1", "questionHistory": "[{"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "5", "correct": "true"}, {"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "7", "correct": "true"}, {"question":"57c5e26cf1cb90dc83bcbe90, "timeStamp": "9", "correct": "true"}]})
-Question.create({"prompt": "havzi", "correctAnswer": "cat", "m": 1 })
-Question.create({"prompt": "vilajero","correctAnswer": "battle", "m": 1 })
-Question.create({"prompt": "vorsa", "correctAnswer": "fire", "m": 1 })
-Question.create({"prompt": "zhavorsa", "correctAnswer": "dragon", "m": 1})
-Question.create({"prompt": "vov", "correctAnswer": "weapon", "m": 1})
+// Question.create({"prompt": "havzi", "correctAnswer": "cat", "m": 1 })
+// Question.create({"prompt": "vilajero","correctAnswer": "battle", "m": 1 })
+// Question.create({"prompt": "vorsa", "correctAnswer": "fire", "m": 1 })
+// Question.create({"prompt": "zhavorsa", "correctAnswer": "dragon", "m": 1})
+// Question.create({"prompt": "vov", "correctAnswer": "weapon", "m": 1})
 
 /*----- GET request for specific user -----*/
 app.get('/users/:username', function(request, response) {
@@ -101,9 +102,8 @@ app.get('/questions', function(request, response) {
     if (error) {
         return response.sendStatus(500);
     }
-    // CALL FUNCTION CONTAINING ALGORITHM HERE
 
-    response.json(questionArray);
+    response.json(assemblePracticeSet(questionArray));
   });
 });
 
@@ -130,10 +130,12 @@ app.post('/questions', function(request, response) {
 
 // PUT request for Questions to update "m" value
 app.put('/questions/:id/:m', function(request, response) {
+  //console.log(request, "request");
   var id = request.params.id
   var m = request.params.m
 
   Question.find({_id: id}, function(error, question) {
+
     var updatedQuestion = {
       _id: id,
       prompt: question.prompt,
@@ -144,7 +146,7 @@ app.put('/questions/:id/:m', function(request, response) {
       if (error) {
         return response.status(500).json({message: 'Internal server error'});
       } response.json({});
-
+      console.log(response, '<-- response')
     });
   });
 });
@@ -152,7 +154,7 @@ app.put('/questions/:id/:m', function(request, response) {
 /*----------------------------- RUN SERVER -----------------------------*/
 
 var runServer = function(callback) {
-    var databaseUri = process.env.DATABASE_URI || global.databaseUri || 'mongodb://localhost/thrones';
+    var databaseUri = process.env.DATABASE_URI || global.databaseUri || 'mongodb://localhost/a';
     mongoose.connect(databaseUri).then(function() {
         var port = process.env.PORT || 8081;
         var server = app.listen(port, function() {

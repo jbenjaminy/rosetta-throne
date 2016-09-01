@@ -6,27 +6,37 @@ var connect = require('react-redux').connect;
 var QuizPage = React.createClass({
   onFormSubmit: function(event) {
     event.preventDefault();
-    this.props.dispatch(actions.submitAnswer(this.refs.userInput.value));
-    if (this.props.questionNumber > this.props.questions.length - 2) {
+    var question = this.props.questions[0];
+    if (this.refs.userInput.value === question.correctAnswer) {
+      this.props.dispatch(actions.updateMvalue(question.m + 1, question._id))
+    } else {this.props.dispatch(actions.updateMvalue(question.m - 1, question._id))
+    }
+
+    if (this.props.questions.length === 0) {
       this.props.dispatch(actions.pageLoad());
     }
+  },
+  refreshQuestions: function() {
+    this.props.dispatch(actions.fetchQuestions());
   },
 
   render: function() {
     console.log(this.props.state, 'state')
+    if (this.props.refreshQuestions) {
+      this.refreshQuestions()
+    }
    if (!this.props.questions) {
      return null
    }
     return (
       <div>
         <Header cls='header2'/>
-        <div>{this.props.questions[this.props.questionNumber].prompt}</div>
+        <div>{this.props.questions[0].prompt}</div>
         <form onSubmit={this.onFormSubmit}>
           <input type="text" ref="userInput" placeholder="Your answer" required/>
           <button type="submit" id="submit-button">Submit answer</button>
         </form>
       </div>
-
     );
   }
 });
@@ -35,7 +45,7 @@ var mapStateToProps = function(state, props) {
   return {
     state: state,
     questions: state.questions,
-    questionNumber: state.questionNumber
+    refreshQuestions: state.refreshQuestions
   }
 }
 

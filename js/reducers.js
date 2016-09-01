@@ -4,21 +4,21 @@ var reducer = function(state, action) {
   state = state || {};
 
   if (action.type === actions.PAGE_LOAD) {
-    return Object.assign({}, state, {
-      questionNumber: 0
+    return Object.assign({}, {
     });
   } else if (action.type === actions.FETCH_QUESTIONS_SUCCESS) {
     return Object.assign({}, state, {
-      userAnswer: '',
-      questions: action.questions
+      questions: action.questions,
+      refreshQuestions: false
     });
   } else if (action.type === actions.FETCH_QUESTIONS_ERROR) {
     return state;
-  } else if (action.type === actions.SUBMIT_ANSWER) {
+  } else if (action.type === actions.UPDATE_MVALUE_SUCCESS) {
     return Object.assign({}, state, {
-      userAnswer: action.answer,
-      questionNumber: state.questionNumber + 1
+      refreshQuestions: true
     });
+  } else if (action.type === actions.UPDATE_MVALUE_ERROR) {
+    return state;
   } else {
     return state;
   }

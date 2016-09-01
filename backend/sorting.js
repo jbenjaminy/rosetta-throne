@@ -1,6 +1,6 @@
-// Write an algorith to sort the questions
+// Write an algorithm to sort the questions
 
-var sort = function(questionBank) {
+var assemblePracticeSet = function(questionBank) {
   var que = [];
   for (var i = 0; i < questionBank.length; i++) {
     if (questionBank[i].m === 1) {
@@ -149,4 +149,4 @@ var sort = function(questionBank) {
 
  // Bug starts at: [{q: 1, m: 3}, {q: 2, m: 3}, {q: 3, m: 1}, {q: 4, m: 1}, {q: 5, m: 1}];
 
-module.exports = sort;
+module.exports = assemblePracticeSet;

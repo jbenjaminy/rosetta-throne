@@ -7,11 +7,50 @@ var pageLoad = function() {
   };
 };
 
-var SUBMIT_ANSWER = 'SUBMIT_ANSWER';
-var submitAnswer = function(answer) {
+var updateMvalue = function(m, id) {
+  return function(dispatch) {
+    var url = 'http://localhost:8081/questions/'+ id + '/' + m;
+    var request = {
+      method: 'put',
+      headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      }
+    };
+    return fetch(url, request)
+    .then(function(response) {
+      if (response.status < 200 || response.status >= 300) {
+          var error = new Error(response.statusText);
+          error.response = response;
+          throw error;
+      }
+      return response;
+    })
+    // returns normal response
+    .then(function(response) {
+      return response.json();
+    })
+    // returns requested questions to reducers
+    .then(function() {
+      return dispatch(updateMvalueSuccess());
+    })
+    .catch(function(error) {
+      return dispatch(updateMvalueError(error));
+    });
+  }
+};
+
+var UPDATE_MVALUE_SUCCESS = 'UPDATE_MVALUE_SUCCESS';
+var updateMvalueSuccess = function() {
   return {
-    type: SUBMIT_ANSWER,
-    answer: answer
+    type: UPDATE_MVALUE_SUCCESS
+  };
+};
+var UPDATE_MVALUE_ERROR = 'UPDATE_MVALUE_ERROR';
+var updateMvalueError = function(error) {
+  return {
+    type: UPDATE_MVALUE_ERROR,
+    error: error
   };
 };
 
@@ -66,8 +105,6 @@ var fetchQuestionsError = function(error) {
   };
 };
 
-exports.submitAnswer = submitAnswer;
-exports.SUBMIT_ANSWER = SUBMIT_ANSWER;
 exports.pageLoad = pageLoad;
 exports.PAGE_LOAD = PAGE_LOAD;
 exports.fetchQuestionsSuccess = fetchQuestionsSuccess;
@@ -75,3 +112,8 @@ exports.FETCH_QUESTIONS_SUCCESS = FETCH_QUESTIONS_SUCCESS;
 exports.fetchQuestionsError = fetchQuestionsError;
 exports.FETCH_QUESTIONS_ERROR = FETCH_QUESTIONS_ERROR;
 exports.fetchQuestions = fetchQuestions;
+exports.updateMvalueSuccess = updateMvalueSuccess;
+exports.UPDATE_MVALUE_SUCCESS = UPDATE_MVALUE_SUCCESS;
+exports.updateMvalueError = updateMvalueError;
+exports.UPDATE_MVALUE_ERROR = UPDATE_MVALUE_ERROR;
+exports.updateMvalue = updateMvalue;
