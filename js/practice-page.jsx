@@ -14,10 +14,10 @@ var PracticePage = React.createClass({
   },
 
   render: function() {
-    // console.log(this.props.state, 'state')
-  if (this.props.startQuiz) {
-      return <Link to={'/quiz'} className="start" onClick={this.getQuestions}>Begin Quiz</Link>
-  }
+    console.log(this.props.state, 'state')
+  // if (this.props.startQuiz) {
+  //     return <Link to={'/quiz'} className="start" onClick={this.getQuestions}>Begin Quiz</Link>
+  // }
   if (!this.props.previewQuestions) {
     return null
   }
@@ -40,8 +40,8 @@ var mapStateToProps = function(state, props) {
   return {
     state: state,
     previewQuestions: state.previewQuestions,
-    questionsNumber: state.questionNumber,
-    startQuiz: state.startQuiz
+    questionNumber: state.questionNumber
+    // startQuiz: state.startQuiz
   }
 }
 

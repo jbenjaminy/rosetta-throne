@@ -8,18 +8,19 @@ var reducer = function(state, action) {
     });
   } else if (action.type === actions.INCREMENT_QUESTION) {
       var questionNumber = state.questionNumber + 1;
-      var startQuiz = false;
-      var previewQuestions = state.previewQuestions
-      if (questionNumber === state.previewQuestions.length - 1) {
-        startQuiz = true;
-        previewQuestions = false;
-      }
+      // var startQuiz = false;
+      // var previewQuestions = state.previewQuestions
+      // if (questionNumber === state.previewQuestions.length - 1) {
+      //   startQuiz = true;
+      //   previewQuestions = false;
+      // }
     return Object.assign({}, state, {
-      questionNumber: questionNumber,
-      startQuiz: startQuiz,
-      previewQuestions: previewQuestions
+      questionNumber: questionNumber
+      // startQuiz: startQuiz,
+      // previewQuestions: previewQuestions
     });
   } else if (action.type === actions.FETCH_PREVIEW_SUCCESS) {
+    console.log(action.questions, "action.questions")
     return Object.assign({}, state, {
       previewQuestions: action.questions,
       questionNumber: 0,
