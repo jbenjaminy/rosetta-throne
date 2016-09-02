@@ -24,10 +24,6 @@ app.use(function(request, response, next) {
   next();
 });
 
-/*----- Serve Frontend -----*/
-app.use(express.static('../build/'));
-
-
 /*--------------------------- QUESTION ENDPOINTS ----------------------------*/
 
 /*----- GET request for questions preview -----*/

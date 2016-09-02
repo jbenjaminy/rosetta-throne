@@ -5,7 +5,7 @@ var fetch = require('isomorphic-fetch');
 var fetchPreview = function(level, lesson) {
   // Sends fetch to retrieve questions from the server connected to DB
   return function(dispatch) {
-    var url = '/preview/' + level + '/' + lesson;
+    var url = 'http://localhost:8081/preview/' + level + '/' + lesson;
     var request = {
       headers: {
         'Accept': 'application/json',
@@ -39,7 +39,7 @@ var fetchPreview = function(level, lesson) {
 
 var updateMvalue = function(m, id) {
   return function(dispatch) {
-    var url = '/questions/'+ id + '/' + m;
+    var url = 'http://localhost:8081/questions/'+ id + '/' + m;
     var request = {
       method: 'put',
       headers: {
@@ -74,7 +74,7 @@ var updateMvalue = function(m, id) {
 var fetchQuestions = function(level, lesson) {
   // Sends fetch to retrieve questions from the server connected to DB
   return function(dispatch) {
-    var url = '/questions/' + level + '/' + lesson;
+    var url = 'http://localhost:8081/questions/' + level + '/' + lesson;
     var request = {
       headers: {
         'Accept': 'application/json',
