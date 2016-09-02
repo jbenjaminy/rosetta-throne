@@ -11,7 +11,6 @@ var createQuestions = require('./create-questions');
 // var createUsers = require('./create-users');
 var assemblePracticeSet = require('./sorting');
 
-
 /*----- Create Question and User Documents in DB -----*/
 createQuestions();
 // createUsers();
@@ -168,7 +167,7 @@ app.post('/users/:username', jsonParser, function(request, response) {
 /*----------------------------- RUN SERVER -----------------------------*/
 
 var runServer = function(callback) {
-    var databaseUri = process.env.DATABASE_URI || global.databaseUri || 'mongodb://localhost/got';
+    var databaseUri = process.env.DATABASE_URI || global.databaseUri || 'mongodb://localhost/got2';
     mongoose.connect(databaseUri).then(function() {
         var port = process.env.PORT || 8081;
         var server = app.listen(port, function() {

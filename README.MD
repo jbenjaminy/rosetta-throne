@@ -12,11 +12,20 @@
 *6) Get the authentication system in place
 *7) Move to having the user data stored in the database
 
+
+
 ## Further items:
+
+* Let the backend serve the client side view
+* Let MLab run mongo db for deployment
+
 1) Don't let m-values decrement below 1.
 2) Make header text into links for homepage/levels.
 3) Reset m-values when you restart quiz.
-4) Clear input box after every submission.
+4) Ask about how to link to the font file
+5) Screen shot title with wolf attached
+
+
 5) Add stats after user integration.
 6) Add images for question previews.
 7) Add dothraki quotes on in-between quiz pages.

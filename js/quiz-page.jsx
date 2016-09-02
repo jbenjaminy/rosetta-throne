@@ -13,7 +13,10 @@ var QuizPage = React.createClass({
     if (this.refs.userInput.value === question.correctAnswer) {
       this.props.dispatch(actions.updateMvalue(question.m + 1, question._id))
     } else {
-     this.props.dispatch(actions.updateMvalue(question.m - 1, question._id))
+     var mUpdate = question.m - 1;
+     if (mUpdate > 0) {
+       this.props.dispatch(actions.updateMvalue(mUpdate, question._id))
+     }
     }
     var form = document.getElementById("gotForm");
     form.reset();
@@ -41,7 +44,7 @@ var QuizPage = React.createClass({
     console.log(this.props.state);
     if (this.props.refreshQuestions) {
       this.refreshQuestions()
-    } 
+    }
     if (!this.props.questions) {
       return null
     }

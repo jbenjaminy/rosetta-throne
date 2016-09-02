@@ -8,7 +8,8 @@ var Header = require('./header');
 
 
 var PracticePage = React.createClass({
-  onFormSubmit: function() {
+  onFormSubmit: function(event) {
+    event.preventDefault();
     this.props.dispatch(actions.incrementQuestion());
     var form = document.getElementById("gotForm");
     form.reset();

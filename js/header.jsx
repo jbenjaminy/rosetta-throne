@@ -14,7 +14,9 @@ var Header = React.createClass({
   render: function() {
     return(
     	<div className={this.props.cls}>
-    		<div className='title'><h1 className='rosetta'>Rosetta</h1><img src='./throne.png' className='throne'/><div className='course'><h2 className='dothraki'>DOTHRAKI</h2><hr/><h3>Level 1, 2, 3, 4, 5</h3></div><img src='./wolf.png' className='wolf'/></div>
+    		<div className='title'>
+          <Link to={'/'} className="title1 col" ><img src="./title1.jpg"/></Link><Link to={'/directory'} className="title2 col"><img src="./title2.jpg"/></Link>
+        </div>
         <Link to={'/practice'} className="start" onClick={this.getPreview}>Start learning</Link>
 		  </div>
     );
