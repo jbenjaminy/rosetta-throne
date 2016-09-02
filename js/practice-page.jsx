@@ -20,7 +20,7 @@ var PracticePage = React.createClass({
   render: function() {
     if (this.props.startQuiz) {
       return (
-        <div>
+        <div className='quizPage'>
           <Header cls='header2'/>
           <Link to={'/quiz'} className="continue" onClick={this.getQuestions}>Begin Quiz</Link>
         </div>

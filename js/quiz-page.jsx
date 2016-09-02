@@ -41,7 +41,6 @@ var QuizPage = React.createClass({
     this.props.dispatch(actions.fetchQuestions(this.props.level, this.props.lesson));
   },
   render: function() {
-    console.log(this.props.state);
     if (this.props.refreshQuestions) {
       this.refreshQuestions()
     }
@@ -52,7 +51,7 @@ var QuizPage = React.createClass({
       return (
         <div>
           <Header cls='header2'/>
-          <div className='endLinks'>
+          <div className='endLinks quizPage'>
             <Link to={'/quiz'} className="quizEnd" onClick={this.getQuestions}>Restart Quiz</Link>
             <Link to={'/practice'} className="quizEnd" onClick={this.getPreview}>Next Lesson</Link>
             <Link to={'/'} className="quizEnd">Return Home</Link>
