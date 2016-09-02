@@ -10,7 +10,7 @@
     "start": "node backend/server.js",
     "server": "webpack-dev-server --content-base build/ --hot",
     "http": "http-server build/",
-    "watch": "npm run watch:html & npm run watch:css & npm run watch:js & npm watch:img",
+    "watch": "npm run watch:html & npm run watch:css & npm run watch:js & npm run watch:img",
     "clean": "rm -rf build",
     "build:html": "npm run clean:html && cp index.html build/",
     "watch:html": "npm run build:html && chokidar index.html -c 'npm run build:html'",
