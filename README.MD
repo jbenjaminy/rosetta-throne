@@ -19,12 +19,11 @@
 * Let the backend serve the client side view
 * Let MLab run mongo db for deployment
 
-1) Don't let m-values decrement below 1.
-2) Make header text into links for homepage/levels.
+
+
 3) Reset m-values when you restart quiz.
 4) Ask about how to link to the font file
-5) Screen shot title with wolf attached
-
+5) fix links in directory
 
 5) Add stats after user integration.
 6) Add images for question previews.

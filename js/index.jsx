@@ -1,8 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var router = require('react-router');
 var Provider = require( 'react-redux' ).Provider;
 
+var router = require('react-router');
 var Route = router.Route;
 var IndexRoute = router.IndexRoute;
 
@@ -11,9 +11,10 @@ import { useScroll } from 'react-router-scroll';
 
 var actions = require('./actions');
 var store = require( './store' );
-var LandingPage = require('./landing-page')
-var PracticePage = require('./practice-page')
-var QuizPage = require('./quiz-page')
+var LandingPage = require('./landing-page');
+var PracticePage = require('./practice-page');
+var QuizPage = require('./quiz-page');
+var Directory = require('./directory');
 
 // This acts as the big container
 var App = function(props) {
@@ -29,6 +30,7 @@ var routes = (
     <IndexRoute component={LandingPage} />
     <Route path='practice' component={PracticePage} />
     <Route path='quiz' component={QuizPage} />
+    <Route path='directory' component={Directory} />
   </Route>
 )
 

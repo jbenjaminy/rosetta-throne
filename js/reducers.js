@@ -42,6 +42,11 @@ var reducer = function(state, action) {
       level: level,
       lesson: 1
     });
+  } else if (action.type === actions.UPDATE_LEVEL) {
+    return Object.assign({}, state, {
+      level: action.level,
+      lesson: action.lesson
+    });
   } else if (action.type === actions.FETCH_PREVIEW_SUCCESS) {
     return Object.assign({}, state, {
       previewQuestions: action.questions,

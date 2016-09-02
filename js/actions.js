@@ -137,6 +137,15 @@ var incrementLesson = function() {
   };
 };
 
+var UPDATE_LEVEL = 'UPDATE_LEVEL';
+var updateLevel = function(level, lesson) {
+  return {
+    type: UPDATE_LEVEL,
+    level: level,
+    lesson: lesson
+  };
+};
+
 /*----- Fetch Actions -----*/
 /* Fetch Preview */
 var FETCH_PREVIEW_SUCCESS = 'FETCH_PREVIEW_SUCCESS';
@@ -202,6 +211,9 @@ exports.incrementLesson = incrementLesson;
 exports.INCREMENT_LEVEL = INCREMENT_LEVEL;
 exports.incrementLevel = incrementLevel;
 
+exports.UPDATE_LEVEL = UPDATE_LEVEL;
+exports.updateLevel = updateLevel;
+
 exports.fetchPreview = fetchPreview;
 exports.FETCH_PREVIEW_SUCCESS = FETCH_PREVIEW_SUCCESS;
 exports.fetchPreviewSuccess = fetchPreviewSuccess;
@@ -219,6 +231,3 @@ exports.UPDATE_MVALUE_SUCCESS = UPDATE_MVALUE_SUCCESS;
 exports.updateMvalueSuccess = updateMvalueSuccess;
 exports.UPDATE_MVALUE_ERROR = UPDATE_MVALUE_ERROR;
 exports.updateMvalueError = updateMvalueError;
-
-
-
