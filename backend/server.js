@@ -15,6 +15,8 @@ var assemblePracticeSet = require('./sorting');
 createQuestions();
 // createUsers();
 
+/*----- Serve Frontend -----*/
+app.use(express.static('../build/'));
 
 /*----- Allow CORS-----*/
 app.use(function(request, response, next) {
