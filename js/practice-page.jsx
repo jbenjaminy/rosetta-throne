@@ -15,7 +15,13 @@ var PracticePage = React.createClass({
     form.reset();
   },
   getQuestions: function() {
-    this.props.dispatch(actions.fetchQuestions(this.props.level, this.props.lesson));
+    this.props.dispatch({
+      type: 'server/getQuestions',
+      data: { 
+        level: this.props.level,
+        lesson: this.props.lesson
+      }
+    });
   },
   render: function() {
     if (this.props.startQuiz) {
@@ -51,8 +57,8 @@ var PracticePage = React.createClass({
 var mapStateToProps = function(state, props) {
   return {
     state: state,
-    level: state.level,
-    lesson: state.lesson,
+    level: state.user.level,
+    lesson: state.user.lesson,
     previewQuestions: state.previewQuestions,
     questionNumber: state.questionNumber,
     startQuiz: state.startQuiz

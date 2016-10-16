@@ -32,8 +32,8 @@ var Header = React.createClass({
 
 var mapStateToProps = function(state, props) {
   return {
-    level: state.level,
-    lesson: state.lesson,
+    level: state.user.level,
+    lesson: state.user.lesson
   }
 }
 

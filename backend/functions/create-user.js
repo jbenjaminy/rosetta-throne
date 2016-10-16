@@ -4,7 +4,9 @@ let createUser = (id) => {
 	return new Promise((resolve, reject) => {
 		User.create({
       		socketId: socket.id,
-      		completedLessons: []
+      		completedLessons: [],
+      		currentLevel: 1,
+      		currentLesson: 1
   		}, (err, user) => {
     		if (err) {
 	      		console.error(err);
