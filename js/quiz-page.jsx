@@ -135,6 +135,6 @@ var mapStateToProps = function(state, props) {
     refreshQuestions: state.quiz.refreshQuestions,
     startQuiz: state.quiz.startQuiz
   }
-}
+};
 
 module.exports = connect(mapStateToProps)(QuizPage);

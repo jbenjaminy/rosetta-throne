@@ -1,64 +1,48 @@
 var React = require('react');
-var connect = require('react-redux').connect;
-var router = require('react-router');
-var Link = router.Link;
 
 var Header = require('./header');
+var DirectoryLink = require('./directory-link')
 
 var Directory = React.createClass({
-  getPreview: function(level, lesson) {
-    var props = this.props;
-    return function() {
-      props.dispatch(actions.fetchPreview(level, lesson));
-      props.dispatch(actions.updateLevel(level, lesson));
-    }
-  },
-
   render: function() {
     return(
       <div className='directory'>
         <Header cls='header2'/>
         <ul className="levels">
           <li>
-            <Link to={'/practice'} onClick={this.getPreview('1', '1')}><h2>Level 1: Nouns</h2></Link>
+            <DirectoryLink level='1' lesson='1' title='Level 1: Nouns' type='h2' />
             <ul className="lessons">
-              <li><Link to={'/practice'} onClick={this.getPreview('1', '1')}>Lesson 1: Creatures of Essos</Link></li>
-              <li><Link to={'/practice'} onClick={this.getPreview('1', '2')}>Lesson 2: Nature and Landscapes</Link></li>
-              <li><Link to={'/practice'} onClick={this.getPreview('1', '3')}>Lesson 3: Positions and Warfare </Link></li>
-              <li><Link to={'/practice'} onClick={this.getPreview('1', '4')}>Lesson 4: Seasons and the Elements</Link></li>
-              <li><Link to={'/practice'} onClick={this.getPreview('1', '5')}>Lesson 5: Family</Link></li>
+              <DirectoryLink level='1' lesson='1' title='Lesson 1: Creatures of Essos' type='li' />
+              <DirectoryLink level='1' lesson='2' title='Lesson 2: Nature and Landscapes' type='li' />
+              <DirectoryLink level='1' lesson='3' title='Lesson 3: Positions and Warfare' type='li' />
+              <DirectoryLink level='1' lesson='4' title='Lesson 4: Seasons and the Elements' type='li' />
+              <DirectoryLink level='1' lesson='5' title='Lesson 5: Family' type='li' />
             </ul>
           </li>
-
           <li>
-            <Link to={'/practice'} onClick={this.getPreview('2', '1')}><h2>Level 2: Numbers, Pronouns, and Interjections</h2></Link>
-            <ul className="lessons">
-            </ul>
-          </li>
-
-          <li>
-            <Link to={'/practice'} onClick={this.getPreview('3', '1')}><h2>Level 3: Adjectives and Adverbs</h2></Link>
+            <DirectoryLink level='2' lesson='1' title='Level 2: Numbers, Pronouns, and Interjections' type='h2' />
             <ul className="lessons">
             </ul>
           </li>
-
           <li>
-            <Link to={'/practice'} onClick={this.getPreview('4', '1')}><h2>Level 4: Transitive Verbs</h2></Link>
+            <DirectoryLink level='3' lesson='1' title='Level 3: Adjectives and Adverbs' type='h2' />
             <ul className="lessons">
             </ul>
           </li>
-
           <li>
-            <Link to={'/practice'} onClick={this.getPreview('5', '1')}><h2>Level 5: Intransitive Verbs</h2></Link>
+            <DirectoryLink level='3' lesson='1' title='Level 4: Transitive Verbs' type='h2' />
+            <ul className="lessons">
+            </ul>
+          </li>
+          <li>
+            <DirectoryLink level='3' lesson='1' title='Level 5: Intransitive Verbs' type='h2' />
             <ul className="lessons">
             </ul>
           </li>
         </ul>
-
-
       </div>
     );
   }
 });
 
-module.exports = connect()(Directory);
+module.exports = Directory;

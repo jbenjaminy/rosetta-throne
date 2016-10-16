@@ -1,12 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Provider = require( 'react-redux' ).Provider;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 
-var router = require('react-router');
-var Route = router.Route;
-var IndexRoute = router.IndexRoute;
-
-import { applyRouterMiddleware, hashHistory, Router }  from 'react-router';
+import { Router, Route, IndexRoute, hashHistory, applyRouterMiddleware }  from 'react-router';
 import { useScroll } from 'react-router-scroll';
 
 var store = require( './store' );

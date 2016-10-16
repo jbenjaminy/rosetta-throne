@@ -28,8 +28,27 @@ io.on('connection', function(socket) {
 
   socket.on('action', (action) => {
     console.log(action.type, '<-----ACTION.TYPE');
-    if (action.type === 'server/getPreview') {
-      
+    if (action.type === 'server/getPreviewQuestions') {
+      // data.currentLevel, data.currentLesson
+    }
+    if (action.type === 'server/incrementQuestion') {
+    }
+    if (action.type === 'server/getQuizQuestions') {
+      // data.currentLevel, data.currentLesson
+    }
+    if (action.type === 'server/updateMvalue') {
+      // data.mValue, data.id
+    }
+    if (action.type === 'server/incrementLesson') {
+    }
+    if (action.type === 'server/lessonComplete') {
+      // data.currentLevel, data.currentLesson
+    }
+    if (action.type === 'server/restartQuiz') {
+      // data.currentLevel, data.currentLesson
+    }
+    if (action.type === 'server/updateLevel') {
+      // data.currentLevel, data.currentLesson
     }
   });
 

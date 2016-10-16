@@ -1,14 +1,14 @@
 {
   "name": "rosetta-throne",
   "version": "1.0.0",
-  "description": "A 'spaced-repetition' app, parodizing the popular language-learning tool, Rosetta Stone&reg;, featuring the fictional language, 'Dothraki', from the hit HBO series, Game of Thrones.",
+  "description": "A 'spaced-repetition' app, parodizing the popular language-learning tool, Rosetta Stone, featuring the fictional language, 'Dothraki', from the hit HBO series, Game of Thrones.",
   "main": "server.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "mkdir": "mkdir -p build",
-    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:js && npm run build:img",
+    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:js",
     "start": "node server.js",
-    "watch": "npm run watch:html & npm run watch:css & npm run watch:js & npm run watch:img",
+    "watch": "npm run watch:html & npm run watch:css & npm run watch:js",
     "clean": "rm -rf build",
     "build:html": "npm run clean:html && cp index.html build/",
     "watch:html": "npm run build:html && chokidar index.html -c 'npm run build:html'",
@@ -19,22 +19,20 @@
     "build:js": "npm run clean:js && webpack",
     "watch:js": "npm run build:js && webpack --watch",
     "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map",
-    "build:img": "npm run clean:img && cp -r img/ build/",
-    "clean:img": "rm -rf build/img/",
-    "watch:img": "npm run build:img && webpack --watch",
     "mongod": "mongod --bind_ip=0.0.0.0 --dbpath=./mongo_data --nojournal --rest"
   },
   "author": "Ben Young & Alex Bang",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbenjaminy/spaced-rep-project.git"
+    "url": "git+https://github.com/jbenjaminy/spaced-rep-project.git"
   },
   "bugs": {
     "url": "https://github.com/jbenjaminy/spaced-rep-project/issues"
   },
   "homepage": "",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "http-server": "^0.9.0",
     "mongodb": "^2.2.9",
@@ -46,7 +44,8 @@
     "react-router-scroll": "^0.3.2",
     "redux": "^3.5.2",
     "redux-socket.io": "^1.2.0",
-    "socket.io": "^1.5.0"
+    "socket.io": "^1.5.0",
+    "socket.io-client": "^1.4.8"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
@@ -54,7 +53,6 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "chokidar-cli": "^1.2.0",
-    "http-server": "^0.9.0",
     "less": "^2.7.1",
     "webpack": "^1.13.1"
   },
@@ -63,5 +61,19 @@
       "es2015",
       "react"
     ]
-  }
+  },
+  "keywords": [
+    "spaced-repetition",
+    "language-learning",
+    "express",
+    "mongodb",
+    "mongoose",
+    "node.js",
+    "react",
+    "react-redux",
+    "react-router",
+    "react-router-scroll",
+    "socket.io",
+    "game-of-thrones"
+  ]
 }
