@@ -32,7 +32,7 @@ io.on('connection', function(socket) {
 
   socket.on('disconnect', function() {
     deleteUser(socket.id);
-    console.log('Socket connected: ', socket.id);
+    console.log('Socket disconnected: ', socket.id);
   });
 });
 

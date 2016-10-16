@@ -2,18 +2,40 @@ const User = require('../models').User;
 const Question = require('../models').Question;
 
 let deleteUser = (id) => {
+	User.findOneAndRemove({ 
+		socketId: id
+	}, (err, user) => {
+	    if (err) {
+	     	console.error(err);
+	    }
+    	console.log('User removed: ', user);
+  	});
+  	const promise = findQuestions(id);
+  	promise.then((questions) => {
+  		for (question of questions) {
+  			Question.findOneAndRemove({
+  				_id: question._id
+  			}, (err, question) => {
+  				if (err) {
+  					console.error(err);
+  				}
+  				console.log('Question removed: ', question);
+  			});
+  		}
+  	});
+};
+
+let findQuestions = (id) => {
 	return new Promise((resolve, reject) => {
-		User.create({
-      		socketId: socket.id,
-      		completedLessons: []
-  		}, (err, user) => {
-    		if (err) {
-	      		console.error(err);
-	      		reject(err);
-	      	}
-	      	resolve(user);
-    	});
+		Question.find({
+			socketId: id
+		}, (err, questions) => {
+			if (err) {
+				reject(err);
+			}
+			resolve(questions);
+		});
 	});
 };
 
-module.exports = createUser;
+module.exports = deleteUser;
