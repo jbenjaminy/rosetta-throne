@@ -10,18 +10,16 @@ var io = require('socket.io')(server);
 var createQuestions = require('./backend/functions/create-questions');
 var createUser = require('./backend/functions/create-user');
 var assemblePracticeSet = require('./backend/functions/assemble-practice-set');
-
-/*----- Create Question and User Documents in DB -----*/
-createQuestions();
+var deleteUser = require('./backend/functions/delete-user');
 
 /*----- Serve Frontend -----*/
 app.use(express.static('./build'));
 
 /*--------------------------- SOCKET MANAGEMENT -----------------------------*/
-io.on('connection', (socket) => {
-  console.log(socket.id, 'SOCKET is connected');
+io.on('connection', function(socket) {
+  console.log('Socket connected: ', socket.id);
   createQuestions(socket.id);
-  createUser(socket.id).then((user) => {
+  createUser(socket.id).then(function(user) {
     socket.emit('action', {
       type: 'userCreated',
       data: user
@@ -32,7 +30,10 @@ io.on('connection', (socket) => {
   //   console.log(action.type, '<-----ACTION.TYPE');
   //   if (action.type === 'server/loadRoom') {
 
-
+  socket.on('disconnect', function() {
+    deleteUser(socket.id);
+    console.log('Socket connected: ', socket.id);
+  });
 });
 
 /*--------------------------- QUESTION ENDPOINTS ----------------------------*/
