@@ -30,6 +30,7 @@ module.exports = {
   }
 };
 
+/* FOR USE WITH WEBPACK DEV SERVER */
 // var path = require('path');
 
 // var webpack = require('webpack');

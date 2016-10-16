@@ -1,5 +1,3 @@
-// Write an algorithm to sort the questions
-
 var assemblePracticeSet = function(questionBank) {
   var que = [];
   for (var i = 0; i < questionBank.length; i++) {
@@ -141,12 +139,5 @@ var assemblePracticeSet = function(questionBank) {
   };
   return que.slice(0,1);
 }
-
-
-//
-// var array = [{q: 1, m: 4}, {q: 2, m: 4}, {q: 3, m: 4}, {q: 4, m: 4}, {q: 5, m: 4}];
-// console.log(sort(array));
-
- // Bug starts at: [{q: 1, m: 3}, {q: 2, m: 3}, {q: 3, m: 1}, {q: 4, m: 1}, {q: 5, m: 1}];
 
 module.exports = assemblePracticeSet;

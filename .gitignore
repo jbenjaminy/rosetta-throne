@@ -2,3 +2,4 @@ node_modules
 build
 mongo_data
 .DS_Store
+spaced-rep-header

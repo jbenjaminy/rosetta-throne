@@ -1,11 +1,26 @@
 var mongoose = require('mongoose');
 
+/*----------- USER SCHEMA -----------*/
+var UserSchema = new mongoose.Schema({
+	 socketId: {
+		 type: String,
+		 required: true
+	 },
+	 completed: {
+		 type: Array,
+		 required: true
+	 }
+});
+
 /*---------- QUESTION SCHEMA ----------*/
 var QuestionSchema = new mongoose.Schema({
+	userId: {
+		type: String,
+		required: true
+	},
 	prompt: {
 		type: String,
-		required: true,
-		unique: true
+		required: true
 	},
 	correctAnswer: {
 		type: String,
@@ -34,24 +49,6 @@ var QuestionSchema = new mongoose.Schema({
 });
 var Question = mongoose.model('Question', QuestionSchema);
 
-
-/*----------- USER SCHEMA -----------*/
-var UserSchema = new mongoose.Schema({
-  //  token: {
-  //      type: String,
-  //      required: true,
-  //      unique: true
-  //  },
-	 username: {
-		 type: String,
-		 required: true,
-		 unique: true
-	 },
-	 questionHistory: {
-		 type: Array,
-		 required: true
-	 }
-});
 var User = mongoose.model('User', UserSchema);
 
 exports.Question = Question;

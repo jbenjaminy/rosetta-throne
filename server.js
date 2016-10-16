@@ -5,18 +5,17 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var mongoose = require('mongoose');
 
-var Question = require('./models').Question;
-var createQuestions = require('./create-questions');
-// var User = require('./models').User;
-// var createUsers = require('./create-users');
-var assemblePracticeSet = require('./sorting');
+var User = require('./models').User;
+var Question = require('./backend/models').Question;
+var createQuestions = require('./backend/create-questions');
+var assemblePracticeSet = require('./backend/sorting');
 
 /*----- Create Question and User Documents in DB -----*/
 createQuestions();
 // createUsers();
 
 /*----- Serve Frontend -----*/
-app.use(express.static('../build/'));
+app.use(express.static('./build'));
 
 /*----- Allow CORS-----*/
 app.use(function(request, response, next) {
@@ -118,52 +117,17 @@ app.post('/questions', function(request, response) {
 });
 
 
-/*---------------- USER ENDPOINTS ------------------*/
-
-/*----- GET request for specific user -----*/
-app.get('/users/:username', function(request, response) {
-  var query = {
-    username: {$eq: request.params.username}
-  };
-  User.find(query).populate('questionHistory').exec(function(error, user) {
-    if (!user[0]) {
-      return response.status(404).json({
-        message: "User not found"
-      });
-    }
-    var userDocument = {
-      _id: user[0]._id,
-      username: user[0].username,
-      questionHistory: user[0].questionHistory
-    };
-    response.json(userDocument);
-  });
-});
-
-/*----- POST request for a user -----*/
-app.post('/users/:username', jsonParser, function(request, response) {
-  var username = request.params.username;
-  if (!username) {
-      return response.status(422).json({
-          message: 'Missing field: username'
-      });
-  }
+/*----- POST User -----*/
   var user = new User({
       username: username,
       questionHistory: []
   });
 
-  User.save(function(error) {
+  User.save(function(err) {
     if (error) {
-      console.error(error);
-      return response.status(500).json({
-        message: 'Internal server error'
-      });
+      console.error(err);
     }
-    response.status(201).json({});
   });
-});
-
 
 /*----------------------------- RUN SERVER -----------------------------*/
 

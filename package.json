@@ -2,14 +2,12 @@
   "name": "spaced-repetition",
   "version": "1.0.0",
   "description": "A language-learning app for practicing vocabulary",
-  "main": "backend/server.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "mkdir": "mkdir -p build",
     "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:js && npm run build:img",
-    "start": "node backend/server.js",
-    "server": "webpack-dev-server --content-base build/ --hot",
-    "http": "http-server build/",
+    "start": "node server.js",
     "watch": "npm run watch:html & npm run watch:css & npm run watch:js & npm run watch:img",
     "clean": "rm -rf build",
     "build:html": "npm run clean:html && cp index.html build/",
@@ -47,7 +45,9 @@
     "react-router": "^2.6.1",
     "react-router-scroll": "^0.3.2",
     "redux": "^3.5.2",
+    "redux-socket.io": "^1.2.0",
     "redux-thunk": "^2.1.0",
+    "socket.io": "^1.5.0",
     "unirest": "^0.5.0"
   },
   "devDependencies": {
