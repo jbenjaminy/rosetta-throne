@@ -1,13 +1,15 @@
-// ABABCDACDBECEDE
 var actions = require('./actions');
 
-var reducer = function(state, action) {
-  state = state || {};
+var initialState = {
+  user: {},
+  level: 1,
+  lesson: 1
+}
 
-  if (action.type === actions.PAGE_LOAD) {
-    return Object.assign({}, {
-      level: 1,
-      lesson: 1
+var reducer = function(state=initialState, action) {
+  if (action.type === userCreated) {
+    return Object.assign({}, state, {
+      user: action.data
     });
   } else if (action.type === actions.INCREMENT_QUESTION) {
     var questionNumber = state.questionNumber + 1;

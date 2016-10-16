@@ -36,7 +36,6 @@ var routes = (
 
 // The page loads {routes} instead of a component which will look up and render the index page and load the app
 document.addEventListener( 'DOMContentLoaded', function() {
- store.dispatch(actions.pageLoad());
   ReactDOM.render(
     <Provider store={store}>
       <Router

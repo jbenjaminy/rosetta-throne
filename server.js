@@ -35,16 +35,17 @@ io.on('connection', (socket) => {
   User.create({
       socketId: socket.id,
       completedLessons: []
-    }, function(err, user) {
-      if (err) {
-        console.error(err);
-      }
-      createQuestions(user._id);
-      socket.emit('action', {
-        type: 'userCreated',
-        data: user
-      });
+  }, function(err, user) {
+    if (err) {
+      console.error(err);
+    }
+    createQuestions(user._id);
+    socket.emit('action', {
+      type: 'userCreated',
+      data: user
+    });
   });
+});
 
 /*--------------------------- QUESTION ENDPOINTS ----------------------------*/
 
