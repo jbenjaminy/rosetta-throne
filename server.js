@@ -29,27 +29,54 @@ io.on('connection', function(socket) {
   socket.on('action', (action) => {
     console.log(action.type, '<-----ACTION.TYPE');
     if (action.type === 'server/getPreviewQuestions') {
-      // data.currentLevel, data.currentLesson
+      var level = action.data.currentLevel;
+      var lesson = action.data.currentLesson;
+      findQuestions(socket.id).then((questions) => {
+        var questionArr = [];
+        for (var i = 0; i < questions.length; i++) {
+          var questionObj = {
+            prompt: questions[i].prompt,
+            placeHolder: questions[i].correctAnswer,
+            level: questions[i].level,
+            levelTitle: questions[i].levelTitle,
+            lesson: questions[i].lesson,
+            lessonTitle: questions[i].lessonTitle
+          }
+          if (questions[i].level === level && questions[i].lesson === lesson) {
+            questionArr.push(questionObj);
+          }
+        }
+        socket.emit('action', {
+          type: 'updateQuiz',
+          data: {
+            questions: questionArr,
+            questionNumber: 0,
+            startQuiz: false
+          }
+        });
+      });
     }
     if (action.type === 'server/incrementQuestion') {
     }
     if (action.type === 'server/getQuizQuestions') {
-      // data.currentLevel, data.currentLesson
+      var level = action.data.currentLevel;
+      var lesson = action.data.currentLesson;
     }
     if (action.type === 'server/updateMvalue') {
-      // data.mValue, data.id
+      var mValue = action.data.mValue;
+      var id = action.data.id;
     }
     if (action.type === 'server/incrementLesson') {
     }
     if (action.type === 'server/lessonComplete') {
-      // data.currentLevel, data.currentLesson
-    }
+      var level = action.data.currentLevel;
+      var lesson = action.data.currentLesson;    }
     if (action.type === 'server/restartQuiz') {
-      // data.currentLevel, data.currentLesson
-    }
+      var level = action.data.currentLevel;
+      var lesson = action.data.currentLesson;    }
     if (action.type === 'server/updateLevel') {
-      // data.currentLevel, data.currentLesson
-    }
+      var level = action.data.currentLevel;
+      var lesson = action.data.currentLesson;    }
   });
 
   socket.on('disconnect', function() {
@@ -95,14 +122,6 @@ io.on('connection', function(socket) {
 //       level: action.level,
 //       lesson: action.lesson
 //     });
-//   } else if (action.type === actions.FETCH_PREVIEW_SUCCESS) {
-//     return Object.assign({}, state, {
-//       previewQuestions: action.questions,
-//       questionNumber: 0,
-//       startQuiz: false
-//     });
-//   } else if (action.type === actions.FETCH_PREVIEW_ERROR) {
-//     return state;
 //   } else if (action.type === actions.FETCH_QUESTIONS_SUCCESS) {
 //     console.log(action.questions)
 //     return Object.assign({}, state, {
@@ -122,34 +141,6 @@ io.on('connection', function(socket) {
 //     return state;
 //   }
 // };
-/*--------------------------- QUESTION ENDPOINTS ----------------------------*/
-
-/*----- GET request for questions preview -----*/
-app.get('/preview/:level/:lesson', function(request, response) {
-  var level = parseInt(request.params.level);
-  var lesson = parseInt(request.params.lesson);
-  Question.find({}, function(error, questions) {
-    var questionArr = [];
-    for (var i = 0; i < questions.length; i++) {
-      var questionObj = {
-        prompt: questions[i].prompt,
-        placeHolder: questions[i].correctAnswer,
-        level: questions[i].level,
-        levelTitle: questions[i].levelTitle,
-        lesson: questions[i].lesson,
-        lessonTitle: questions[i].lessonTitle
-      }
-      if (questions[i].level === level && questions[i].lesson === lesson) {
-        questionArr.push(questionObj);
-      }
-    }
-    if (error) {
-      console.error(error);
-      return response.sendStatus(500);
-    }
-    response.json(questionArr);
-  });
-});
 
 /*----- GET request for quiz questions -----*/
 app.get('/questions/:level/:lesson', function(request, response) {
