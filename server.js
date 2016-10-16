@@ -1,18 +1,15 @@
 /*---------------------------DEPENDENCIES -----------------------------*/
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
-var jsonParser = bodyParser.json();
 
 var mongoose = require('mongoose');
 
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
-var User = require('./models').User;
-var Question = require('./backend/models').Question;
-var createQuestions = require('./backend/create-questions');
-var assemblePracticeSet = require('./backend/sorting');
+var createQuestions = require('./backend/functions/create-questions');
+var createUser = require('./backend/functions/create-user');
+var assemblePracticeSet = require('./backend/functions/assemble-practice-set');
 
 /*----- Create Question and User Documents in DB -----*/
 createQuestions();
@@ -20,31 +17,22 @@ createQuestions();
 /*----- Serve Frontend -----*/
 app.use(express.static('./build'));
 
-/*----- Allow CORS-----*/
-app.use(function(request, response, next) {
-  response.header("Access-Control-Allow-Origin", "*");
-  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  response.header("Access-Control-Allow-Methods", "PUT");
-  next();
-});
 /*--------------------------- SOCKET MANAGEMENT -----------------------------*/
 io.on('connection', (socket) => {
   console.log(socket.id, 'SOCKET is connected');
-
-  /*----- POST User for newly connected socket -----*/
-  User.create({
-      socketId: socket.id,
-      completedLessons: []
-  }, function(err, user) {
-    if (err) {
-      console.error(err);
-    }
-    createQuestions(socket.id);
+  createQuestions(socket.id);
+  createUser(socket.id).then((user) => {
     socket.emit('action', {
       type: 'userCreated',
       data: user
     });
   });
+
+  // socket.on('action', (action) => {
+  //   console.log(action.type, '<-----ACTION.TYPE');
+  //   if (action.type === 'server/loadRoom') {
+
+
 });
 
 /*--------------------------- QUESTION ENDPOINTS ----------------------------*/

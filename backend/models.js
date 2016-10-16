@@ -2,14 +2,14 @@ var mongoose = require('mongoose');
 
 /*----------- USER SCHEMA -----------*/
 var UserSchema = new mongoose.Schema({
-	 socketId: {
-		 type: String,
-		 required: true
-	 },
-	 completedLessons: {
-		 type: Array,
-		 required: true
-	 }
+	socketId: {
+		type: String,
+		required: true
+	},
+	completedLessons: {
+		type: Array,
+		required: true
+	}
 });
 
 /*---------- QUESTION SCHEMA ----------*/

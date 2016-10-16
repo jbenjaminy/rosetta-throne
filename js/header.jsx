@@ -8,7 +8,13 @@ var actions = require('./actions');
 var Header = React.createClass({
 
   getPreview: function() {
-    this.props.dispatch(actions.fetchPreview(this.props.level, this.props.lesson));
+    this.props.dispatch({
+      type: 'server/getPreview',
+      data: {
+        level: this.props.level,
+        lesson: this.props.lesson
+      }
+    });
   },
 
   render: function() {
