@@ -3,23 +3,25 @@ var connect = require('react-redux').connect;
 var router = require('react-router');
 var Link = router.Link;
 
-var actions = require('./actions');
 var Header = require('./header');
 
 
 var PracticePage = React.createClass({
   onFormSubmit: function(event) {
     event.preventDefault();
-    this.props.dispatch(actions.incrementQuestion());
+    this.props.dispatch({
+      type: 'server/incrementQuestion',
+      data: {}
+    });
     var form = document.getElementById("gotForm");
     form.reset();
   },
   getQuestions: function() {
     this.props.dispatch({
-      type: 'server/getQuestions',
+      type: 'server/getQuizQuestions',
       data: { 
-        level: this.props.level,
-        lesson: this.props.lesson
+        currentLevel: this.props.level,
+        currentLesson: this.props.lesson
       }
     });
   },
@@ -32,10 +34,10 @@ var PracticePage = React.createClass({
         </div>
       );
     }
-    if (!this.props.previewQuestions) {
-      return null
-    }
-    var question = this.props.previewQuestions[this.props.questionNumber];
+    // if (!this.props.questions) {
+    //   return null
+    // }
+    var question = this.props.questions[this.props.questionNumber];
     return (
       <div className='quizPage'>
         <Header cls='header2'/>
@@ -57,11 +59,11 @@ var PracticePage = React.createClass({
 var mapStateToProps = function(state, props) {
   return {
     state: state,
-    level: state.user.level,
-    lesson: state.user.lesson,
-    previewQuestions: state.previewQuestions,
-    questionNumber: state.questionNumber,
-    startQuiz: state.startQuiz
+    level: state.user.currentLevel,
+    lesson: state.user.currentLesson,
+    questions: state.quiz.questions,
+    questionNumber: state.quiz.questionNumber,
+    startQuiz: state.quiz.startQuiz
   }
 }
 

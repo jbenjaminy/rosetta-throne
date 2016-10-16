@@ -3,20 +3,16 @@ var connect = require('react-redux').connect;
 var router = require('react-router');
 var Link = router.Link;
 
-var actions = require('./actions');
-
 var Header = React.createClass({
-
   getPreview: function() {
     this.props.dispatch({
-      type: 'server/getPreview',
+      type: 'server/getPreviewQuestions',
       data: {
-        level: this.props.level,
-        lesson: this.props.lesson
+        currentLevel: this.props.level,
+        currentLesson: this.props.lesson
       }
     });
   },
-
   render: function() {
     return(
     	<div className={this.props.cls}>
@@ -32,8 +28,8 @@ var Header = React.createClass({
 
 var mapStateToProps = function(state, props) {
   return {
-    level: state.user.level,
-    lesson: state.user.lesson
+    level: state.user.currentLevel,
+    lesson: state.user.currentLesson
   }
 }
 

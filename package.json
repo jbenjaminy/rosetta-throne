@@ -1,7 +1,7 @@
 {
-  "name": "spaced-repetition",
+  "name": "rosetta-throne",
   "version": "1.0.0",
-  "description": "A language-learning app for practicing vocabulary",
+  "description": "A 'spaced-repetition' app, parodizing the popular language-learning tool, Rosetta Stone&reg;, featuring the fictional language, 'Dothraki', from the hit HBO series, Game of Thrones.",
   "main": "server.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register test/**/*.js*",
@@ -24,16 +24,19 @@
     "watch:img": "npm run build:img && webpack --watch",
     "mongod": "mongod --bind_ip=0.0.0.0 --dbpath=./mongo_data --nojournal --rest"
   },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
-  },
-  "author": "",
+  "author": "Ben Young & Alex Bang",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbenjaminy/spaced-rep-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jbenjaminy/spaced-rep-project/issues"
+  },
+  "homepage": "",
   "dependencies": {
     "express": "^4.14.0",
+    "http-server": "^0.9.0",
     "mongodb": "^2.2.9",
     "mongoose": "^4.5.10",
     "react": "^15.2.1",
@@ -54,5 +57,11 @@
     "http-server": "^0.9.0",
     "less": "^2.7.1",
     "webpack": "^1.13.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
   }
 }

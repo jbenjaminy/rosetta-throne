@@ -9,14 +9,12 @@ var IndexRoute = router.IndexRoute;
 import { applyRouterMiddleware, hashHistory, Router }  from 'react-router';
 import { useScroll } from 'react-router-scroll';
 
-var actions = require('./actions');
 var store = require( './store' );
 var LandingPage = require('./landing-page');
 var PracticePage = require('./practice-page');
 var QuizPage = require('./quiz-page');
 var Directory = require('./directory');
 
-// This acts as the big container
 var App = function(props) {
   return (
     <div>
@@ -34,7 +32,6 @@ var routes = (
   </Route>
 )
 
-// The page loads {routes} instead of a component which will look up and render the index page and load the app
 document.addEventListener( 'DOMContentLoaded', function() {
   ReactDOM.render(
     <Provider store={store}>

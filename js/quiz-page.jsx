@@ -3,7 +3,6 @@ var connect = require('react-redux').connect;
 var router = require('react-router');
 var Link = router.Link;
 
-var actions = require('./actions');
 var Header = require('./header');
 
 var QuizPage = React.createClass({
@@ -11,18 +10,27 @@ var QuizPage = React.createClass({
     event.preventDefault();
     var question = this.props.questions[0];
     if (this.refs.userInput.value === question.correctAnswer) {
-      this.props.dispatch(actions.updateMvalue(question.m + 1, question._id))
+      this.props.dispatch({
+        type: 'server/updateMvalue',
+        data: { 
+          mValue: question.m + 1,
+          id: question._id
+        }
+      });
     } else {
      var mUpdate = question.m - 1;
      if (mUpdate > 0) {
-       this.props.dispatch(actions.updateMvalue(mUpdate, question._id))
+       this.props.dispatch({
+        type: 'server/updateMvalue',
+        data: { 
+          mValue: mUpdate,
+          id: question._id
+        }
+      });
      }
     }
     var form = document.getElementById("gotForm");
     form.reset();
-  },
-  refreshQuestions: function() {
-    this.props.dispatch(actions.fetchQuestions(this.props.level, this.props.lesson));
   },
   getPreview: function() {
     var lesson = this.props.lesson + 1;
@@ -34,27 +42,68 @@ var QuizPage = React.createClass({
       }
       lesson = 1;
     }
-    this.props.dispatch(actions.fetchPreview(level, lesson));
-    this.props.dispatch(actions.incrementLesson());
+    this.props.dispatch({
+      type: 'server/getPreviewQuestions',
+      data: {
+        currentLevel: this.props.level,
+        currentLesson: this.props.lesson
+      }
+    });
+    this.props.dispatch({
+      type: 'server/incrementLesson',
+      data: {}
+    });
+    this.props.dispatch({
+      type: 'server/lessonComplete',
+      data: { 
+        currentLevel: this.props.level,
+        currentLesson: this.props.lesson
+      }
+    });
   },
   getQuestions: function() {
-    this.props.dispatch(actions.fetchQuestions(this.props.level, this.props.lesson));
+    this.props.dispatch({
+      type: 'server/getQuizQuestions',
+      data: { 
+        currentLevel: this.props.level,
+        currentLesson: this.props.lesson
+      }
+    });  
+  },
+  restart: function() {
+    this.props.dispatch({
+      type: 'server/restartQuiz',
+      data: {
+        currentLevel: this.props.level,
+        currentLesson: this.props.lesson
+      }
+    });
+  },
+  markComplete: function() {
+    this.props.dispatch({
+      type: 'server/lessonComplete',
+      data: { 
+        currentLevel: this.props.level,
+        currentLesson: this.props.lesson
+      }
+    });
+    this.props.dispatch({
+      type: 'server/incrementLesson',
+      data: {}
+    });
   },
   render: function() {
     if (this.props.refreshQuestions) {
-      this.refreshQuestions()
-    }
-    if (!this.props.questions) {
-      return null
+      this.getQuestions()
     }
     if (this.props.questions.length === 0) {
       return (
         <div>
           <Header cls='header2'/>
           <div className='endLinks quizPage'>
-            <Link to={'/quiz'} className="quizEnd" onClick={this.getQuestions}>Restart Quiz</Link>
+            <Link to={'/quiz'} className="quizEnd" onClick={this.restart}>Restart Quiz</Link>
             <Link to={'/practice'} className="quizEnd" onClick={this.getPreview}>Next Lesson</Link>
-            <Link to={'/'} className="quizEnd">Return Home</Link>
+            <Link to={'/'} className="quizEnd" onClick={this.markComplete}>Return Home</Link>
           </div>
         </div>
       );
@@ -80,11 +129,11 @@ var QuizPage = React.createClass({
 var mapStateToProps = function(state, props) {
   return {
     state: state,
-    level: state.level,
-    lesson: state.lesson,
-    questions: state.questions,
-    refreshQuestions: state.refreshQuestions,
-    startQuiz: state.startQuiz
+    level: state.user.currentLevel,
+    lesson: state.user.currentLesson,
+    questions: state.quiz.questions,
+    refreshQuestions: state.quiz.refreshQuestions,
+    startQuiz: state.quiz.startQuiz
   }
 }
 

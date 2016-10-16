@@ -3,7 +3,6 @@ var connect = require('react-redux').connect;
 var router = require('react-router');
 var Link = router.Link;
 
-var actions = require('./actions');
 var Header = require('./header');
 
 var Directory = React.createClass({
