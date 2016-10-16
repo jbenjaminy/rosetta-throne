@@ -6,7 +6,7 @@ var UserSchema = new mongoose.Schema({
 		 type: String,
 		 required: true
 	 },
-	 completed: {
+	 completedLessons: {
 		 type: Array,
 		 required: true
 	 }

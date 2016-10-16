@@ -3,7 +3,11 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
+
 var mongoose = require('mongoose');
+
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 var User = require('./models').User;
 var Question = require('./backend/models').Question;
@@ -12,7 +16,6 @@ var assemblePracticeSet = require('./backend/sorting');
 
 /*----- Create Question and User Documents in DB -----*/
 createQuestions();
-// createUsers();
 
 /*----- Serve Frontend -----*/
 app.use(express.static('./build'));
@@ -24,6 +27,24 @@ app.use(function(request, response, next) {
   response.header("Access-Control-Allow-Methods", "PUT");
   next();
 });
+/*--------------------------- SOCKET MANAGEMENT -----------------------------*/
+io.on('connection', (socket) => {
+  console.log(socket.id, 'SOCKET is connected');
+
+  /*----- POST User for newly connected socket -----*/
+  User.create({
+      socketId: socket.id,
+      completedLessons: []
+    }, function(err, user) {
+      if (err) {
+        console.error(err);
+      }
+      createQuestions(user._id);
+      socket.emit('action', {
+        type: 'userCreated',
+        data: user
+      });
+  });
 
 /*--------------------------- QUESTION ENDPOINTS ----------------------------*/
 
@@ -116,26 +137,13 @@ app.post('/questions', function(request, response) {
   });
 });
 
-
-/*----- POST User -----*/
-  var user = new User({
-      username: username,
-      questionHistory: []
-  });
-
-  User.save(function(err) {
-    if (error) {
-      console.error(err);
-    }
-  });
-
 /*----------------------------- RUN SERVER -----------------------------*/
 
 var runServer = function(callback) {
     var databaseUri = process.env.DATABASE_URI || global.databaseUri || 'mongodb://localhost/got2';
     mongoose.connect(databaseUri).then(function() {
         var port = process.env.PORT || 8081;
-        var server = app.listen(port, function() {
+        server.listen(port, function() {
             console.log('Listening on port ' + port);
             if (callback) {
                 callback(server);
@@ -145,10 +153,9 @@ var runServer = function(callback) {
 };
 
 if (require.main === module) {
-  runServer();
+  runServer(function(err) {
+    if (err) {
+      throw new Error(err);
+    }
+  });
 }
-
-
-/*------------------------------- EXPORTS -------------------------------*/
-exports.app = app;
-exports.runServer = runServer;
