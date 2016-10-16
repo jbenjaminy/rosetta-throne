@@ -14,7 +14,7 @@ var UserSchema = new mongoose.Schema({
 
 /*---------- QUESTION SCHEMA ----------*/
 var QuestionSchema = new mongoose.Schema({
-	userId: {
+	socketId: {
 		type: String,
 		required: true
 	},

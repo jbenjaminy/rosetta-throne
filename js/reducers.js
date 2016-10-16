@@ -1,5 +1,3 @@
-var actions = require('./actions');
-
 var initialState = {
   user: {},
   level: 1,

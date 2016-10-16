@@ -39,7 +39,7 @@ io.on('connection', (socket) => {
     if (err) {
       console.error(err);
     }
-    createQuestions(user._id);
+    createQuestions(socket.id);
     socket.emit('action', {
       type: 'userCreated',
       data: user
