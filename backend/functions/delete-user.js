@@ -12,7 +12,7 @@ let deleteUser = (id) => {
   	});
   	const promise = findQuestions(id);
   	promise.then((questions) => {
-  		for (question of questions) {
+  		for (let question of questions) {
   			Question.findOneAndRemove({
   				_id: question._id
   			}, (err, question) => {

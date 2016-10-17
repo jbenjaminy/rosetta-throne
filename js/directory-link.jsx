@@ -12,7 +12,8 @@ var DirectoryLink = React.createClass({
 				 	type: 'server/restartQuiz',
 					data: {
 				    	currentLevel: level,
-				    	currentLesson: lesson
+				    	currentLesson: lesson,
+				    	completed: this.props.completed
 				  	}
 				});
 			} else if (classes === 'level-links completed') {
@@ -20,7 +21,8 @@ var DirectoryLink = React.createClass({
 					type: 'server/restartQuiz',
 					data: {
 				    	currentLevel: level,
-				    	currentLesson: lesson
+				    	currentLesson: lesson,
+				    	completed: this.props.completed
 				  	}
 				});
 				this.props.dispatch({
@@ -28,7 +30,8 @@ var DirectoryLink = React.createClass({
 					data: {
 				    	currentLevel: level,
 				    	currentLesson: '2',
-				    	funct: 'remove'
+				    	funct: 'remove',
+				    	completed: this.props.completed
 				  	}
 				});
 				this.props.dispatch({
@@ -36,7 +39,8 @@ var DirectoryLink = React.createClass({
 					data: {
 				    	currentLevel: level,
 				    	currentLesson: '3',
-				    	funct: 'remove'
+				    	funct: 'remove',
+				    	completed: this.props.completed
 				  	}
 				});
 				this.props.dispatch({
@@ -44,7 +48,8 @@ var DirectoryLink = React.createClass({
 					data: {
 				    	currentLevel: level,
 				    	currentLesson: '4',
-				    	funct: 'remove'
+				    	funct: 'remove',
+				    	completed: this.props.completed
 				  	}
 				});
 				this.props.dispatch({
@@ -52,7 +57,9 @@ var DirectoryLink = React.createClass({
 					data: {
 				    	currentLevel: level,
 				    	currentLesson: '5',
-				    	funct: 'remove'
+				    	funct: 'remove',
+				    	completed: this.props.completed
+
 				  	}
 				});
 			} else {
@@ -80,23 +87,23 @@ var DirectoryLink = React.createClass({
 		var completed = this.props.completed;
 		if (this.props.type === 'li') {
 			classes = 'lesson-links ';
-			for (lesson of completed) {
+			completed.forEach(function(lesson) {
 				if ((lesson.lesson = this.props.lesson) && (lesson.level === this.props.level)) {
 					classes += 'completed';
 				}
-			}
+			});
 			return <li className={classes}><Link to={'/practice'} onClick={this.getPreview(level, lesson, classes)}>{this.props.title}</Link></li>
 		}
 		classes = 'level-links ';
 		var finishedLessons = 0;
-		for (lesson of completed) {
+		completed.forEach(function(lesson) {for (lesson of completed) {
 			if (lesson.level === this.props.level) {
 				finishedLessons++;
 			}
 			if (finshedLessons === 5) {
 				classes += 'completed';
 			}
-		}
+		});
     	return <Link to={'/practice'} onClick={this.getPreview(level, lesson, classes)}><h2 className={classes}>{this.props.title}</h2></Link>
 	}
 });

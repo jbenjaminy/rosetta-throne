@@ -54,18 +54,19 @@ var QuizPage = React.createClass({
       }
     });
     this.props.dispatch({
-      type: 'server/incrementLesson',
-      data: {
-        currentLevel: this.props.level,
-        currentLesson: this.props.lesson
-      }
-    });
-    this.props.dispatch({
       type: 'server/updateCompleted',
       data: { 
         currentLevel: this.props.level,
         currentLesson: this.props.lesson,
-        funct: 'add'
+        funct: 'add',
+        completed: this.props.completed
+      }
+    });
+    this.props.dispatch({
+      type: 'server/incrementLesson',
+      data: {
+        currentLevel: this.props.level,
+        currentLesson: this.props.lesson
       }
     });
   },
@@ -93,7 +94,8 @@ var QuizPage = React.createClass({
       data: { 
         currentLevel: this.props.level,
         currentLesson: this.props.lesson,
-        funct: 'add'
+        funct: 'add',
+        completed: this.props.completed
       }
     });
     this.props.dispatch({
@@ -140,6 +142,7 @@ var mapStateToProps = function(state, props) {
     state: state,
     level: state.user.currentLevel,
     lesson: state.user.currentLesson,
+    completed: state.user.completedLessons,
     questions: state.quiz.questions,
     startQuiz: state.quiz.startQuiz
   }

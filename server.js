@@ -173,7 +173,8 @@ io.on('connection', function(socket) {
       var level = action.data.currentLevel;
       var lesson = action.data.currentLesson;
       var funct = action.data.funct;
-      updateCompleted(socket.id, level, lesson, funct).then(function(user) {
+      var completed = action.data.completed;
+      updateCompleted(socket.id, level, lesson, funct, completed).then(function(user) {
         socket.emit('action', {
           type: 'updateUser',
           data: user
@@ -184,7 +185,8 @@ io.on('connection', function(socket) {
       var level = action.data.currentLevel;
       var lesson = action.data.currentLesson;
       var funct = 'remove';
-      updateCompleted(socket.id, level, lesson, funct).then(function(user) {
+      var completed = action.data.completed;
+      updateCompleted(socket.id, level, lesson, funct, completed).then(function(user) {
         findQuestions(socket.id).then(function(questions) {
           var questionArr = [];
           for (var i = 0; i < questions.length; i++) {
