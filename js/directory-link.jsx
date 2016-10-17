@@ -9,19 +9,59 @@ var DirectoryLink = React.createClass({
 		return function() {
 			if (classes === 'lesson-links completed') {
 				this.props.dispatch({
-				  type: 'server/restartQuiz',
-				  data: {
-				    currentLevel: level,
-				    currentLesson: lesson
-				  }
+				 	type: 'server/restartQuiz',
+					data: {
+				    	currentLevel: level,
+				    	currentLesson: lesson
+				  	}
+				});
+			} else if (classes === 'level-links completed') {
+				this.props.dispatch({
+					type: 'server/restartQuiz',
+					data: {
+				    	currentLevel: level,
+				    	currentLesson: lesson
+				  	}
+				});
+				this.props.dispatch({
+					type: 'server/updateCompleted',
+					data: {
+				    	currentLevel: level,
+				    	currentLesson: '2',
+				    	funct: 'remove'
+				  	}
+				});
+				this.props.dispatch({
+					type: 'server/updateCompleted',
+					data: {
+				    	currentLevel: level,
+				    	currentLesson: '3',
+				    	funct: 'remove'
+				  	}
+				});
+				this.props.dispatch({
+					type: 'server/updateCompleted',
+					data: {
+				    	currentLevel: level,
+				    	currentLesson: '4',
+				    	funct: 'remove'
+				  	}
+				});
+				this.props.dispatch({
+					type: 'server/updateCompleted',
+					data: {
+				    	currentLevel: level,
+				    	currentLesson: '5',
+				    	funct: 'remove'
+				  	}
 				});
 			} else {
 				props.dispatch({
-			      type: 'server/getPreviewQuestions',
-			      data: {
-			        currentLevel: level,
-			        currentLesson: lesson
-			      }
+			      	type: 'server/getPreviewQuestions',
+			      	data: {
+			        	currentLevel: level,
+			        	currentLesson: lesson
+			      	}
 			    });
 				props.dispatch({
 					type: 'server/updateLesson',
@@ -34,11 +74,12 @@ var DirectoryLink = React.createClass({
 		};
 	},
 	render: function() {
+		var classes = '';
 		var level = this.props.level;
 		var lesson = this.props.lesson;
 		var completed = this.props.completed;
 		if (this.props.type === 'li') {
-			var classes = 'lesson-links ';
+			classes = 'lesson-links ';
 			for (lesson of completed) {
 				if ((lesson.lesson = this.props.lesson) && (lesson.level === this.props.level)) {
 					classes += 'completed';
@@ -46,7 +87,7 @@ var DirectoryLink = React.createClass({
 			}
 			return <li className={classes}><Link to={'/practice'} onClick={this.getPreview(level, lesson, classes)}>{this.props.title}</Link></li>
 		}
-		var classes = 'level-links ';
+		classes = 'level-links ';
 		var finishedLessons = 0;
 		for (lesson of completed) {
 			if (lesson.level === this.props.level) {
@@ -61,9 +102,9 @@ var DirectoryLink = React.createClass({
 });
 
 var mapStateToProps = function(state, props) {
-  return {
-    completed: state.user.completedLessons
-  }
+  	return {
+    	completed: state.user.completedLessons
+  	}
 };
 
 module.exports = connect(mapStateToProps)(DirectoryLink);
