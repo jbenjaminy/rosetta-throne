@@ -109,8 +109,8 @@ io.on('connection', function(socket) {
       });
     }
     if (action.type === 'server/incrementLesson') {
-      var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson + 1;
+      var level = parseInt(action.data.currentLevel);
+      var lesson = parseInt(action.data.currentLesson) + 1;
       if (lesson === 6) {
         level = level + 1;
         lesson = 1;
@@ -126,8 +126,8 @@ io.on('connection', function(socket) {
       }); 
     }
     if (action.type === 'server/updateLesson') {
-      var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson;
+      var level = parseInt(action.data.currentLevel);
+      var lesson = parseInt(action.data.currentLesson);
       updateLesson(socket.id, level, lesson).then(function(user) {
         socket.emit('action', {
           type: 'updateUser',
