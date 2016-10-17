@@ -57,8 +57,34 @@ io.on('connection', function(socket) {
       });
     }
     if (action.type === 'server/getQuizQuestions') {
-      var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson;
+      var level = parseInt(action.data.currentLevel);
+      var lesson = parseInt(action.data.currentLesson);
+      findQuestions(socket.id).then((questions) => {
+        var questionArr = [];
+        for (var i = 0; i < questions.length; i++) {
+          var questionObj = {
+            _id: questions[i].id,
+            prompt: questions[i].prompt,
+            correctAnswer: questions[i].correctAnswer,
+            m: questions[i].m,
+            level: questions[i].level,
+            levelTitle: questions[i].levelTitle,
+            lesson: questions[i].lesson,
+            lessonTitle: questions[i].lessonTitle
+          }
+          if (questions[i].level === level && questions[i].lesson === lesson) {
+            questionArr.push(questionObj);
+          }
+        }
+        socket.emit('action', {
+          type: 'updateQuiz',
+          data: {
+            questions: questionArr,
+            questionNumber: 0,
+            startQuiz: false
+          }
+        });
+      });
     }
     if (action.type === 'server/incrementQuestion') {
       var questionNumber = action.data.questionNumber + 1;
@@ -122,8 +148,13 @@ io.on('connection', function(socket) {
     }
     if (action.type === 'server/restartQuiz') {
       var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson; 
-      // remove from completed
+      var lesson = action.data.currentLesson;
+      var funct = 'remove';
+      updateCompleted(level, lesson, funct).then(function(user) {
+        findQuestions(socket.id).then((questions) => {
+          var questionArr = [];
+
+      });
     }
   });
 
@@ -140,18 +171,10 @@ io.on('connection', function(socket) {
 //       refreshQuestions: false,
 //       questionNumber: false
 //     });
-//   } else if (action.type === actions.FETCH_QUESTIONS_ERROR) {
-//     return state;
 //   } else if (action.type === actions.UPDATE_MVALUE_SUCCESS) {
 //     return Object.assign({}, state, {
 //       refreshQuestions: true
 //     });
-//   } else if (action.type === actions.UPDATE_MVALUE_ERROR) {
-//     return state;
-//   } else {
-//     return state;
-//   }
-// };
 
 /*----- GET request for quiz questions -----*/
 app.get('/questions/:level/:lesson', function(request, response) {
