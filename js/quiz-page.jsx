@@ -57,10 +57,11 @@ var QuizPage = React.createClass({
       }
     });
     this.props.dispatch({
-      type: 'server/lessonComplete',
+      type: 'server/updateCompleted',
       data: { 
         currentLevel: this.props.level,
-        currentLesson: this.props.lesson
+        currentLesson: this.props.lesson,
+        funct: 'add'
       }
     });
   },
@@ -84,10 +85,11 @@ var QuizPage = React.createClass({
   },
   markComplete: function() {
     this.props.dispatch({
-      type: 'server/lessonComplete',
+      type: 'server/updateCompleted',
       data: { 
         currentLevel: this.props.level,
-        currentLesson: this.props.lesson
+        currentLesson: this.props.lesson,
+        funct: 'add'
       }
     });
     this.props.dispatch({
