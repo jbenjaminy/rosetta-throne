@@ -96,7 +96,7 @@ var DirectoryLink = React.createClass({
 		}
 		classes = 'level-links ';
 		var finishedLessons = 0;
-		completed.forEach(function(lesson) {for (lesson of completed) {
+		completed.forEach(function(lesson) {
 			if (lesson.level === this.props.level) {
 				finishedLessons++;
 			}
