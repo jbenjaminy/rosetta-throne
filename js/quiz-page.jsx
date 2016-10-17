@@ -14,7 +14,9 @@ var QuizPage = React.createClass({
         type: 'server/updateMvalue',
         data: { 
           mValue: question.m + 1,
-          id: question._id
+          id: question._id,
+          level: this.props.level,
+          lesson: this.props.lesson
         }
       });
     } else {
@@ -24,7 +26,9 @@ var QuizPage = React.createClass({
         type: 'server/updateMvalue',
         data: { 
           mValue: mUpdate,
-          id: question._id
+          id: question._id,
+          level: this.props.level,
+          lesson: this.props.lesson
         }
       });
      }

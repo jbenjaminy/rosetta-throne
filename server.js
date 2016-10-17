@@ -138,6 +138,8 @@ io.on('connection', function(socket) {
     if (action.type === 'server/updateMvalue') {
       var mValue = action.data.mValue;
       var id = action.data.id;
+      var level = action.data.level;
+      var lesson = action.data.lesson;
       updateMvalue(mValue, id).then(function() {
         findQuestions(socket.id).then(function(questions) {
           var questionArr = [];
