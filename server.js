@@ -95,7 +95,7 @@ io.on('connection', function(socket) {
         });
       }); 
     }
-    if (action.type === 'server/updateLevel') {
+    if (action.type === 'server/updateLesson') {
       var level = action.data.currentLevel;
       var lesson = action.data.currentLesson;
       updateLesson(level, lesson).then(function(user) {
@@ -109,12 +109,22 @@ io.on('connection', function(socket) {
       var mValue = action.data.mValue;
       var id = action.data.id;
     }
-    if (action.type === 'server/lessonComplete') {
+    if (action.type === 'server/updateCompleted') {
       var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson;    }
+      var lesson = action.data.currentLesson;
+      var funct = action.data.funct;
+      updateCompleted(level, lesson, funct).then(function(user) {
+        socket.emit('action', {
+          type: 'updateUser',
+          data: user
+        });
+      });   
+    }
     if (action.type === 'server/restartQuiz') {
       var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson;    }
+      var lesson = action.data.currentLesson; 
+      // remove from completed
+    }
   });
 
   socket.on('disconnect', function() {
@@ -123,13 +133,6 @@ io.on('connection', function(socket) {
   });
 });
 
-
-//   } else if (action.type === actions.INCREMENT_LEVEL) {
-//     var level = state.level + 1;
-//     return Object.assign({}, state, {
-//       level: level,
-//       lesson: 1
-//     });
 //   } else if (action.type === actions.FETCH_QUESTIONS_SUCCESS) {
 //     console.log(action.questions)
 //     return Object.assign({}, state, {

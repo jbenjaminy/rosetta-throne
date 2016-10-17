@@ -45,8 +45,8 @@ var QuizPage = React.createClass({
     this.props.dispatch({
       type: 'server/getPreviewQuestions',
       data: {
-        currentLevel: this.props.level,
-        currentLesson: this.props.lesson
+        currentLevel: level,
+        currentLesson: lesson
       }
     });
     this.props.dispatch({
@@ -92,7 +92,10 @@ var QuizPage = React.createClass({
     });
     this.props.dispatch({
       type: 'server/incrementLesson',
-      data: {}
+      data: {
+        currentLevel: this.props.level,
+        currentLesson: this.props.lesson
+      }
     });
   },
   render: function() {
