@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A 'spaced-repetition' app, parodizing the popular language-learning tool, Rosetta Stone, featuring the fictional language, 'Dothraki', from the hit HBO series, Game of Thrones.",
   "main": "server.js",
+  "engines": {
+    "node": "6.4.0"
+  },
   "scripts": {
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "mkdir": "mkdir -p build",
@@ -25,7 +28,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jbenjaminy/spaced-rep-project.git"
+    "url": "https://github.com/jbenjaminy/spaced-rep-project"
   },
   "bugs": {
     "url": "https://github.com/jbenjaminy/spaced-rep-project/issues"
