@@ -56,6 +56,10 @@ io.on('connection', function(socket) {
         });
       });
     }
+    if (action.type === 'server/getQuizQuestions') {
+      var level = action.data.currentLevel;
+      var lesson = action.data.currentLesson;
+    }
     if (action.type === 'server/incrementQuestion') {
       var questionNumber = action.data.questionNumber + 1;
       var startQuiz = false;
@@ -74,14 +78,6 @@ io.on('connection', function(socket) {
         }
       });
     }
-    if (action.type === 'server/getQuizQuestions') {
-      var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson;
-    }
-    if (action.type === 'server/updateMvalue') {
-      var mValue = action.data.mValue;
-      var id = action.data.id;
-    }
     if (action.type === 'server/incrementLesson') {
       var level = action.data.currentLevel;
       var lesson = action.data.currentLesson + 1;
@@ -99,13 +95,24 @@ io.on('connection', function(socket) {
         });
       }); 
     }
+    if (action.type === 'server/updateLevel') {
+      var level = action.data.currentLevel;
+      var lesson = action.data.currentLesson;
+      updateLesson(level, lesson).then(function(user) {
+        socket.emit('action', {
+          type: 'updateUser',
+          data: user
+        });
+      });     
+    }
+    if (action.type === 'server/updateMvalue') {
+      var mValue = action.data.mValue;
+      var id = action.data.id;
+    }
     if (action.type === 'server/lessonComplete') {
       var level = action.data.currentLevel;
       var lesson = action.data.currentLesson;    }
     if (action.type === 'server/restartQuiz') {
-      var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson;    }
-    if (action.type === 'server/updateLevel') {
       var level = action.data.currentLevel;
       var lesson = action.data.currentLesson;    }
   });
@@ -116,20 +123,12 @@ io.on('connection', function(socket) {
   });
 });
 
-//     return Object.assign({}, state, {
-//       level: level,
-//       lesson: lesson
-//     });
+
 //   } else if (action.type === actions.INCREMENT_LEVEL) {
 //     var level = state.level + 1;
 //     return Object.assign({}, state, {
 //       level: level,
 //       lesson: 1
-//     });
-//   } else if (action.type === actions.UPDATE_LEVEL) {
-//     return Object.assign({}, state, {
-//       level: action.level,
-//       lesson: action.lesson
 //     });
 //   } else if (action.type === actions.FETCH_QUESTIONS_SUCCESS) {
 //     console.log(action.questions)

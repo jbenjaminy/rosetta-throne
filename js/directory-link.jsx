@@ -46,7 +46,16 @@ var DirectoryLink = React.createClass({
 			}
 			return <li className={classes}><Link to={'/practice'} onClick={this.getPreview(level, lesson, classes)}>{this.props.title}</Link></li>
 		}
-    	return <Link to={'/practice'} onClick={this.getPreview(level, lesson, classes)}><h2>{this.props.title}</h2></Link>
+		var finishedLessons = 0;
+		for (lesson of completed) {
+			if (lesson.level === this.props.level) {
+				finishedLessons++;
+			}
+			if (finshedLessons === 5) {
+				classes += 'completed';
+			}
+		}
+    	return <Link to={'/practice'} onClick={this.getPreview(level, lesson, classes)}><h2 className={classes}>{this.props.title}</h2></Link>
 	}
 });
 
