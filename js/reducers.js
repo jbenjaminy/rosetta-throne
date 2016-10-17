@@ -7,8 +7,7 @@ let initialState = {
   quiz: {
     questions: [],
     questionNumber: null,
-    startQuiz: false,
-    refreshQuestions: false
+    startQuiz: false
   }
 }
 
@@ -30,13 +29,11 @@ function reducer(state=initialState, action) {
       let questions = action.data.questions || state.quiz.questions;
       let questionNumber = action.data.questionNumber || state.quiz.questionNumber;
       let startQuiz = action.data.startQuiz || state.quiz.startQuiz;
-      let refreshQuestions = action.data.refreshQuestions || state.quiz.refreshQuestions;
       return Object.assign({}, state, {
         quiz: {
           questions: questions,
           questionNumber: questionNumber,
           startQuiz: startQuiz,
-          refreshQuestions: refreshQuestions
         }
       });
     }

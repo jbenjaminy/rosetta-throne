@@ -101,9 +101,6 @@ var QuizPage = React.createClass({
     });
   },
   render: function() {
-    if (this.props.refreshQuestions) {
-      this.getQuestions()
-    }
     if (this.props.questions.length === 0) {
       return (
         <div>
@@ -140,7 +137,6 @@ var mapStateToProps = function(state, props) {
     level: state.user.currentLevel,
     lesson: state.user.currentLesson,
     questions: state.quiz.questions,
-    refreshQuestions: state.quiz.refreshQuestions,
     startQuiz: state.quiz.startQuiz
   }
 };

@@ -11,6 +11,10 @@ var createQuestions = require('./backend/functions/create-questions');
 var createUser = require('./backend/functions/create-user');
 var assemblePracticeSet = require('./backend/functions/assemble-practice-set');
 var deleteUser = require('./backend/functions/delete-user');
+var findQuestions = require('./backend/functions/find-questions');
+var updateCompleted = require('./backend/functions/update-completed');
+var updateLesson = require('./backend/functions/update-lesson');
+var updateMvalue = require('./backend/functions/update-mvalue');
 
 /*----- Serve Frontend -----*/
 app.use(express.static('./build'));
@@ -31,7 +35,7 @@ io.on('connection', function(socket) {
     if (action.type === 'server/getPreviewQuestions') {
       var level = action.data.currentLevel;
       var lesson = action.data.currentLesson;
-      findQuestions(socket.id).then((questions) => {
+      findQuestions(socket.id).then(function(questions) {
         var questionArr = [];
         for (var i = 0; i < questions.length; i++) {
           var questionObj = {
@@ -59,7 +63,7 @@ io.on('connection', function(socket) {
     if (action.type === 'server/getQuizQuestions') {
       var level = parseInt(action.data.currentLevel);
       var lesson = parseInt(action.data.currentLesson);
-      findQuestions(socket.id).then((questions) => {
+      findQuestions(socket.id).then(function(questions) {
         var questionArr = [];
         for (var i = 0; i < questions.length; i++) {
           var questionObj = {
@@ -76,13 +80,13 @@ io.on('connection', function(socket) {
             questionArr.push(questionObj);
           }
         }
-        socket.emit('action', {
-          type: 'updateQuiz',
-          data: {
-            questions: questionArr,
-            questionNumber: 0,
-            startQuiz: false
-          }
+        assemblePracticeSet(questionArr).then(function(user) {
+          socket.emit('action', {
+            type: 'updateQuiz',
+            data: {
+              questions: questionArr,
+            }
+          });          
         });
       });
     }
@@ -114,7 +118,7 @@ io.on('connection', function(socket) {
           level = 1;
         }
       }
-      updateLesson(level, lesson).then(function(user) {
+      updateLesson(socket.id, level, lesson).then(function(user) {
         socket.emit('action', {
           type: 'updateUser',
           data: user
@@ -124,7 +128,7 @@ io.on('connection', function(socket) {
     if (action.type === 'server/updateLesson') {
       var level = action.data.currentLevel;
       var lesson = action.data.currentLesson;
-      updateLesson(level, lesson).then(function(user) {
+      updateLesson(socket.id, level, lesson).then(function(user) {
         socket.emit('action', {
           type: 'updateUser',
           data: user
@@ -134,12 +138,40 @@ io.on('connection', function(socket) {
     if (action.type === 'server/updateMvalue') {
       var mValue = action.data.mValue;
       var id = action.data.id;
+      updateMvalue(mValue, id).then(function() {
+        findQuestions(socket.id).then(function(questions) {
+          var questionArr = [];
+          for (var i = 0; i < questions.length; i++) {
+            var questionObj = {
+              _id: questions[i].id,
+              prompt: questions[i].prompt,
+              correctAnswer: questions[i].correctAnswer,
+              m: questions[i].m,
+              level: questions[i].level,
+              levelTitle: questions[i].levelTitle,
+              lesson: questions[i].lesson,
+              lessonTitle: questions[i].lessonTitle
+            }
+            if (questions[i].level === level && questions[i].lesson === lesson) {
+              questionArr.push(questionObj);
+            }
+          }
+          assemblePracticeSet(questionArr).then(function(user) {
+            socket.emit('action', {
+              type: 'updateQuiz',
+              data: {
+                questions: questionArr
+              }
+            });          
+          });
+        });
+      });
     }
     if (action.type === 'server/updateCompleted') {
       var level = action.data.currentLevel;
       var lesson = action.data.currentLesson;
       var funct = action.data.funct;
-      updateCompleted(level, lesson, funct).then(function(user) {
+      updateCompleted(socket.id, level, lesson, funct).then(function(user) {
         socket.emit('action', {
           type: 'updateUser',
           data: user
@@ -150,71 +182,45 @@ io.on('connection', function(socket) {
       var level = action.data.currentLevel;
       var lesson = action.data.currentLesson;
       var funct = 'remove';
-      updateCompleted(level, lesson, funct).then(function(user) {
-        findQuestions(socket.id).then((questions) => {
+      updateCompleted(socket.id, level, lesson, funct).then(function(user) {
+        findQuestions(socket.id).then(function(questions) {
           var questionArr = [];
-
+          for (var i = 0; i < questions.length; i++) {
+            var questionObj = {
+              _id: questions[i].id,
+              prompt: questions[i].prompt,
+              correctAnswer: questions[i].correctAnswer,
+              m: questions[i].m,
+              level: questions[i].level,
+              levelTitle: questions[i].levelTitle,
+              lesson: questions[i].lesson,
+              lessonTitle: questions[i].lessonTitle
+            }
+            if (questions[i].level === level && questions[i].lesson === lesson) {
+              questionArr.push(questionObj);
+            }
+          }
+          assemblePracticeSet(questionArr).then(function(user) {
+            socket.emit('action', {
+              type: 'updateQuiz',
+              data: {
+                questions: questionArr
+              }
+            });
+            socket.emit('action', {
+              type: 'updateUser',
+              data: {
+                user: user
+              }
+            });
+          });
+        }); 
       });
     }
   });
-
   socket.on('disconnect', function() {
     deleteUser(socket.id);
     console.log('Socket disconnected: ', socket.id);
-  });
-});
-
-//   } else if (action.type === actions.FETCH_QUESTIONS_SUCCESS) {
-//     console.log(action.questions)
-//     return Object.assign({}, state, {
-//       questions: action.questions,
-//       refreshQuestions: false,
-//       questionNumber: false
-//     });
-//   } else if (action.type === actions.UPDATE_MVALUE_SUCCESS) {
-//     return Object.assign({}, state, {
-//       refreshQuestions: true
-//     });
-
-/*----- GET request for quiz questions -----*/
-app.get('/questions/:level/:lesson', function(request, response) {
-  var level = parseInt(request.params.level);
-  var lesson = parseInt(request.params.lesson);
-  Question.find({}, function(error, questions) {
-    var questionArr = [];
-    for (var i = 0; i < questions.length; i++) {
-      var questionObj = {
-        _id: questions[i].id,
-        prompt: questions[i].prompt,
-        correctAnswer: questions[i].correctAnswer,
-        m: questions[i].m,
-        level: questions[i].level,
-        levelTitle: questions[i].levelTitle,
-        lesson: questions[i].lesson,
-        lessonTitle: questions[i].lessonTitle
-      }
-      if (questions[i].level === level && questions[i].lesson === lesson) {
-        questionArr.push(questionObj);
-      }
-    }
-    if (error) {
-      console.error(error);
-      return response.sendStatus(500);
-    }
-    response.json(assemblePracticeSet(questionArr));
-  });
-});
-
-/* ----- PUT request for Questions to update "m" value -----*/
-app.put('/questions/:id/:m', function(request, response) {
-  var id = request.params.id
-  var m = request.params.m
-  // console.log(m, "m")
-  Question.update({_id: id}, {m: m}, function(error) {
-    if (error) {
-      console.error(error);
-      return response.status(500).json({message: 'Internal server error'});
-    } response.json({});
   });
 });
 
