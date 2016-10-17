@@ -6,7 +6,7 @@ let initialState = {
   },
   quiz: {
     questions: [],
-    questionNumber: 0,
+    questionNumber: null,
     startQuiz: false,
     refreshQuestions: false
   }

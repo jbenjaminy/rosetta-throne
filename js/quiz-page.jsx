@@ -51,7 +51,10 @@ var QuizPage = React.createClass({
     });
     this.props.dispatch({
       type: 'server/incrementLesson',
-      data: {}
+      data: {
+        currentLevel: this.props.level,
+        currentLesson: this.props.lesson
+      }
     });
     this.props.dispatch({
       type: 'server/lessonComplete',

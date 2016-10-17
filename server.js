@@ -21,7 +21,7 @@ io.on('connection', function(socket) {
   createQuestions(socket.id);
   createUser(socket.id).then(function(user) {
     socket.emit('action', {
-      type: 'userCreated',
+      type: 'updateUser',
       data: user
     });
   });
@@ -62,17 +62,17 @@ io.on('connection', function(socket) {
       var questions = action.data.questions
       if (questionNumber === questions.length - 1) {
         startQuiz = true;
-        questionNumber = 0;
+        questionNumber = null;
         questions = [];
       }
       socket.emit('action', {
-          type: 'updateQuiz',
-          data: {
-            questions: questions,
-            questionNumber: questionNumber,
-            startQuiz: startQuiz
-          }
-        });
+        type: 'updateQuiz',
+        data: {
+          questions: questions,
+          questionNumber: questionNumber,
+          startQuiz: startQuiz
+        }
+      });
     }
     if (action.type === 'server/getQuizQuestions') {
       var level = action.data.currentLevel;
@@ -83,6 +83,21 @@ io.on('connection', function(socket) {
       var id = action.data.id;
     }
     if (action.type === 'server/incrementLesson') {
+      var level = action.data.currentLevel;
+      var lesson = action.data.currentLesson + 1;
+      if (lesson === 6) {
+        level = level + 1;
+        lesson = 1;
+        if (level === 6) {
+          level = 1;
+        }
+      }
+      updateLesson(level, lesson).then(function(user) {
+        socket.emit('action', {
+          type: 'updateUser',
+          data: user
+        });
+      }); 
     }
     if (action.type === 'server/lessonComplete') {
       var level = action.data.currentLevel;
@@ -100,16 +115,7 @@ io.on('connection', function(socket) {
     console.log('Socket disconnected: ', socket.id);
   });
 });
-//   } else if (action.type === actions.INCREMENT_LESSON) {
-//     var lesson = state.lesson + 1;
-//     var level = state.level;
-//     if (lesson === 6) {
-//       level = state.level + 1;
-//       if (level === 6) {
-//         level = 1;
-//       }
-//       lesson = 1;
-//     }
+
 //     return Object.assign({}, state, {
 //       level: level,
 //       lesson: lesson
