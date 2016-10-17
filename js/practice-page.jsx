@@ -11,7 +11,10 @@ var PracticePage = React.createClass({
     event.preventDefault();
     this.props.dispatch({
       type: 'server/incrementQuestion',
-      data: {}
+      data: {
+        questionNumber: this.props.questionNumber,
+        questions: this.props.questions
+      }
     });
     var form = document.getElementById("gotForm");
     form.reset();

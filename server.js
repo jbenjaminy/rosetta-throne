@@ -57,6 +57,22 @@ io.on('connection', function(socket) {
       });
     }
     if (action.type === 'server/incrementQuestion') {
+      var questionNumber = action.data.questionNumber + 1;
+      var startQuiz = false;
+      var questions = action.data.questions
+      if (questionNumber === questions.length - 1) {
+        startQuiz = true;
+        questionNumber = 0;
+        questions = [];
+      }
+      socket.emit('action', {
+          type: 'updateQuiz',
+          data: {
+            questions: questions,
+            questionNumber: questionNumber,
+            startQuiz: startQuiz
+          }
+        });
     }
     if (action.type === 'server/getQuizQuestions') {
       var level = action.data.currentLevel;
@@ -84,19 +100,6 @@ io.on('connection', function(socket) {
     console.log('Socket disconnected: ', socket.id);
   });
 });
-//   } else if (action.type === actions.INCREMENT_QUESTION) {
-//     var questionNumber = state.questionNumber + 1;
-//     var startQuiz = false;
-//     var previewQuestions = state.previewQuestions
-//     if (state.questionNumber === state.previewQuestions.length - 1) {
-//       startQuiz = true;
-//       previewQuestions = false;
-//     }
-//     return Object.assign({}, state, {
-//       questionNumber: questionNumber,
-//       startQuiz: startQuiz,
-//       previewQuestions: previewQuestions
-//     });
 //   } else if (action.type === actions.INCREMENT_LESSON) {
 //     var lesson = state.lesson + 1;
 //     var level = state.level;
@@ -181,26 +184,6 @@ app.put('/questions/:id/:m', function(request, response) {
       console.error(error);
       return response.status(500).json({message: 'Internal server error'});
     } response.json({});
-  });
-});
-
-// /*----- POST request for Questions -----*/
-app.post('/questions', function(request, response) {
-  console.log(request.body, "<-- request.body");
-  var questionsArray = request.body;
-  var completed = 0;
-  questionsArray.forEach(function(question) {
-    Question.create(question, function(error) {
-      if (error) {
-        console.error(error);
-      } else {
-        console.log("Post question success");
-      }
-    });
-    completed++;
-    if (completed === questionsArray.length) {
-      return response.status(201).json();
-    }
   });
 });
 
