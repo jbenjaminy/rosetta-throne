@@ -1,4 +1,4 @@
-var Question = require('./models').Question;
+var Question = require('../models').Question;
 
 var createQuestions = function(id) {
 /*---------- LEVEL 1, NOUNS ----------*/

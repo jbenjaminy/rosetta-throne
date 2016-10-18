@@ -17,7 +17,7 @@ var Header = React.createClass({
     return(
     	<div className={this.props.cls}>
     		<div className='title'>
-          <Link to={'/'} className="title1 col" ><img src="./title1.png"/></Link><Link to={'/directory'} className="title2 col"><img src="./title2.png"/></Link>
+          <Link to={'/'} className="title1 col" ><img src="http://i.imgur.com/UtAVA4T.png"/></Link><Link to={'/directory'} className="title2 col"><img src="http://i.imgur.com/bC89zOl.png"/></Link>
         </div>
         <Link to={'/practice'} className="start" onClick={this.getPreview}>Start learning</Link>
         <div className='space'></div>

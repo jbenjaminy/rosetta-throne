@@ -1,29 +1,29 @@
 /*---------------------------DEPENDENCIES -----------------------------*/
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
-var createQuestions = require('./backend/functions/create-questions');
-var createUser = require('./backend/functions/create-user');
-var assemblePracticeSet = require('./backend/functions/assemble-practice-set');
-var deleteUser = require('./backend/functions/delete-user');
-var findQuestions = require('./backend/functions/find-questions');
-var updateCompleted = require('./backend/functions/update-completed');
-var updateLesson = require('./backend/functions/update-lesson');
-var updateMvalue = require('./backend/functions/update-mvalue');
+const createQuestions = require('./backend/functions/create-questions');
+const createUser = require('./backend/functions/create-user');
+const assemblePracticeSet = require('./backend/functions/assemble-practice-set');
+const deleteUser = require('./backend/functions/delete-user');
+const findQuestions = require('./backend/functions/find-questions');
+const updateCompleted = require('./backend/functions/update-completed');
+const updateLesson = require('./backend/functions/update-lesson');
+const updateMvalue = require('./backend/functions/update-mvalue');
 
 /*----- Serve Frontend -----*/
 app.use(express.static('./build'));
 
 /*--------------------------- SOCKET MANAGEMENT -----------------------------*/
-io.on('connection', function(socket) {
+io.on('connection', (socket) => {
   console.log('Socket connected: ', socket.id);
   createQuestions(socket.id);
-  createUser(socket.id).then(function(user) {
+  createUser(socket.id).then((user) => {
     socket.emit('action', {
       type: 'updateUser',
       data: user
@@ -33,12 +33,12 @@ io.on('connection', function(socket) {
   socket.on('action', (action) => {
     console.log(action.type, '<-----ACTION.TYPE');
     if (action.type === 'server/getPreviewQuestions') {
-      var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson;
-      findQuestions(socket.id).then(function(questions) {
-        var questionArr = [];
-        for (var i = 0; i < questions.length; i++) {
-          var questionObj = {
+      let level = action.data.currentLevel;
+      let lesson = action.data.currentLesson;
+      findQuestions(socket.id).then((questions) => {
+        let questionArr = [];
+        for (let i = 0; i < questions.length; i++) {
+          let questionObj = {
             prompt: questions[i].prompt,
             placeHolder: questions[i].correctAnswer,
             level: questions[i].level,
@@ -61,12 +61,12 @@ io.on('connection', function(socket) {
       });
     }
     if (action.type === 'server/getQuizQuestions') {
-      var level = parseInt(action.data.currentLevel);
-      var lesson = parseInt(action.data.currentLesson);
-      findQuestions(socket.id).then(function(questions) {
-        var questionArr = [];
-        for (var i = 0; i < questions.length; i++) {
-          var questionObj = {
+      let level = parseInt(action.data.currentLevel);
+      let lesson = parseInt(action.data.currentLesson);
+      findQuestions(socket.id).then((questions) => {
+        let questionArr = [];
+        for (let i = 0; i < questions.length; i++) {
+          let questionObj = {
             _id: questions[i].id,
             prompt: questions[i].prompt,
             correctAnswer: questions[i].correctAnswer,
@@ -80,7 +80,7 @@ io.on('connection', function(socket) {
             questionArr.push(questionObj);
           }
         }
-        assemblePracticeSet(questionArr).then(function(user) {
+        assemblePracticeSet(questionArr).then((user) => {
           socket.emit('action', {
             type: 'updateQuiz',
             data: {
@@ -91,9 +91,9 @@ io.on('connection', function(socket) {
       });
     }
     if (action.type === 'server/incrementQuestion') {
-      var questionNumber = action.data.questionNumber + 1;
-      var startQuiz = false;
-      var questions = action.data.questions
+      let questionNumber = action.data.questionNumber + 1;
+      let startQuiz = false;
+      let questions = action.data.questions
       if (questionNumber === questions.length - 1) {
         startQuiz = true;
         questionNumber = null;
@@ -109,8 +109,8 @@ io.on('connection', function(socket) {
       });
     }
     if (action.type === 'server/incrementLesson') {
-      var level = parseInt(action.data.currentLevel);
-      var lesson = parseInt(action.data.currentLesson) + 1;
+      let level = parseInt(action.data.currentLevel);
+      let lesson = parseInt(action.data.currentLesson) + 1;
       if (lesson === 6) {
         level = level + 1;
         lesson = 1;
@@ -118,7 +118,7 @@ io.on('connection', function(socket) {
           level = 1;
         }
       }
-      updateLesson(socket.id, level, lesson).then(function(user) {
+      updateLesson(socket.id, level, lesson).then((user) => {
         socket.emit('action', {
           type: 'updateUser',
           data: user
@@ -126,9 +126,9 @@ io.on('connection', function(socket) {
       }); 
     }
     if (action.type === 'server/updateLesson') {
-      var level = parseInt(action.data.currentLevel);
-      var lesson = parseInt(action.data.currentLesson);
-      updateLesson(socket.id, level, lesson).then(function(user) {
+      let level = parseInt(action.data.currentLevel);
+      let lesson = parseInt(action.data.currentLesson);
+      updateLesson(socket.id, level, lesson).then((user) => {
         socket.emit('action', {
           type: 'updateUser',
           data: user
@@ -136,15 +136,15 @@ io.on('connection', function(socket) {
       });     
     }
     if (action.type === 'server/updateMvalue') {
-      var mValue = action.data.mValue;
-      var id = action.data.id;
-      var level = action.data.level;
-      var lesson = action.data.lesson;
-      updateMvalue(mValue, id).then(function() {
-        findQuestions(socket.id).then(function(questions) {
-          var questionArr = [];
-          for (var i = 0; i < questions.length; i++) {
-            var questionObj = {
+      let mValue = action.data.mValue;
+      let id = action.data.id;
+      let level = action.data.level;
+      let lesson = action.data.lesson;
+      updateMvalue(mValue, id).then(() => {
+        findQuestions(socket.id).then((questions) => {
+          let questionArr = [];
+          for (let i = 0; i < questions.length; i++) {
+            let questionObj = {
               _id: questions[i].id,
               prompt: questions[i].prompt,
               correctAnswer: questions[i].correctAnswer,
@@ -158,7 +158,7 @@ io.on('connection', function(socket) {
               questionArr.push(questionObj);
             }
           }
-          assemblePracticeSet(questionArr).then(function(user) {
+          assemblePracticeSet(questionArr).then((user) => {
             socket.emit('action', {
               type: 'updateQuiz',
               data: {
@@ -170,11 +170,11 @@ io.on('connection', function(socket) {
       });
     }
     if (action.type === 'server/updateCompleted') {
-      var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson;
-      var funct = action.data.funct;
-      var completed = action.data.completed;
-      updateCompleted(socket.id, level, lesson, funct, completed).then(function(user) {
+      let level = action.data.currentLevel;
+      let lesson = action.data.currentLesson;
+      let funct = action.data.funct;
+      let completed = action.data.completed;
+      updateCompleted(socket.id, level, lesson, funct, completed).then((user) => {
         socket.emit('action', {
           type: 'updateUser',
           data: user
@@ -182,15 +182,15 @@ io.on('connection', function(socket) {
       });   
     }
     if (action.type === 'server/restartQuiz') {
-      var level = action.data.currentLevel;
-      var lesson = action.data.currentLesson;
-      var funct = 'remove';
-      var completed = action.data.completed;
-      updateCompleted(socket.id, level, lesson, funct, completed).then(function(user) {
-        findQuestions(socket.id).then(function(questions) {
-          var questionArr = [];
-          for (var i = 0; i < questions.length; i++) {
-            var questionObj = {
+      let level = action.data.currentLevel;
+      let lesson = action.data.currentLesson;
+      let funct = 'remove';
+      let completed = action.data.completed;
+      updateCompleted(socket.id, level, lesson, funct, completed).then((user) => {
+        findQuestions(socket.id).then((questions) => {
+          let questionArr = [];
+          for (let i = 0; i < questions.length; i++) {
+            let questionObj = {
               _id: questions[i].id,
               prompt: questions[i].prompt,
               correctAnswer: questions[i].correctAnswer,
@@ -204,7 +204,7 @@ io.on('connection', function(socket) {
               questionArr.push(questionObj);
             }
           }
-          assemblePracticeSet(questionArr).then(function(user) {
+          assemblePracticeSet(questionArr).then((user) => {
             socket.emit('action', {
               type: 'updateQuiz',
               data: {
@@ -222,7 +222,7 @@ io.on('connection', function(socket) {
       });
     }
   });
-  socket.on('disconnect', function() {
+  socket.on('disconnect', () => {
     deleteUser(socket.id);
     console.log('Socket disconnected: ', socket.id);
   });
@@ -230,21 +230,21 @@ io.on('connection', function(socket) {
 
 /*----------------------------- RUN SERVER -----------------------------*/
 
-var runServer = function(callback) {
-    var databaseUri = process.env.DATABASE_URI || global.databaseUri || 'mongodb://localhost/got2';
-    mongoose.connect(databaseUri).then(function() {
-        var port = process.env.PORT || 8081;
-        server.listen(port, function() {
-            console.log('Listening on port ' + port);
+let runServer = (callback) => {
+    let databaseUri = process.env.DATABASE_URI || global.databaseUri || 'mongodb://localhost/got2';
+    mongoose.connect(databaseUri).then(() => {
+        let PORT = process.env.PORT || 8080;
+        server.listen(PORT, () => {
+            console.log(`Listening on localhost: ${PORT}`);
             if (callback) {
-                callback(server);
+                callback();
             }
         });
     });
 };
 
 if (require.main === module) {
-  runServer(function(err) {
+  runServer((err) => {
     if (err) {
       throw new Error(err);
     }

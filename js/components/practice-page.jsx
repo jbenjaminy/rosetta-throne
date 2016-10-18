@@ -29,6 +29,7 @@ var PracticePage = React.createClass({
     });
   },
   render: function() {
+    console.log(this.props.state);
     if (this.props.startQuiz) {
       return (
         <div className='quizPage'>
@@ -37,9 +38,9 @@ var PracticePage = React.createClass({
         </div>
       );
     }
-    // if (!this.props.questions) {
-    //   return null
-    // }
+    if (!this.props.questions) {
+      return null
+    }
     var question = this.props.questions[this.props.questionNumber];
     return (
       <div className='quizPage'>
