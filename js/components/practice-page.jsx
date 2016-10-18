@@ -38,10 +38,11 @@ var PracticePage = React.createClass({
         </div>
       );
     }
-    if (!this.props.questions) {
+    if (this.props.questions.length === 0) {
       return null
+    } else {
+      var question = this.props.questions[this.props.questionNumber];
     }
-    var question = this.props.questions[this.props.questionNumber];
     return (
       <div className='quizPage'>
         <Header cls='header2'/>

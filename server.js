@@ -31,7 +31,6 @@ io.on('connection', (socket) => {
   });
 
   socket.on('action', (action) => {
-    console.log(action.type, '<-----ACTION.TYPE');
     if (action.type === 'server/getPreviewQuestions') {
       let level = action.data.currentLevel;
       let lesson = action.data.currentLesson;
@@ -80,11 +79,14 @@ io.on('connection', (socket) => {
             questionArr.push(questionObj);
           }
         }
-        assemblePracticeSet(questionArr).then((user) => {
+        // console.log('questionArr---->', questionArr);
+        assemblePracticeSet(questionArr).then((practiceSet) => {
+          console.log('practiceSet', practiceSet);
           socket.emit('action', {
             type: 'updateQuiz',
             data: {
-              questions: questionArr,
+              questions: practiceSet,
+              questionNumber: null
             }
           });          
         });
@@ -158,11 +160,12 @@ io.on('connection', (socket) => {
               questionArr.push(questionObj);
             }
           }
-          assemblePracticeSet(questionArr).then((user) => {
+          assemblePracticeSet(questionArr).then((practiceSet) => {
             socket.emit('action', {
               type: 'updateQuiz',
               data: {
-                questions: questionArr
+                questions: practiceSet,
+                questionNumber: null
               }
             });          
           });
@@ -208,7 +211,8 @@ io.on('connection', (socket) => {
             socket.emit('action', {
               type: 'updateQuiz',
               data: {
-                questions: questionArr
+                questions: practiceSet,
+                questionNumber: null
               }
             });
             socket.emit('action', {
