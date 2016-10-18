@@ -63,33 +63,250 @@ var createQuestions = function(id) {
 	Question.create({"socketId": id, "prompt": "mahrazhkem", "correctAnswer": "husband", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 5, "lessonTitle": "Family" });
 
 /*---------- LEVEL 2, NUMBERS, PRONOUNS, AND INTERJECTIONS ----------*/
-	/* LESSON 1, */
+	/* LESSON 1, Numbers */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 1, "lessonTitle": "Numbers" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 1, "lessonTitle": "Numbers" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 1, "lessonTitle": "Numbers" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 1, "lessonTitle": "Numbers" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 1, "lessonTitle": "Numbers" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 1, "lessonTitle": "Numbers" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 1, "lessonTitle": "Numbers" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 1, "lessonTitle": "Numbers" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 1, "lessonTitle": "Numbers" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 1, "lessonTitle": "Numbers" });
+	
 	/* LESSON 2, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 2, "lessonTitle": "" });
+
 	/* LESSON 3, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 3, "lessonTitle": "" });
+
 	/* LESSON 4, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 4, "lessonTitle": "" });
+
 	/* LESSON 5, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 2, "levelTitle": "Numbers, Pronouns, and Interjections", "lesson": 5, "lessonTitle": "" });
 
 /*---------- LEVEL 3, ADJECTIVES AND ADVERBS ----------*/
 	/* LESSON 1, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 1, "lessonTitle": "" });
+
 	/* LESSON 2, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 2, "lessonTitle": "" });
+
 	/* LESSON 3, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 3, "lessonTitle": "" });
+
 	/* LESSON 4, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 4, "lessonTitle": "" });
+
 	/* LESSON 5, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "" });
+
 
 /*---------- LEVEL 4, TRANSITIVE VERBS ----------*/
 	/* LESSON 1, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "" });
+
 	/* LESSON 2, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "" });
+
 	/* LESSON 3, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "" });
+
 	/* LESSON 4, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "" });
+
 	/* LESSON 5, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "" });
+
 
 /*---------- LEVEL 5, INTRANSITIVE VERBS ----------*/
 	/* LESSON 1, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "" });
+
 	/* LESSON 2, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "" });
+
 	/* LESSON 3, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "" });
+
 	/* LESSON 4, */
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "" });
+
 	/* LESSON 5, */
-	
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "" });
+	Question.create({"socketId": id, "prompt": "", "correctAnswer": "", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "" });
 }
 
 module.exports = createQuestions;
