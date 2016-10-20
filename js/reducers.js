@@ -31,7 +31,7 @@ function reducer(state=initialState, action) {
       let questions = action.data.questions || state.quiz.questions;
       console.log('q', questions);
       let questionNumber = action.data.questionNumber;
-      let startQuiz = action.data.startQuiz || state.quiz.startQuiz;
+      let startQuiz = action.data.startQuiz || false;
       return Object.assign({}, state, {
         quiz: {
           questions: questions,

@@ -2,12 +2,13 @@ const User = require('../models').User;
 
 let updateLesson = (id, level, lesson) => {
 	return new Promise((resolve, reject) => {
-		User.update({
+		User.findOneAndUpdate({
 			socketId: id
 		}, {
 			currentLevel: level,
 			currentLesson: lesson
-		}, (err, user) => {
+		}, { new: true }, (err, user) => {
+			console.log(user);
 	    	if (err) {
 	      		reject(err);
 	    	}

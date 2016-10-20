@@ -40,35 +40,29 @@ var QuizPage = React.createClass({
     var lesson = this.props.lesson + 1;
     var level = this.props.level;
     if (lesson === 6) {
-      level = this.props.level + 1;
+      level = level + 1;
       if (level === 6) {
         level = 1;
       }
       lesson = 1;
     }
     this.props.dispatch({
-      type: 'server/getPreviewQuestions',
+      type: 'server/updateLesson',
       data: {
         currentLevel: level,
         currentLesson: lesson
       }
     });
-    this.props.dispatch({
-      type: 'server/updateCompleted',
-      data: { 
-        currentLevel: this.props.level,
-        currentLesson: this.props.lesson,
-        funct: 'add',
-        completed: this.props.completed
-      }
-    });
-    this.props.dispatch({
-      type: 'server/incrementLesson',
-      data: {
-        currentLevel: this.props.level,
-        currentLesson: this.props.lesson
-      }
-    });
+    // this.props.dispatch({
+    //   type: 'server/updateCompleted',
+    //   data: { 
+    //     currentLevel: this.props.level,
+    //     currentLesson: this.props.lesson,
+    //     funct: 'add',
+    //     completed: this.props.completed
+    //   }
+    // });
+    
   },
   getQuestions: function() {
     this.props.dispatch({

@@ -6,14 +6,14 @@ var createQuestions = function(id) {
 	/* LESSON 1, Creatures of Essos */
 	Question.create({"socketId": id, "prompt": "havzi", "correctAnswer": "cat", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
 	Question.create({"socketId": id, "prompt": "zhavorsa", "correctAnswer": "dragon", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
-	Question.create({"socketId": id, "prompt": "hrazef", "correctAnswer": "horse", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
-	Question.create({"socketId": id, "prompt": "hlizif", "correctAnswer": "bear", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
-	Question.create({"socketId": id, "prompt": "adra", "correctAnswer": "turtle", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
-	Question.create({"socketId": id, "prompt": "dorvi", "correctAnswer": "goat", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
-	Question.create({"socketId": id, "prompt": "eshina", "correctAnswer": "fish", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
-	Question.create({"socketId": id, "prompt": "gezri", "correctAnswer": "snake", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
-	Question.create({"socketId": id, "prompt": "hrakkar", "correctAnswer": "lion", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
-	Question.create({"socketId": id, "prompt": "gimi", "correctAnswer": "mouse", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
+	// Question.create({"socketId": id, "prompt": "hrazef", "correctAnswer": "horse", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
+	// Question.create({"socketId": id, "prompt": "hlizif", "correctAnswer": "bear", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
+	// Question.create({"socketId": id, "prompt": "adra", "correctAnswer": "turtle", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
+	// Question.create({"socketId": id, "prompt": "dorvi", "correctAnswer": "goat", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
+	// Question.create({"socketId": id, "prompt": "eshina", "correctAnswer": "fish", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
+	// Question.create({"socketId": id, "prompt": "gezri", "correctAnswer": "snake", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
+	// Question.create({"socketId": id, "prompt": "hrakkar", "correctAnswer": "lion", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
+	// Question.create({"socketId": id, "prompt": "gimi", "correctAnswer": "mouse", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 1, "lessonTitle": "Creatures of Essos" });
 
 	/* LESSON 2, Nature and Landscapes*/
 	Question.create({"socketId": id, "prompt": "asavva", "correctAnswer": "sky", "m": 1, "level": 1, "levelTitle": "Nouns", "lesson": 2, "lessonTitle": "Nature and Landscapes" });
