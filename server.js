@@ -98,7 +98,7 @@ io.on('connection', (socket) => {
       let questionNumber = action.data.questionNumber + 1;
       let startQuiz = false;
       let questions = action.data.questions
-      if (questionNumber === questions.length - 1) {
+      if (questionNumber === questions.length) {
         startQuiz = true;
         questionNumber = null;
         questions = [];
@@ -246,7 +246,6 @@ io.on('connection', (socket) => {
   });
   socket.on('disconnect', () => {
     deleteUser(socket.id);
-    console.log('Socket disconnected: ', socket.id);
   });
 });
 

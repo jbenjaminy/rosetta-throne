@@ -3,7 +3,7 @@ const User = require('../models').User;
 let createUser = (id) => {
 	return new Promise((resolve, reject) => {
 		User.create({
-      		socketId: socket.id,
+      		socketId: id,
       		completedLessons: [],
       		currentLevel: 1,
       		currentLesson: 1

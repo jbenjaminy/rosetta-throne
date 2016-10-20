@@ -7,8 +7,7 @@ var UserSchema = new mongoose.Schema({
 		required: true
 	},
 	completedLessons: {
-		type: Array,
-		required: true
+		type: Array
 	},
 	currentLevel: {
 		type: Number,
