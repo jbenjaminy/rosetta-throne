@@ -9,7 +9,6 @@ let createUser = (id) => {
       		currentLesson: 1
   		}, (err, user) => {
     		if (err) {
-	      		console.error(err);
 	      		reject(err);
 	      	}
 	      	resolve(user);

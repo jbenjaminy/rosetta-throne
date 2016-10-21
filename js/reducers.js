@@ -12,7 +12,7 @@ let initialState = {
 }
 
 function reducer(state=initialState, action) {
-  console.log('STATE ------>', state);
+  // console.log('STATE ------>', state);
   console.log('ACTION.TYPE ----->', action.type, 'ACTION.DATA ----->', action.data);
   switch(action.type) {
     case 'updateUser': {

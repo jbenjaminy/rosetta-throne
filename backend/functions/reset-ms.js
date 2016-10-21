@@ -1,16 +1,16 @@
 const Question = require('../models').Question;
 
-let updateMs = (id, level, lesson) => {
+let resetMs = (id, level, lesson) => {
 	return new Promise((resolve, reject) => {
 		const promise = findQs(id);
 		promise.then((questions) => { 
 			for (let question of questions) {
 				if (parseInt(question.level) === level && parseInt(question.lesson) === lesson) {
-					Question.update({
+					Question.findOneAndUpdate({
 						_id: id
 					}, {
 						m: 1
-					}, (err, res) => {
+					}, { new: true }, (err, question) => {
 				    	if (err) {
 				      		reject(err);
 				    	}
@@ -34,4 +34,4 @@ let findQs = (id) => {
 		});
 	});
 }
-module.exports = updateMs;
+module.exports = resetMs;

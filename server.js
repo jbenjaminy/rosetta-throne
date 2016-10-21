@@ -13,10 +13,9 @@ const createUser = require('./backend/functions/create-user');
 const assemblePracticeSet = require('./backend/functions/assemble-practice-set');
 const deleteUser = require('./backend/functions/delete-user');
 const findQuestions = require('./backend/functions/find-questions');
-const updateCompleted = require('./backend/functions/update-completed');
 const updateLesson = require('./backend/functions/update-lesson');
 const updateMvalue = require('./backend/functions/update-mvalue');
-const updateMs = require('./backend/functions/update-ms');
+const resetMs = require('./backend/functions/reset-ms');
 
 /*----- Serve Frontend -----*/
 app.use(express.static('./build'));
@@ -81,7 +80,6 @@ io.on('connection', (socket) => {
             questionArr.push(questionObj);
           }
         }
-        // console.log('questionArr---->', questionArr);
         assemblePracticeSet(questionArr).then((practiceSet) => {
           socket.emit('action', {
             type: 'updateQuiz',
@@ -112,29 +110,14 @@ io.on('connection', (socket) => {
         }
       });
     }
-    if (action.type === 'server/incrementLesson') {
-      let level = parseInt(action.data.currentLevel);
-      let lesson = parseInt(action.data.currentLesson) + 1;
-      console.log('level --->', level);
-      console.log('lesson ----> ', lesson);
-      if (lesson === 6) {
-        level = level + 1;
-        lesson = 1;
-        if (level === 6) {
-          level = 1;
-        }
-      }
-      updateLesson(socket.id, level, lesson).then((user) => {
-        socket.emit('action', {
-          type: 'updateUser',
-          data: user
-        });
-      }); 
-    }
     if (action.type === 'server/updateLesson') {
       let level = parseInt(action.data.currentLevel);
       let lesson = parseInt(action.data.currentLesson);
-      updateLesson(socket.id, level, lesson).then((user) => {
+      let completed = action.data.completed;
+      if (action.data.prevLevel) {
+        completed.push({level: action.data.prevLevel, lesson: action.data.prevLesson});
+      }
+      updateLesson(socket.id, level, lesson, completed).then((user) => {
         findQuestions(socket.id).then((questions) => {
           let questionArr = [];
           for (let i = 0; i < questions.length; i++) {
@@ -201,44 +184,39 @@ io.on('connection', (socket) => {
         });
       });
     }
-    if (action.type === 'server/updateCompleted') {
-      let level = action.data.currentLevel;
-      let lesson = action.data.currentLesson;
-      let funct = action.data.funct;
-      let completed = action.data.completed;
-      updateCompleted(socket.id, level, lesson, funct, completed).then((user) => {
-        socket.emit('action', {
-          type: 'updateUser',
-          data: user
-        });
-      });   
-    }
     if (action.type === 'server/restartQuiz') {
       let level = action.data.currentLevel;
       let lesson = action.data.currentLesson;
+      let completed = action.data.completed;
       resetMs(socket.id, level, lesson).then(() => {
-        findQuestions(socket.id).then((questions) => {
-          let questionArr = [];
-          for (let i = 0; i < questions.length; i++) {
-            let questionObj = {
-              prompt: questions[i].prompt,
-              placeHolder: questions[i].correctAnswer,
-              level: questions[i].level,
-              levelTitle: questions[i].levelTitle,
-              lesson: questions[i].lesson,
-              lessonTitle: questions[i].lessonTitle
+        updateLesson(socket.id, level, lesson, completed).then((user) => {
+          findQuestions(socket.id).then((questions) => {
+            let questionArr = [];
+            for (let i = 0; i < questions.length; i++) {
+              let questionObj = {
+                prompt: questions[i].prompt,
+                placeHolder: questions[i].correctAnswer,
+                level: questions[i].level,
+                levelTitle: questions[i].levelTitle,
+                lesson: questions[i].lesson,
+                lessonTitle: questions[i].lessonTitle
+              }
+              if (questions[i].level === level && questions[i].lesson === lesson) {
+                questionArr.push(questionObj);
+              }
             }
-            if (questions[i].level === level && questions[i].lesson === lesson) {
-              questionArr.push(questionObj);
-            }
-          }
-          socket.emit('action', {
-            type: 'updateQuiz',
-            data: {
-              questions: questionArr,
-              questionNumber: 0,
-              startQuiz: false
-            }
+            socket.emit('action', {
+              type: 'updateQuiz',
+              data: {
+                questions: questionArr,
+                questionNumber: 0,
+                startQuiz: false
+              }
+            });
+            socket.emit('action', {
+              type: 'updateUser',
+              data: user
+            });
           });
         });
       });

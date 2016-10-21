@@ -50,57 +50,25 @@ var QuizPage = React.createClass({
       type: 'server/updateLesson',
       data: {
         currentLevel: level,
-        currentLesson: lesson
+        currentLesson: lesson,
+        prevLevel: this.props.level,
+        prevLesson: this.props.lesson,
+        completed: this.props.completed
       }
     });
-    // this.props.dispatch({
-    //   type: 'server/updateCompleted',
-    //   data: { 
-    //     currentLevel: this.props.level,
-    //     currentLesson: this.props.lesson,
-    //     funct: 'add',
-    //     completed: this.props.completed
-    //   }
-    // });
-    
-  },
-  getQuestions: function() {
-    this.props.dispatch({
-      type: 'server/getQuizQuestions',
-      data: { 
-        currentLevel: this.props.level,
-        currentLesson: this.props.lesson
-      }
-    });  
   },
   restart: function() {
     this.props.dispatch({
       type: 'server/restartQuiz',
       data: {
         currentLevel: this.props.level,
-        currentLesson: this.props.lesson
-      }
-    });
-  },
-  markComplete: function() {
-    this.props.dispatch({
-      type: 'server/updateCompleted',
-      data: { 
-        currentLevel: this.props.level,
         currentLesson: this.props.lesson,
-        funct: 'add',
         completed: this.props.completed
-      }
-    });
-    this.props.dispatch({
-      type: 'server/incrementLesson',
-      data: {
-        currentLevel: this.props.level,
-        currentLesson: this.props.lesson
       }
     });
   },
   render: function() {
+    console.log('state -----> ', this.props.state);
     if (this.props.questions.length === 0) {
       return (
         <div>
@@ -108,7 +76,7 @@ var QuizPage = React.createClass({
           <div className='endLinks quizPage'>
             <Link to={'/quiz'} className="quizEnd" onClick={this.restart}>Restart Quiz</Link>
             <Link to={'/practice'} className="quizEnd" onClick={this.getPreview}>Next Lesson</Link>
-            <Link to={'/'} className="quizEnd" onClick={this.markComplete}>Return Home</Link>
+            <Link to={'/'} className="quizEnd" onClick={this.getPreview}>Return Home</Link>
           </div>
         </div>
       );
