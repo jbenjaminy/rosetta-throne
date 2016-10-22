@@ -1,0 +1,218 @@
+@font-face {
+  font-family: "Hit The Road";
+  src: local("New"), local("New"), url("hit-the-road.ttf");
+  font-weight: bold;
+}
+#app {
+  height: 100%;
+}
+body {
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 0;
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+  font-family: "Hit The Road";
+}
+body a {
+  font-size: 1em;
+}
+body .header {
+  margin: 0 auto;
+  background-image: url('http://i.imgur.com/kKy9hoA.png');
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+body .header .title {
+  margin-bottom: 45%;
+}
+body .header .start {
+  color: #F8F6F0;
+  text-decoration: none;
+  border: solid 1px #0D69A5;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #0D69A5;
+  font-weight: lighter;
+}
+body .header .space {
+  height: 100px;
+}
+body .header2 {
+  margin: 0 auto;
+  background-image: url('http://i.imgur.com/LmJ9lfn.png?1');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: auto;
+  max-height: 172px;
+  margin-bottom: 50px;
+}
+body .header2 .title {
+  padding-bottom: 100px;
+}
+body .header2 .start {
+  display: none;
+}
+body .title {
+  width: 100%;
+  padding-top: 3%;
+}
+body .title .title1 {
+  text-align: left;
+  margin-left: 5%;
+}
+body .title .title2 {
+  text-align: right;
+  margin-right: 5%;
+}
+body .title .col {
+  width: 45%;
+  display: inline-block;
+}
+body .continue {
+  color: #F8F6F0;
+  text-decoration: none;
+  border: solid 1px #0D69A5;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #0D69A5;
+  font-weight: lighter;
+}
+body .endLinks .quizEnd {
+  color: #F8F6F0;
+  text-decoration: none;
+  border: solid 1px #0D69A5;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #0D69A5;
+  font-weight: lighter;
+  margin-left: 2%;
+  display: inline-block;
+}
+body .directory .lessons {
+  margin-left: 15px;
+}
+body .directory h2 {
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-size: 1.3em;
+}
+body .directory .levels,
+body .directory .lessons {
+  list-style-type: none;
+}
+body .directory .levels a,
+body .directory .lessons a {
+  text-decoration: none;
+  color: inherit;
+}
+body .directory .completed {
+  color: lightgrey;
+  font-style: italic;
+}
+body .quizPage {
+  text-align: center;
+  margin-bottom: 100px;
+}
+body .quizPage .prompt {
+  font-size: 1.75em;
+  font-style: italic;
+  padding-top: 2%;
+}
+body .quizPage h2 {
+  margin-left: 5%;
+  text-align: left;
+}
+body .quizPage form {
+  margin-left: 44%;
+  width: 160px;
+  margin: 0 auto;
+  text-align: center;
+}
+body .quizPage form input {
+  margin-top: 1.5em;
+  width: 150px;
+  border: 1px solid grey;
+  border-radius: 0.25em;
+  text-align: center;
+}
+body .quizPage form input:required {
+  border-color: 1px solid #4c5058;
+  box-shadow: none;
+}
+body .quizPage form button {
+  color: #F8F6F0;
+  border: solid 1px #0D69A5;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #0D69A5;
+  margin-top: 20px;
+  font-size: 0.8em;
+}
+@media only screen and (max-width: 760px) {
+  body .header .title {
+    margin-bottom: 85%;
+  }
+  body .header .space {
+    height: 50px;
+  }
+  body .header2 {
+    margin: 0 auto;
+    background-image: url('http://i.imgur.com/LmJ9lfn.png?1');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    height: auto;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  body .header2 .title {
+    padding-bottom: 10px;
+  }
+  body .title .title1 {
+    display: block;
+  }
+  body .title .title1 img {
+    width: 275px;
+  }
+  body .title .title2 {
+    display: block;
+  }
+  body .title .title2 img {
+    width: 150px;
+  }
+  body .title .col {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+  body .continue,
+  body .start,
+  body .quizEnd {
+    font-size: 0.8em;
+  }
+  body h2 {
+    font-size: 1em;
+  }
+  body .quizPage .prompt {
+    font-size: 1.5em;
+  }
+  body .directory .levels,
+  body .directory .lessons {
+    padding-left: 10px;
+    margin-left: 0px;
+  }
+  body .directory h2 {
+    font-size: 0.9em;
+  }
+  body .directory .levels a,
+  body .directory .lessons a {
+    font-size: 0.8em;
+  }
+}
+/*# sourceMappingURL=rosetta-throne.1.0.0.css.map */
