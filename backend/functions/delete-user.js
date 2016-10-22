@@ -8,7 +8,6 @@ let deleteUser = (id) => {
 	    if (err) {
 	     	console.error(err);
 	    }
-    	console.log('User removed: ', user);
   	});
   	const promise = findQuestions(id);
   	promise.then((questions) => {
@@ -19,7 +18,6 @@ let deleteUser = (id) => {
   				if (err) {
   					console.error(err);
   				}
-  				console.log('Question removed: ', question);
   			});
   		}
   	});

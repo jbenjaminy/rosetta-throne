@@ -62,19 +62,18 @@ var QuizPage = React.createClass({
       type: 'server/restartQuiz',
       data: {
         currentLevel: this.props.level,
-        currentLesson: this.props.lesson,
-        completed: this.props.completed
+        currentLesson: this.props.lesson
       }
     });
   },
   render: function() {
-    console.log('state -----> ', this.props.state);
+    // console.log('state -----> ', this.props.state);
     if (this.props.questions.length === 0) {
       return (
         <div>
           <Header cls='header2'/>
           <div className='endLinks quizPage'>
-            <Link to={'/quiz'} className="quizEnd" onClick={this.restart}>Restart Quiz</Link>
+            <Link to={'/practice'} className="quizEnd" onClick={this.restart}>Restart Quiz</Link>
             <Link to={'/practice'} className="quizEnd" onClick={this.getPreview}>Next Lesson</Link>
             <Link to={'/'} className="quizEnd" onClick={this.getPreview}>Return Home</Link>
           </div>

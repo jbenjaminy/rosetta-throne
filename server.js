@@ -111,11 +111,22 @@ io.on('connection', (socket) => {
       });
     }
     if (action.type === 'server/updateLesson') {
+      console.log('action.data----->', action.data);
       let level = parseInt(action.data.currentLevel);
       let lesson = parseInt(action.data.currentLesson);
-      let completed = action.data.completed;
-      if (action.data.prevLevel) {
-        completed.push({level: action.data.prevLevel, lesson: action.data.prevLesson});
+      let completed = action.data.completed || false;
+      if (completed) {
+        let exists = false;
+        for (let item of completed) {
+          if (action.data.prevLevel === item.level && action.data.prevLesson === item.lesson) {
+            exists = true;
+          }
+        }
+        if (!exists) {
+          completed.push({level: parseInt(action.data.prevLevel), lesson: parseInt(action.data.prevLesson)});
+        } else {
+          completed = false;
+        }
       }
       updateLesson(socket.id, level, lesson, completed).then((user) => {
         findQuestions(socket.id).then((questions) => {
@@ -187,9 +198,8 @@ io.on('connection', (socket) => {
     if (action.type === 'server/restartQuiz') {
       let level = action.data.currentLevel;
       let lesson = action.data.currentLesson;
-      let completed = action.data.completed;
       resetMs(socket.id, level, lesson).then(() => {
-        updateLesson(socket.id, level, lesson, completed).then((user) => {
+        updateLesson(socket.id, level, lesson).then((user) => {
           findQuestions(socket.id).then((questions) => {
             let questionArr = [];
             for (let i = 0; i < questions.length; i++) {
@@ -223,6 +233,7 @@ io.on('connection', (socket) => {
     }
   });
   socket.on('disconnect', () => {
+    console.log('Socket disconnected: ', socket.id)
     deleteUser(socket.id);
   });
 });

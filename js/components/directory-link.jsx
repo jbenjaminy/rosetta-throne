@@ -4,15 +4,14 @@ var router = require('react-router');
 var Link = router.Link;
 
 var DirectoryLink = React.createClass({
-	restart: function(level, lesson, completed) {
+	restart: function(level, lesson) {
 		var props = this.props;
 		return function() {
 			props.dispatch({
 			 	type: 'server/restartQuiz',
 				data: {
 			    	currentLevel: level,
-			    	currentLesson: lesson,
-			    	completed: completed
+			    	currentLesson: lesson
 			  	}
 			});		
 		};
@@ -22,13 +21,13 @@ var DirectoryLink = React.createClass({
 		var lesson = this.props.lesson;
 		var completed = this.props.completed;
 		var	classes = 'links ';
-		completed.forEach(function(lesson) {
-			if ((lesson.lesson = this.props.lesson) && (lesson.level === this.props.level)) {
+		completed.forEach(function(item) {
+			if ((item.lesson === parseInt(lesson)) && (item.level === parseInt(level))) {
 				classes += 'completed';
 			}
 		});
 
-		return <li className={classes}><Link to={'/practice'} onClick={this.restart(level, lesson, completed)}>{this.props.title}</Link></li>
+		return <li className={classes}><Link to={'/practice'} onClick={this.restart(parseInt(level), parseInt(lesson), completed)}>{this.props.title}</Link></li>
 	}
 });
 

@@ -5,14 +5,14 @@ let resetMs = (id, level, lesson) => {
 		const promise = findQs(id);
 		promise.then((questions) => { 
 			for (let question of questions) {
-				if (parseInt(question.level) === level && parseInt(question.lesson) === lesson) {
+				if (question.level === parseInt(level) && question.lesson === parseInt(lesson)) {
 					Question.findOneAndUpdate({
-						_id: id
+						_id: question.id
 					}, {
 						m: 1
 					}, { new: true }, (err, question) => {
 				    	if (err) {
-				      		reject(err);
+				    		console.error(err);
 				    	}
 				  	});
 				}
