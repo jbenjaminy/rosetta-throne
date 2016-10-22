@@ -188,128 +188,128 @@ var createQuestions = function(id) {
 	Question.create({"socketId": id, "prompt": "ajjin", "correctAnswer": "now", "m": 1, "level": 3, "levelTitle": "Adjectives and Adverbs", "lesson": 5, "lessonTitle": "Adverbs - Part 2" });
 
 
-/*---------- LEVEL 4, TRANSITIVE VERBS ----------*/
+/*---------- LEVEL 4, VERBS PART 1 ----------*/
 	/* LESSON 1, Dothraki Life */
-	Question.create({"socketId": id, "prompt": "lirat", "correctAnswer": "to tattoo", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "Dothraki Life" });
-	Question.create({"socketId": id, "prompt": "vindelat", "correctAnswer": "to stab", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "Dothraki Life" });
-	Question.create({"socketId": id, "prompt": "zireyeselat", "correctAnswer": "to offend", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "Dothraki Life" });
-	Question.create({"socketId": id, "prompt": "zhilat", "correctAnswer": "to love", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "Dothraki Life" });
-	Question.create({"socketId": id, "prompt": "addrivat", "correctAnswer": "to kill", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "Dothraki Life" });
-	Question.create({"socketId": id, "prompt": "astilat", "correctAnswer": "to joke about", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "Dothraki Life" });
-	Question.create({"socketId": id, "prompt": "emrasolat", "correctAnswer": "to raid", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "Dothraki Life" });
-	Question.create({"socketId": id, "prompt": "fakat", "correctAnswer": "to kick", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "Dothraki Life" });
-	Question.create({"socketId": id, "prompt": "fatilat", "correctAnswer": "to insult", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "Dothraki Life" });
-	Question.create({"socketId": id, "prompt": "drivolat", "correctAnswer": "to die from", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 1, "lessonTitle": "Dothraki Life" });
+	Question.create({"socketId": id, "prompt": "lirat", "correctAnswer": "to tattoo", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 1, "lessonTitle": "Dothraki Life" });
+	Question.create({"socketId": id, "prompt": "vindelat", "correctAnswer": "to stab", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 1, "lessonTitle": "Dothraki Life" });
+	Question.create({"socketId": id, "prompt": "zireyeselat", "correctAnswer": "to offend", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 1, "lessonTitle": "Dothraki Life" });
+	Question.create({"socketId": id, "prompt": "zhilat", "correctAnswer": "to love", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 1, "lessonTitle": "Dothraki Life" });
+	Question.create({"socketId": id, "prompt": "addrivat", "correctAnswer": "to kill", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 1, "lessonTitle": "Dothraki Life" });
+	Question.create({"socketId": id, "prompt": "astilat", "correctAnswer": "to joke about", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 1, "lessonTitle": "Dothraki Life" });
+	Question.create({"socketId": id, "prompt": "emrasolat", "correctAnswer": "to raid", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 1, "lessonTitle": "Dothraki Life" });
+	Question.create({"socketId": id, "prompt": "fakat", "correctAnswer": "to kick", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 1, "lessonTitle": "Dothraki Life" });
+	Question.create({"socketId": id, "prompt": "fatilat", "correctAnswer": "to insult", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 1, "lessonTitle": "Dothraki Life" });
+	Question.create({"socketId": id, "prompt": "drivolat", "correctAnswer": "to die from", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 1, "lessonTitle": "Dothraki Life" });
 
 	/* LESSON 2, Actions with Animals */
-	Question.create({"socketId": id, "prompt": "vishaferat", "correctAnswer": "to break a horse", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "Actions with Animals" });
-	Question.create({"socketId": id, "prompt": "addakhat", "correctAnswer": "to feed", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "Actions with Animals" });
-	Question.create({"socketId": id, "prompt": "dothralat", "correctAnswer": "to ride alongside", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "Actions with Animals" });
-	Question.create({"socketId": id, "prompt": "drogat", "correctAnswer": "to drive animals", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "Actions with Animals" });
-	Question.create({"socketId": id, "prompt": "drozhat", "correctAnswer": "to slay", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "Actions with Animals" });
-	Question.create({"socketId": id, "prompt": "govat", "correctAnswer": "to breed", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "Actions with Animals" });
-	Question.create({"socketId": id, "prompt": "hakelat", "correctAnswer": "to name", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "Actions with Animals" });
-	Question.create({"socketId": id, "prompt": "javrathat", "correctAnswer": "to rein", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "Actions with Animals" });
-	Question.create({"socketId": id, "prompt": "karlinat", "correctAnswer": "to gallop beside", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "Actions with Animals" });
-	Question.create({"socketId": id, "prompt": "ogat", "correctAnswer": "to slaughter an animal", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 2, "lessonTitle": "Actions with Animals" });
+	Question.create({"socketId": id, "prompt": "vishaferat", "correctAnswer": "to break a horse", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 2, "lessonTitle": "Actions with Animals" });
+	Question.create({"socketId": id, "prompt": "addakhat", "correctAnswer": "to feed", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 2, "lessonTitle": "Actions with Animals" });
+	Question.create({"socketId": id, "prompt": "dothralat", "correctAnswer": "to ride alongside", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 2, "lessonTitle": "Actions with Animals" });
+	Question.create({"socketId": id, "prompt": "drogat", "correctAnswer": "to drive animals", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 2, "lessonTitle": "Actions with Animals" });
+	Question.create({"socketId": id, "prompt": "drozhat", "correctAnswer": "to slay", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 2, "lessonTitle": "Actions with Animals" });
+	Question.create({"socketId": id, "prompt": "govat", "correctAnswer": "to breed", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 2, "lessonTitle": "Actions with Animals" });
+	Question.create({"socketId": id, "prompt": "hakelat", "correctAnswer": "to name", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 2, "lessonTitle": "Actions with Animals" });
+	Question.create({"socketId": id, "prompt": "javrathat", "correctAnswer": "to rein", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 2, "lessonTitle": "Actions with Animals" });
+	Question.create({"socketId": id, "prompt": "karlinat", "correctAnswer": "to gallop beside", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 2, "lessonTitle": "Actions with Animals" });
+	Question.create({"socketId": id, "prompt": "ogat", "correctAnswer": "to slaughter an animal", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 2, "lessonTitle": "Actions with Animals" });
 
 	/* LESSON 3, Actions on Objects */
-	Question.create({"socketId": id, "prompt": "ammenat", "correctAnswer": "to empty something", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "Actions on Objects" });
-	Question.create({"socketId": id, "prompt": "annevalat", "correctAnswer": "to leave something alone", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "Actions on Objects" });
-	Question.create({"socketId": id, "prompt": "assamvat", "correctAnswer": "to break something", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "Actions on Objects" });
-	Question.create({"socketId": id, "prompt": "avvirsalat", "correctAnswer": "to burn something", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "Actions on Objects" });
-	Question.create({"socketId": id, "prompt": "avvitisherat", "correctAnswer": "to grow something", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "Actions on Objects" });
-	Question.create({"socketId": id, "prompt": "azzohat", "correctAnswer": "to put something down", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "Actions on Objects" });
-	Question.create({"socketId": id, "prompt": "akkovarat", "correctAnswer": "to stand something up", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "Actions on Objects" });
-	Question.create({"socketId": id, "prompt": "emmalat", "correctAnswer": "to make something enter", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "Actions on Objects" });
-	Question.create({"socketId": id, "prompt": "eqorasalat", "correctAnswer": "to let go of something", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "Actions on Objects" });
-	Question.create({"socketId": id, "prompt": "eyelat", "correctAnswer": "to move something", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 3, "lessonTitle": "Actions on Objects" });
+	Question.create({"socketId": id, "prompt": "ammenat", "correctAnswer": "to empty something", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 3, "lessonTitle": "Actions on Objects" });
+	Question.create({"socketId": id, "prompt": "annevalat", "correctAnswer": "to leave something alone", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 3, "lessonTitle": "Actions on Objects" });
+	Question.create({"socketId": id, "prompt": "assamvat", "correctAnswer": "to break something", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 3, "lessonTitle": "Actions on Objects" });
+	Question.create({"socketId": id, "prompt": "avvirsalat", "correctAnswer": "to burn something", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 3, "lessonTitle": "Actions on Objects" });
+	Question.create({"socketId": id, "prompt": "avvitisherat", "correctAnswer": "to grow something", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 3, "lessonTitle": "Actions on Objects" });
+	Question.create({"socketId": id, "prompt": "azzohat", "correctAnswer": "to put something down", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 3, "lessonTitle": "Actions on Objects" });
+	Question.create({"socketId": id, "prompt": "akkovarat", "correctAnswer": "to stand something up", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 3, "lessonTitle": "Actions on Objects" });
+	Question.create({"socketId": id, "prompt": "emmalat", "correctAnswer": "to make something enter", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 3, "lessonTitle": "Actions on Objects" });
+	Question.create({"socketId": id, "prompt": "eqorasalat", "correctAnswer": "to let go of something", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 3, "lessonTitle": "Actions on Objects" });
+	Question.create({"socketId": id, "prompt": "eyelat", "correctAnswer": "to move something", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 3, "lessonTitle": "Actions on Objects" });
 
 	/* LESSON 4, Power Dynamics */
-	Question.create({"socketId": id, "prompt": "arranat", "correctAnswer": "to shame", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "Power Dynamics" });
-	Question.create({"socketId": id, "prompt": "chomolat", "correctAnswer": "to honor", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "Power Dynamics" });
-	Question.create({"socketId": id, "prompt": "qoralat", "correctAnswer": "to seize", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "Power Dynamics" });
-	Question.create({"socketId": id, "prompt": "ziganesolat", "correctAnswer": "to defy", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "Power Dynamics" });
-	Question.create({"socketId": id, "prompt": "acchakat", "correctAnswer": "to silence", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "Power Dynamics" });
-	Question.create({"socketId": id, "prompt": "annithat", "correctAnswer": "to cause pain", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "Power Dynamics" });
-	Question.create({"socketId": id, "prompt": "assilat", "correctAnswer": "to defeat", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "Power Dynamics" });
-	Question.create({"socketId": id, "prompt": "davrakh", "correctAnswer": "to be useful to", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "Power Dynamics" });
-	Question.create({"socketId": id, "prompt": "echomosalat", "correctAnswer": "to dishonor", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "Power Dynamics" });
-	Question.create({"socketId": id, "prompt": "iddelat", "correctAnswer": "to make someone drink", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 4, "lessonTitle": "Power Dynamics" });
+	Question.create({"socketId": id, "prompt": "arranat", "correctAnswer": "to shame", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 4, "lessonTitle": "Power Dynamics" });
+	Question.create({"socketId": id, "prompt": "chomolat", "correctAnswer": "to honor", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 4, "lessonTitle": "Power Dynamics" });
+	Question.create({"socketId": id, "prompt": "qoralat", "correctAnswer": "to seize", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 4, "lessonTitle": "Power Dynamics" });
+	Question.create({"socketId": id, "prompt": "ziganesolat", "correctAnswer": "to defy", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 4, "lessonTitle": "Power Dynamics" });
+	Question.create({"socketId": id, "prompt": "acchakat", "correctAnswer": "to silence", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 4, "lessonTitle": "Power Dynamics" });
+	Question.create({"socketId": id, "prompt": "annithat", "correctAnswer": "to cause pain", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 4, "lessonTitle": "Power Dynamics" });
+	Question.create({"socketId": id, "prompt": "assilat", "correctAnswer": "to defeat", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 4, "lessonTitle": "Power Dynamics" });
+	Question.create({"socketId": id, "prompt": "davrakh", "correctAnswer": "to be useful to", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 4, "lessonTitle": "Power Dynamics" });
+	Question.create({"socketId": id, "prompt": "echomosalat", "correctAnswer": "to dishonor", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 4, "lessonTitle": "Power Dynamics" });
+	Question.create({"socketId": id, "prompt": "iddelat", "correctAnswer": "to make someone drink", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 4, "lessonTitle": "Power Dynamics" });
 
-	/* LESSON 5, The Body and the Senses*/
-	Question.create({"socketId": id, "prompt": "charat", "correctAnswer": "to hear", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "The Body and the Senses" });
-	Question.create({"socketId": id, "prompt": "astolat", "correctAnswer": "to speak of", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "The Body and the Senses" });
-	Question.create({"socketId": id, "prompt": "frakhat", "correctAnswer": "to touch", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "The Body and the Senses" });
-	Question.create({"socketId": id, "prompt": "frakholat", "correctAnswer": "to feel", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "The Body and the Senses" });
-	Question.create({"socketId": id, "prompt": "rivvat", "correctAnswer": "to smell", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "The Body and the Senses" });
-	Question.create({"socketId": id, "prompt": "donat", "correctAnswer": "to shout about", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "The Body and the Senses" });
-	Question.create({"socketId": id, "prompt": "dogat", "correctAnswer": "to suffer from", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "The Body and the Senses" });
-	Question.create({"socketId": id, "prompt": "vineserat", "correctAnswer": "to remember", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "The Body and the Senses" });
-	Question.create({"socketId": id, "prompt": "akkoalat", "correctAnswer": "to heal", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "The Body and the Senses" });
-	Question.create({"socketId": id, "prompt": "garvolat", "correctAnswer": "to hunger from", "m": 1, "level": 4, "levelTitle": "Transitive Verbs", "lesson": 5, "lessonTitle": "The Body and the Senses" });
+	/* LESSON 5, The Body and the Senses */
+	Question.create({"socketId": id, "prompt": "charat", "correctAnswer": "to hear", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 5, "lessonTitle": "The Body and the Senses" });
+	Question.create({"socketId": id, "prompt": "astolat", "correctAnswer": "to speak of", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 5, "lessonTitle": "The Body and the Senses" });
+	Question.create({"socketId": id, "prompt": "frakhat", "correctAnswer": "to touch", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 5, "lessonTitle": "The Body and the Senses" });
+	Question.create({"socketId": id, "prompt": "frakholat", "correctAnswer": "to feel", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 5, "lessonTitle": "The Body and the Senses" });
+	Question.create({"socketId": id, "prompt": "rivvat", "correctAnswer": "to smell", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 5, "lessonTitle": "The Body and the Senses" });
+	Question.create({"socketId": id, "prompt": "donat", "correctAnswer": "to shout about", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 5, "lessonTitle": "The Body and the Senses" });
+	Question.create({"socketId": id, "prompt": "dogat", "correctAnswer": "to suffer from", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 5, "lessonTitle": "The Body and the Senses" });
+	Question.create({"socketId": id, "prompt": "vineserat", "correctAnswer": "to remember", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 5, "lessonTitle": "The Body and the Senses" });
+	Question.create({"socketId": id, "prompt": "akkoalat", "correctAnswer": "to heal", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 5, "lessonTitle": "The Body and the Senses" });
+	Question.create({"socketId": id, "prompt": "garvolat", "correctAnswer": "to hunger from", "m": 1, "level": 4, "levelTitle": "Verbs - Part 1", "lesson": 5, "lessonTitle": "The Body and the Senses" });
 
 
-/*---------- LEVEL 5, MORE VERBS ----------*/
+/*---------- LEVEL 5, VERBS - PART 2 ----------*/
 	/* LESSON 1, Barbaric Actions */
-	Question.create({"socketId": id, "prompt": "achralat", "correctAnswer": "to be smelly", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "Barbaric Actions" });
-	Question.create({"socketId": id, "prompt": "adakhilat", "correctAnswer": "to feed on", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "Barbaric Actions" });
-	Question.create({"socketId": id, "prompt": "arrokhat", "correctAnswer": "to frighten", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "Barbaric Actions" });
-	Question.create({"socketId": id, "prompt": "atthasat", "correctAnswer": "to destroy (insulting)", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "Barbaric Actions" });
-	Question.create({"socketId": id, "prompt": "awazat", "correctAnswer": "to scream", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "Barbaric Actions" });
-	Question.create({"socketId": id, "prompt": "donat", "correctAnswer": "to shout", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "Barbaric Actions" });
-	Question.create({"socketId": id, "prompt": "drivolat", "correctAnswer": "to die", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "Barbaric Actions" });
-	Question.create({"socketId": id, "prompt": "esittesak", "correctAnswer": "to brag", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "Barbaric Actions" });
-	Question.create({"socketId": id, "prompt": "fejat", "correctAnswer": "to hate", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "Barbaric Actions" });
-	Question.create({"socketId": id, "prompt": "fonat", "correctAnswer": "to hunt", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 1, "lessonTitle": "Barbaric Actions" });
+	Question.create({"socketId": id, "prompt": "achralat", "correctAnswer": "to be smelly", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 1, "lessonTitle": "Barbaric Actions" });
+	Question.create({"socketId": id, "prompt": "adakhilat", "correctAnswer": "to feed on", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 1, "lessonTitle": "Barbaric Actions" });
+	Question.create({"socketId": id, "prompt": "arrokhat", "correctAnswer": "to frighten", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 1, "lessonTitle": "Barbaric Actions" });
+	Question.create({"socketId": id, "prompt": "atthasat", "correctAnswer": "to destroy (insulting)", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 1, "lessonTitle": "Barbaric Actions" });
+	Question.create({"socketId": id, "prompt": "awazat", "correctAnswer": "to scream", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 1, "lessonTitle": "Barbaric Actions" });
+	Question.create({"socketId": id, "prompt": "donat", "correctAnswer": "to shout", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 1, "lessonTitle": "Barbaric Actions" });
+	Question.create({"socketId": id, "prompt": "drivolat", "correctAnswer": "to die", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 1, "lessonTitle": "Barbaric Actions" });
+	Question.create({"socketId": id, "prompt": "esittesak", "correctAnswer": "to brag", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 1, "lessonTitle": "Barbaric Actions" });
+	Question.create({"socketId": id, "prompt": "fejat", "correctAnswer": "to hate", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 1, "lessonTitle": "Barbaric Actions" });
+	Question.create({"socketId": id, "prompt": "fonat", "correctAnswer": "to hunt", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 1, "lessonTitle": "Barbaric Actions" });
 
 	/* LESSON 2, Actions of a Healthy Lifestyle */
-	Question.create({"socketId": id, "prompt": "adakhat", "correctAnswer": "to eat", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
-	Question.create({"socketId": id, "prompt": "anat", "correctAnswer": "to jog", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
-	Question.create({"socketId": id, "prompt": "ammithrat", "correctAnswer": "to rest", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
-	Question.create({"socketId": id, "prompt": "ammemat", "correctAnswer": "to play a musical instrument", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
-	Question.create({"socketId": id, "prompt": "ezhirat", "correctAnswer": "to dance", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
-	Question.create({"socketId": id, "prompt": "ezolat", "correctAnswer": "to learn", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
-	Question.create({"socketId": id, "prompt": "hajolat", "correctAnswer": "to grow strong", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
-	Question.create({"socketId": id, "prompt": "hoyalat", "correctAnswer": "to sing", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
-	Question.create({"socketId": id, "prompt": "ifat", "correctAnswer": "to walk", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
-	Question.create({"socketId": id, "prompt": "indelat", "correctAnswer": "to drink", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
+	Question.create({"socketId": id, "prompt": "adakhat", "correctAnswer": "to eat", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
+	Question.create({"socketId": id, "prompt": "anat", "correctAnswer": "to jog", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
+	Question.create({"socketId": id, "prompt": "ammithrat", "correctAnswer": "to rest", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
+	Question.create({"socketId": id, "prompt": "ammemat", "correctAnswer": "to play a musical instrument", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
+	Question.create({"socketId": id, "prompt": "ezhirat", "correctAnswer": "to dance", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
+	Question.create({"socketId": id, "prompt": "ezolat", "correctAnswer": "to learn", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
+	Question.create({"socketId": id, "prompt": "hajolat", "correctAnswer": "to grow strong", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
+	Question.create({"socketId": id, "prompt": "hoyalat", "correctAnswer": "to sing", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
+	Question.create({"socketId": id, "prompt": "ifat", "correctAnswer": "to walk", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
+	Question.create({"socketId": id, "prompt": "indelat", "correctAnswer": "to drink", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 2, "lessonTitle": "Actions of a Healthy Lifestyle" });
 
 	/* LESSON 3, Actions of a Great Leader */
-	Question.create({"socketId": id, "prompt": "akkelenat", "correctAnswer": "to decide", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
-	Question.create({"socketId": id, "prompt": "assolat", "correctAnswer": "to command", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
-	Question.create({"socketId": id, "prompt": "dirgat", "correctAnswer": "to think", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
-	Question.create({"socketId": id, "prompt": "erin", "correctAnswer": "to be good", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
-	Question.create({"socketId": id, "prompt": "ezzolat", "correctAnswer": "to teach", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
-	Question.create({"socketId": id, "prompt": "gachat", "correctAnswer": "to solve", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
-	Question.create({"socketId": id, "prompt": "goshat", "correctAnswer": "to be certain", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
-	Question.create({"socketId": id, "prompt": "jerat", "correctAnswer": "to trade", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
-	Question.create({"socketId": id, "prompt": "jilat", "correctAnswer": "to be correct", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
-	Question.create({"socketId": id, "prompt": "koalat", "correctAnswer": "to be of help", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
+	Question.create({"socketId": id, "prompt": "akkelenat", "correctAnswer": "to decide", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
+	Question.create({"socketId": id, "prompt": "assolat", "correctAnswer": "to command", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
+	Question.create({"socketId": id, "prompt": "dirgat", "correctAnswer": "to think", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
+	Question.create({"socketId": id, "prompt": "erin", "correctAnswer": "to be good", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
+	Question.create({"socketId": id, "prompt": "ezzolat", "correctAnswer": "to teach", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
+	Question.create({"socketId": id, "prompt": "gachat", "correctAnswer": "to solve", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
+	Question.create({"socketId": id, "prompt": "goshat", "correctAnswer": "to be certain", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
+	Question.create({"socketId": id, "prompt": "jerat", "correctAnswer": "to trade", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
+	Question.create({"socketId": id, "prompt": "jilat", "correctAnswer": "to be correct", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
+	Question.create({"socketId": id, "prompt": "koalat", "correctAnswer": "to be of help", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 3, "lessonTitle": "Actions of a Great Leader" });
 
 	/* LESSON 4, Actions of Dothraki Women */
-	Question.create({"socketId": id, "prompt": "ammasat", "correctAnswer": "to decorate", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
-	Question.create({"socketId": id, "prompt": "emat", "correctAnswer": "to smile", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
-	Question.create({"socketId": id, "prompt": "annithilat", "correctAnswer": "to entice", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
-	Question.create({"socketId": id, "prompt": "arannat", "correctAnswer": "to be neglected", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
-	Question.create({"socketId": id, "prompt": "ayyolat", "correctAnswer": "to bear a child", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
-	Question.create({"socketId": id, "prompt": "chakat", "correctAnswer": "to be silent", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
-	Question.create({"socketId": id, "prompt": "charolat", "correctAnswer": "to listen", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
-	Question.create({"socketId": id, "prompt": "chomat", "correctAnswer": "to be respectful", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
-	Question.create({"socketId": id, "prompt": "ekhogaralat", "correctAnswer": "to undress", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
-	Question.create({"socketId": id, "prompt": "jolinat", "correctAnswer": "to cook", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
+	Question.create({"socketId": id, "prompt": "ammasat", "correctAnswer": "to decorate", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
+	Question.create({"socketId": id, "prompt": "emat", "correctAnswer": "to smile", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
+	Question.create({"socketId": id, "prompt": "annithilat", "correctAnswer": "to entice", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
+	Question.create({"socketId": id, "prompt": "arannat", "correctAnswer": "to be neglected", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
+	Question.create({"socketId": id, "prompt": "ayyolat", "correctAnswer": "to bear a child", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
+	Question.create({"socketId": id, "prompt": "chakat", "correctAnswer": "to be silent", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
+	Question.create({"socketId": id, "prompt": "charolat", "correctAnswer": "to listen", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
+	Question.create({"socketId": id, "prompt": "chomat", "correctAnswer": "to be respectful", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
+	Question.create({"socketId": id, "prompt": "ekhogaralat", "correctAnswer": "to undress", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
+	Question.create({"socketId": id, "prompt": "jolinat", "correctAnswer": "to cook", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 4, "lessonTitle": "Actions of Dothraki Women" });
 
 	/* LESSON 5, Other Useful Verbs */
-	Question.create({"socketId": id, "prompt": "aresat", "correctAnswer": "to hide", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
-	Question.create({"socketId": id, "prompt": "arrissat", "correctAnswer": "to fix", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
-	Question.create({"socketId": id, "prompt": "arthasat", "correctAnswer": "to fall", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
-	Question.create({"socketId": id, "prompt": "astat", "correctAnswer": "to say", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
-	Question.create({"socketId": id, "prompt": "astolat", "correctAnswer": "to speak", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
-	Question.create({"socketId": id, "prompt": "atholat", "correctAnswer": "to dry", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
-	Question.create({"socketId": id, "prompt": "chilat", "correctAnswer": "to lie down", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
-	Question.create({"socketId": id, "prompt": "choqat", "correctAnswer": "to flee", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
-	Question.create({"socketId": id, "prompt": "chorkat", "correctAnswer": "to roll", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
-	Question.create({"socketId": id, "prompt": "dinat", "correctAnswer": "to pass", "m": 1, "level": 5, "levelTitle": "Intransitive Verbs", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
+	Question.create({"socketId": id, "prompt": "aresat", "correctAnswer": "to hide", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
+	Question.create({"socketId": id, "prompt": "arrissat", "correctAnswer": "to fix", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
+	Question.create({"socketId": id, "prompt": "arthasat", "correctAnswer": "to fall", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
+	Question.create({"socketId": id, "prompt": "astat", "correctAnswer": "to say", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
+	Question.create({"socketId": id, "prompt": "astolat", "correctAnswer": "to speak", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
+	Question.create({"socketId": id, "prompt": "atholat", "correctAnswer": "to dry", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
+	Question.create({"socketId": id, "prompt": "chilat", "correctAnswer": "to lie down", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
+	Question.create({"socketId": id, "prompt": "choqat", "correctAnswer": "to flee", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
+	Question.create({"socketId": id, "prompt": "chorkat", "correctAnswer": "to roll", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
+	Question.create({"socketId": id, "prompt": "dinat", "correctAnswer": "to pass", "m": 1, "level": 5, "levelTitle": "Verbs - Part 2", "lesson": 5, "lessonTitle": "Other Useful Verbs" });
 }
 
 module.exports = createQuestions;
