@@ -29,7 +29,6 @@ var PracticePage = React.createClass({
     });
   },
   render: function() {
-    // console.log('state----->', this.props.state);
     if (this.props.startQuiz) {
       return (
         <div className='quizPage'>

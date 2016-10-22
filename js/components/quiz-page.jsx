@@ -67,7 +67,6 @@ var QuizPage = React.createClass({
     });
   },
   render: function() {
-    // console.log('state -----> ', this.props.state);
     if (this.props.questions.length === 0) {
       return (
         <div>

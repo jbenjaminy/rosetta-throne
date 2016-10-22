@@ -12,7 +12,6 @@ let initialState = {
 }
 
 function reducer(state=initialState, action) {
-  // console.log('ACTION.TYPE ----->', action.type, 'ACTION.DATA ----->', action.data);
   switch(action.type) {
     case 'updateUser': {
       let currentLevel = action.data.currentLevel || state.currentLevel;
@@ -28,7 +27,6 @@ function reducer(state=initialState, action) {
     }
     case 'updateQuiz': {
       let questions = action.data.questions || state.quiz.questions;
-      console.log('q', questions);
       let questionNumber = action.data.questionNumber;
       let startQuiz = action.data.startQuiz || false;
       return Object.assign({}, state, {

@@ -111,7 +111,6 @@ io.on('connection', (socket) => {
       });
     }
     if (action.type === 'server/updateLesson') {
-      console.log('action.data----->', action.data);
       let level = parseInt(action.data.currentLevel);
       let lesson = parseInt(action.data.currentLesson);
       let completed = action.data.completed || false;
