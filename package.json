@@ -22,18 +22,19 @@
     "build:js": "npm run clean:js && webpack",
     "watch:js": "npm run build:js && webpack --watch",
     "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map",
-    "mongod": "mongod --bind_ip=0.0.0.0 --dbpath=./mongo_data --nojournal --rest"
+    "mongod": "mongod --bind_ip=0.0.0.0 --dbpath=./mongo_data --nojournal --rest",
+    "heroku-postbuild": "npm run build"
   },
   "author": "Ben Young & Alex Bang",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jbenjaminy/spaced-rep-project"
+    "url": "https://github.com/jbenjaminy/rosetta-throne"
   },
   "bugs": {
-    "url": "https://github.com/jbenjaminy/spaced-rep-project/issues"
+    "url": "https://github.com/jbenjaminy/rosetta-throne/issues"
   },
-  "homepage": "",
+  "homepage": "http://rosetta-throne.jbenjaminy.com",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
