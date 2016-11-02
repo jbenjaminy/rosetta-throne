@@ -1,5 +1,4 @@
 var React = require('react');
-
 var Header = require('./header');
 var DirectoryLink = require('./directory-link')
 

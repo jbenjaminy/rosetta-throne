@@ -2,7 +2,6 @@ var React = require('react');
 var connect = require('react-redux').connect;
 var router = require('react-router');
 var Link = router.Link;
-
 var Header = require('./header');
 
 var QuizPage = React.createClass({

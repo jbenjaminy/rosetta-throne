@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, Route, IndexRoute, hashHistory} from 'react-router';
+import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import LandingPage from './components/landing-page';
 import PracticePage from './components/practice-page';
 import QuizPage from './components/quiz-page';
@@ -14,7 +14,7 @@ let App = (props) => {
 };
 
 const routes = (
-	<Router history={hashHistory}>
+	<Router history={browserHistory}>
   		<Route path='/' component={App}>
 	    	<IndexRoute component={LandingPage} />
 	    	<Route path='practice' component={PracticePage} />
