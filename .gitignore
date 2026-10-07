@@ -3,3 +3,5 @@ mongo_data
 .DS_Store
 other
 build
+.env
+.env.local
